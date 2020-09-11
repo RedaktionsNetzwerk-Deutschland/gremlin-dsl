@@ -1,0 +1,13 @@
+{
+    "name": "rnd/gremlin-dsl",
+    "description": "Gremlin DSL PHP integration",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dominik Jansen",
+            "email": "dominik.jansen@rnd.de"
+        }
+    ],
+    "require": {}
+}
