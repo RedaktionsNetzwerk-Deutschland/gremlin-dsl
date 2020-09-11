@@ -116,14 +116,14 @@ def getMethodDescription = { method ->
 }
 
 def methods = [
-    'pmethods': P.getMethods().
+    'predicates': P.getMethods().
         findAll { Modifier.isStatic(it.getModifiers()) }.
         findAll { P.isAssignableFrom(it.returnType) }.
         collect { it.name }.
         unique().
         sort { a, b -> a <=> b },
 
-    'tpmethods': TextP.getMethods().
+    'textPredicates': TextP.getMethods().
             findAll { Modifier.isStatic(it.getModifiers()) }.
             findAll { TextP.isAssignableFrom(it.returnType) }.
             collect { it.name }.

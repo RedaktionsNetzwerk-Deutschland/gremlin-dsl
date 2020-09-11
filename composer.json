@@ -9,5 +9,21 @@
             "email": "dominik.jansen@rnd.de"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "RND\\GremlinDSL\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.4",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "nette/php-generator": "^3.4",
+        "symfony/console": "^5.1",
+        "symfony/var-dumper": "^5.1"
+    },
+    "suggest": {
+        "brightzone/gremlin-php": "gremlin-server client for php"
+    }
 }

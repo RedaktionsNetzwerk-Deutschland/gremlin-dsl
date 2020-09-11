@@ -1,1 +1,5 @@
+.idea
+
 generator/target
+composer.lock
+vendor

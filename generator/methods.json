@@ -1,5 +1,5 @@
 {
-    "pmethods": [
+    "predicates": [
         "between",
         "eq",
         "gt",
@@ -14,7 +14,7 @@
         "within",
         "without"
     ],
-    "tpmethods": [
+    "textPredicates": [
         "containing",
         "endingWith",
         "notContaining",
