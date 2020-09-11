@@ -1,0 +1,3975 @@
+{
+    "pmethods": [
+        "between",
+        "eq",
+        "gt",
+        "gte",
+        "inside",
+        "lt",
+        "lte",
+        "neq",
+        "not",
+        "outside",
+        "test",
+        "within",
+        "without"
+    ],
+    "tpmethods": [
+        "containing",
+        "endingWith",
+        "notContaining",
+        "notEndingWith",
+        "notStartingWith",
+        "startingWith"
+    ],
+    "sourceStepMethods": [
+        {
+            "methodName": "with",
+            "parameters": [
+                {
+                    "param": "key",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "with",
+            "parameters": [
+                {
+                    "param": "key",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "value",
+                    "type": "object",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "withBulk",
+            "parameters": [
+                {
+                    "param": "useBulk",
+                    "type": "bool",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "withPath",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "withSack",
+            "parameters": [
+                {
+                    "param": "initialValue",
+                    "type": "object",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "withSack",
+            "parameters": [
+                {
+                    "param": "initialValue",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "mergeOperator",
+                    "type": "BinaryOperator",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "withSack",
+            "parameters": [
+                {
+                    "param": "initialValue",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "splitOperator",
+                    "type": "UnaryOperator",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "withSack",
+            "parameters": [
+                {
+                    "param": "initialValue",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "splitOperator",
+                    "type": "UnaryOperator",
+                    "variableArgs": false
+                },
+                {
+                    "param": "mergeOperator",
+                    "type": "BinaryOperator",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "withSack",
+            "parameters": [
+                {
+                    "param": "initialValue",
+                    "type": "Supplier",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "withSack",
+            "parameters": [
+                {
+                    "param": "initialValue",
+                    "type": "Supplier",
+                    "variableArgs": false
+                },
+                {
+                    "param": "mergeOperator",
+                    "type": "BinaryOperator",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "withSack",
+            "parameters": [
+                {
+                    "param": "initialValue",
+                    "type": "Supplier",
+                    "variableArgs": false
+                },
+                {
+                    "param": "splitOperator",
+                    "type": "UnaryOperator",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "withSack",
+            "parameters": [
+                {
+                    "param": "initialValue",
+                    "type": "Supplier",
+                    "variableArgs": false
+                },
+                {
+                    "param": "splitOperator",
+                    "type": "UnaryOperator",
+                    "variableArgs": false
+                },
+                {
+                    "param": "mergeOperator",
+                    "type": "BinaryOperator",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "withSideEffect",
+            "parameters": [
+                {
+                    "param": "key",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "initialValue",
+                    "type": "object",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "withSideEffect",
+            "parameters": [
+                {
+                    "param": "key",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "initialValue",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "reducer",
+                    "type": "BinaryOperator",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "withSideEffect",
+            "parameters": [
+                {
+                    "param": "key",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "initialValue",
+                    "type": "Supplier",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "withSideEffect",
+            "parameters": [
+                {
+                    "param": "key",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "initialValue",
+                    "type": "Supplier",
+                    "variableArgs": false
+                },
+                {
+                    "param": "reducer",
+                    "type": "BinaryOperator",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "withStrategies",
+            "parameters": [
+                {
+                    "param": "traversalStrategies",
+                    "type": "TraversalStrategy[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "withoutStrategies",
+            "parameters": [
+                {
+                    "param": "traversalStrategyClasses",
+                    "type": "Type[]",
+                    "variableArgs": true
+                }
+            ]
+        }
+    ],
+    "sourceSpawnMethods": [
+        {
+            "methodName": "E",
+            "parameters": [
+                {
+                    "param": "edgesIds",
+                    "type": "object[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "V",
+            "parameters": [
+                {
+                    "param": "vertexIds",
+                    "type": "object[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "addE",
+            "parameters": [
+                {
+                    "param": "label",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "addE",
+            "parameters": [
+                {
+                    "param": "edgeLabelTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "addV",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "addV",
+            "parameters": [
+                {
+                    "param": "label",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "addV",
+            "parameters": [
+                {
+                    "param": "vertexLabelTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "inject",
+            "parameters": [
+                {
+                    "param": "starts",
+                    "type": "object[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "io",
+            "parameters": [
+                {
+                    "param": "file",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        }
+    ],
+    "graphStepMethods": [
+        {
+            "methodName": "V",
+            "parameters": [
+                {
+                    "param": "vertexIdsOrElements",
+                    "type": "object[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "addE",
+            "parameters": [
+                {
+                    "param": "edgeLabel",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "addE",
+            "parameters": [
+                {
+                    "param": "edgeLabelTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "addV",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "addV",
+            "parameters": [
+                {
+                    "param": "vertexLabel",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "addV",
+            "parameters": [
+                {
+                    "param": "vertexLabelTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "aggregate",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                },
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "aggregate",
+            "parameters": [
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "and",
+            "parameters": [
+                {
+                    "param": "andTraversals",
+                    "type": "Traversal[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "as",
+            "parameters": [
+                {
+                    "param": "stepLabel",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "stepLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "barrier",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "barrier",
+            "parameters": [
+                {
+                    "param": "barrierConsumer",
+                    "type": "Consumer",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "barrier",
+            "parameters": [
+                {
+                    "param": "maxBarrierSize",
+                    "type": "int",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "both",
+            "parameters": [
+                {
+                    "param": "edgeLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "bothE",
+            "parameters": [
+                {
+                    "param": "edgeLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "bothV",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "branch",
+            "parameters": [
+                {
+                    "param": "function",
+                    "type": "Function",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "branch",
+            "parameters": [
+                {
+                    "param": "branchTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "by",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "by",
+            "parameters": [
+                {
+                    "param": "comparator",
+                    "type": "Comparator",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "by",
+            "parameters": [
+                {
+                    "param": "function",
+                    "type": "Function",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "by",
+            "parameters": [
+                {
+                    "param": "function",
+                    "type": "Function",
+                    "variableArgs": false
+                },
+                {
+                    "param": "comparator",
+                    "type": "Comparator",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "by",
+            "parameters": [
+                {
+                    "param": "order",
+                    "type": "Order",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "by",
+            "parameters": [
+                {
+                    "param": "key",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "by",
+            "parameters": [
+                {
+                    "param": "key",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "comparator",
+                    "type": "Comparator",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "by",
+            "parameters": [
+                {
+                    "param": "token",
+                    "type": "T",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "by",
+            "parameters": [
+                {
+                    "param": "traversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "by",
+            "parameters": [
+                {
+                    "param": "traversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                },
+                {
+                    "param": "comparator",
+                    "type": "Comparator",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "cap",
+            "parameters": [
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "sideEffectKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "choose",
+            "parameters": [
+                {
+                    "param": "choiceFunction",
+                    "type": "Function",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "choose",
+            "parameters": [
+                {
+                    "param": "choosePredicate",
+                    "type": "Predicate",
+                    "variableArgs": false
+                },
+                {
+                    "param": "trueChoice",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "choose",
+            "parameters": [
+                {
+                    "param": "choosePredicate",
+                    "type": "Predicate",
+                    "variableArgs": false
+                },
+                {
+                    "param": "trueChoice",
+                    "type": "Traversal",
+                    "variableArgs": false
+                },
+                {
+                    "param": "falseChoice",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "choose",
+            "parameters": [
+                {
+                    "param": "choiceTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "choose",
+            "parameters": [
+                {
+                    "param": "traversalPredicate",
+                    "type": "Traversal",
+                    "variableArgs": false
+                },
+                {
+                    "param": "trueChoice",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "choose",
+            "parameters": [
+                {
+                    "param": "traversalPredicate",
+                    "type": "Traversal",
+                    "variableArgs": false
+                },
+                {
+                    "param": "trueChoice",
+                    "type": "Traversal",
+                    "variableArgs": false
+                },
+                {
+                    "param": "falseChoice",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "coalesce",
+            "parameters": [
+                {
+                    "param": "coalesceTraversals",
+                    "type": "Traversal[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "coin",
+            "parameters": [
+                {
+                    "param": "probability",
+                    "type": "double",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "connectedComponent",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "constant",
+            "parameters": [
+                {
+                    "param": "e",
+                    "type": "object",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "count",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "count",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "cyclicPath",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "dedup",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                },
+                {
+                    "param": "dedupLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "dedup",
+            "parameters": [
+                {
+                    "param": "dedupLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "drop",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "elementMap",
+            "parameters": [
+                {
+                    "param": "propertyKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "emit",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "emit",
+            "parameters": [
+                {
+                    "param": "emitPredicate",
+                    "type": "Predicate",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "emit",
+            "parameters": [
+                {
+                    "param": "emitTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "filter",
+            "parameters": [
+                {
+                    "param": "predicate",
+                    "type": "Predicate",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "filter",
+            "parameters": [
+                {
+                    "param": "filterTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "flatMap",
+            "parameters": [
+                {
+                    "param": "function",
+                    "type": "Function",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "flatMap",
+            "parameters": [
+                {
+                    "param": "flatMapTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "fold",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "fold",
+            "parameters": [
+                {
+                    "param": "seed",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "foldFunction",
+                    "type": "BiFunction",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "from",
+            "parameters": [
+                {
+                    "param": "fromStepLabel",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "from",
+            "parameters": [
+                {
+                    "param": "fromVertex",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "from",
+            "parameters": [
+                {
+                    "param": "fromVertex",
+                    "type": "Vertex",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "group",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "group",
+            "parameters": [
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "groupCount",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "groupCount",
+            "parameters": [
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "propertyKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "propertyKey",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "value",
+                    "type": "object",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "propertyKey",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "label",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "propertyKey",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "value",
+                    "type": "object",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "label",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "propertyKey",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "propertyKey",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "propertyTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "accessor",
+                    "type": "T",
+                    "variableArgs": false
+                },
+                {
+                    "param": "value",
+                    "type": "object",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "accessor",
+                    "type": "T",
+                    "variableArgs": false
+                },
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "accessor",
+                    "type": "T",
+                    "variableArgs": false
+                },
+                {
+                    "param": "propertyTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "hasId",
+            "parameters": [
+                {
+                    "param": "id",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "otherIds",
+                    "type": "object[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "hasId",
+            "parameters": [
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "hasKey",
+            "parameters": [
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "hasKey",
+            "parameters": [
+                {
+                    "param": "label",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "otherLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "hasLabel",
+            "parameters": [
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "hasLabel",
+            "parameters": [
+                {
+                    "param": "label",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "otherLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "hasNot",
+            "parameters": [
+                {
+                    "param": "propertyKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "hasValue",
+            "parameters": [
+                {
+                    "param": "value",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "otherValues",
+                    "type": "object[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "hasValue",
+            "parameters": [
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "id",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "identity",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "in",
+            "parameters": [
+                {
+                    "param": "edgeLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "inE",
+            "parameters": [
+                {
+                    "param": "edgeLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "inV",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "index",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "inject",
+            "parameters": [
+                {
+                    "param": "injections",
+                    "type": "object[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "is",
+            "parameters": [
+                {
+                    "param": "value",
+                    "type": "object",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "is",
+            "parameters": [
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "key",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "label",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "limit",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                },
+                {
+                    "param": "limit",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "limit",
+            "parameters": [
+                {
+                    "param": "limit",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "local",
+            "parameters": [
+                {
+                    "param": "localTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "loops",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "loops",
+            "parameters": [
+                {
+                    "param": "loopName",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "map",
+            "parameters": [
+                {
+                    "param": "function",
+                    "type": "Function",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "map",
+            "parameters": [
+                {
+                    "param": "mapTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "match",
+            "parameters": [
+                {
+                    "param": "matchTraversals",
+                    "type": "Traversal[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "math",
+            "parameters": [
+                {
+                    "param": "expression",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "max",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "max",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "mean",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "mean",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "min",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "min",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "not",
+            "parameters": [
+                {
+                    "param": "notTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "option",
+            "parameters": [
+                {
+                    "param": "pickToken",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "traversalOption",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "option",
+            "parameters": [
+                {
+                    "param": "traversalOption",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "optional",
+            "parameters": [
+                {
+                    "param": "optionalTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "or",
+            "parameters": [
+                {
+                    "param": "orTraversals",
+                    "type": "Traversal[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "order",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "order",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "otherV",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "out",
+            "parameters": [
+                {
+                    "param": "edgeLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "outE",
+            "parameters": [
+                {
+                    "param": "edgeLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "outV",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "pageRank",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "pageRank",
+            "parameters": [
+                {
+                    "param": "alpha",
+                    "type": "double",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "path",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "peerPressure",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "profile",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "profile",
+            "parameters": [
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "program",
+            "parameters": [
+                {
+                    "param": "vertexProgram",
+                    "type": "object",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "project",
+            "parameters": [
+                {
+                    "param": "projectKey",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "otherProjectKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "properties",
+            "parameters": [
+                {
+                    "param": "propertyKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "property",
+            "parameters": [
+                {
+                    "param": "cardinality",
+                    "type": "Cardinality",
+                    "variableArgs": false
+                },
+                {
+                    "param": "key",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "value",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "keyValues",
+                    "type": "object[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "property",
+            "parameters": [
+                {
+                    "param": "key",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "value",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "keyValues",
+                    "type": "object[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "propertyMap",
+            "parameters": [
+                {
+                    "param": "propertyKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "range",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                },
+                {
+                    "param": "low",
+                    "type": "long",
+                    "variableArgs": false
+                },
+                {
+                    "param": "high",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "range",
+            "parameters": [
+                {
+                    "param": "low",
+                    "type": "long",
+                    "variableArgs": false
+                },
+                {
+                    "param": "high",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "read",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "repeat",
+            "parameters": [
+                {
+                    "param": "loopName",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "repeatTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "repeat",
+            "parameters": [
+                {
+                    "param": "repeatTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "sack",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "sack",
+            "parameters": [
+                {
+                    "param": "sackOperator",
+                    "type": "BiFunction",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "sample",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                },
+                {
+                    "param": "amountToSample",
+                    "type": "int",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "sample",
+            "parameters": [
+                {
+                    "param": "amountToSample",
+                    "type": "int",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "select",
+            "parameters": [
+                {
+                    "param": "column",
+                    "type": "Column",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "select",
+            "parameters": [
+                {
+                    "param": "pop",
+                    "type": "Pop",
+                    "variableArgs": false
+                },
+                {
+                    "param": "selectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "select",
+            "parameters": [
+                {
+                    "param": "pop",
+                    "type": "Pop",
+                    "variableArgs": false
+                },
+                {
+                    "param": "selectKey1",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "selectKey2",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "otherSelectKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "select",
+            "parameters": [
+                {
+                    "param": "pop",
+                    "type": "Pop",
+                    "variableArgs": false
+                },
+                {
+                    "param": "keyTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "select",
+            "parameters": [
+                {
+                    "param": "selectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "select",
+            "parameters": [
+                {
+                    "param": "selectKey1",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "selectKey2",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "otherSelectKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "select",
+            "parameters": [
+                {
+                    "param": "keyTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "shortestPath",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "sideEffect",
+            "parameters": [
+                {
+                    "param": "consumer",
+                    "type": "Consumer",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "sideEffect",
+            "parameters": [
+                {
+                    "param": "sideEffectTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "simplePath",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "skip",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                },
+                {
+                    "param": "skip",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "skip",
+            "parameters": [
+                {
+                    "param": "skip",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "store",
+            "parameters": [
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "subgraph",
+            "parameters": [
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "sum",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "sum",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "tail",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "tail",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "tail",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                },
+                {
+                    "param": "limit",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "tail",
+            "parameters": [
+                {
+                    "param": "limit",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "timeLimit",
+            "parameters": [
+                {
+                    "param": "timeLimit",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "times",
+            "parameters": [
+                {
+                    "param": "maxLoops",
+                    "type": "int",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "to",
+            "parameters": [
+                {
+                    "param": "direction",
+                    "type": "Direction",
+                    "variableArgs": false
+                },
+                {
+                    "param": "edgeLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "to",
+            "parameters": [
+                {
+                    "param": "toStepLabel",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "to",
+            "parameters": [
+                {
+                    "param": "toVertex",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "to",
+            "parameters": [
+                {
+                    "param": "toVertex",
+                    "type": "Vertex",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "toE",
+            "parameters": [
+                {
+                    "param": "direction",
+                    "type": "Direction",
+                    "variableArgs": false
+                },
+                {
+                    "param": "edgeLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "toV",
+            "parameters": [
+                {
+                    "param": "direction",
+                    "type": "Direction",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "tree",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "tree",
+            "parameters": [
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "unfold",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "union",
+            "parameters": [
+                {
+                    "param": "unionTraversals",
+                    "type": "Traversal[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "until",
+            "parameters": [
+                {
+                    "param": "untilPredicate",
+                    "type": "Predicate",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "until",
+            "parameters": [
+                {
+                    "param": "untilTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "value",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "valueMap",
+            "parameters": [
+                {
+                    "param": "propertyKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "valueMap",
+            "parameters": [
+                {
+                    "param": "includeTokens",
+                    "type": "bool",
+                    "variableArgs": false
+                },
+                {
+                    "param": "propertyKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "values",
+            "parameters": [
+                {
+                    "param": "propertyKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "where",
+            "parameters": [
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "where",
+            "parameters": [
+                {
+                    "param": "startKey",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "where",
+            "parameters": [
+                {
+                    "param": "whereTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "with",
+            "parameters": [
+                {
+                    "param": "key",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "with",
+            "parameters": [
+                {
+                    "param": "key",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "value",
+                    "type": "object",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "write",
+            "parameters": [
+                
+            ]
+        }
+    ],
+    "anonStepMethods": [
+        {
+            "methodName": "V",
+            "parameters": [
+                {
+                    "param": "vertexIdsOrElements",
+                    "type": "object[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "addE",
+            "parameters": [
+                {
+                    "param": "edgeLabel",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "addE",
+            "parameters": [
+                {
+                    "param": "edgeLabelTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "addV",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "addV",
+            "parameters": [
+                {
+                    "param": "vertexLabel",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "addV",
+            "parameters": [
+                {
+                    "param": "vertexLabelTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "aggregate",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                },
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "aggregate",
+            "parameters": [
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "and",
+            "parameters": [
+                {
+                    "param": "andTraversals",
+                    "type": "Traversal[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "as",
+            "parameters": [
+                {
+                    "param": "label",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "labels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "barrier",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "barrier",
+            "parameters": [
+                {
+                    "param": "barrierConsumer",
+                    "type": "Consumer",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "barrier",
+            "parameters": [
+                {
+                    "param": "maxBarrierSize",
+                    "type": "int",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "both",
+            "parameters": [
+                {
+                    "param": "edgeLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "bothE",
+            "parameters": [
+                {
+                    "param": "edgeLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "bothV",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "branch",
+            "parameters": [
+                {
+                    "param": "function",
+                    "type": "Function",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "branch",
+            "parameters": [
+                {
+                    "param": "traversalFunction",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "cap",
+            "parameters": [
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "sideEffectKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "choose",
+            "parameters": [
+                {
+                    "param": "choiceFunction",
+                    "type": "Function",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "choose",
+            "parameters": [
+                {
+                    "param": "choosePredicate",
+                    "type": "Predicate",
+                    "variableArgs": false
+                },
+                {
+                    "param": "trueChoice",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "choose",
+            "parameters": [
+                {
+                    "param": "choosePredicate",
+                    "type": "Predicate",
+                    "variableArgs": false
+                },
+                {
+                    "param": "trueChoice",
+                    "type": "Traversal",
+                    "variableArgs": false
+                },
+                {
+                    "param": "falseChoice",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "choose",
+            "parameters": [
+                {
+                    "param": "traversalFunction",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "choose",
+            "parameters": [
+                {
+                    "param": "traversalPredicate",
+                    "type": "Traversal",
+                    "variableArgs": false
+                },
+                {
+                    "param": "trueChoice",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "choose",
+            "parameters": [
+                {
+                    "param": "traversalPredicate",
+                    "type": "Traversal",
+                    "variableArgs": false
+                },
+                {
+                    "param": "trueChoice",
+                    "type": "Traversal",
+                    "variableArgs": false
+                },
+                {
+                    "param": "falseChoice",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "coalesce",
+            "parameters": [
+                {
+                    "param": "traversals",
+                    "type": "Traversal[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "coin",
+            "parameters": [
+                {
+                    "param": "probability",
+                    "type": "double",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "constant",
+            "parameters": [
+                {
+                    "param": "a",
+                    "type": "object",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "count",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "count",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "cyclicPath",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "dedup",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                },
+                {
+                    "param": "dedupLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "dedup",
+            "parameters": [
+                {
+                    "param": "dedupLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "drop",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "elementMap",
+            "parameters": [
+                {
+                    "param": "propertyKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "emit",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "emit",
+            "parameters": [
+                {
+                    "param": "emitPredicate",
+                    "type": "Predicate",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "emit",
+            "parameters": [
+                {
+                    "param": "emitTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "filter",
+            "parameters": [
+                {
+                    "param": "predicate",
+                    "type": "Predicate",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "filter",
+            "parameters": [
+                {
+                    "param": "filterTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "flatMap",
+            "parameters": [
+                {
+                    "param": "function",
+                    "type": "Function",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "flatMap",
+            "parameters": [
+                {
+                    "param": "flatMapTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "fold",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "fold",
+            "parameters": [
+                {
+                    "param": "seed",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "foldFunction",
+                    "type": "BiFunction",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "group",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "group",
+            "parameters": [
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "groupCount",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "groupCount",
+            "parameters": [
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "propertyKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "propertyKey",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "value",
+                    "type": "object",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "propertyKey",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "label",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "propertyKey",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "value",
+                    "type": "object",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "label",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "propertyKey",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "propertyKey",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "propertyTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "accessor",
+                    "type": "T",
+                    "variableArgs": false
+                },
+                {
+                    "param": "value",
+                    "type": "object",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "accessor",
+                    "type": "T",
+                    "variableArgs": false
+                },
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "has",
+            "parameters": [
+                {
+                    "param": "accessor",
+                    "type": "T",
+                    "variableArgs": false
+                },
+                {
+                    "param": "propertyTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "hasId",
+            "parameters": [
+                {
+                    "param": "id",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "otherIds",
+                    "type": "object[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "hasId",
+            "parameters": [
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "hasKey",
+            "parameters": [
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "hasKey",
+            "parameters": [
+                {
+                    "param": "label",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "otherLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "hasLabel",
+            "parameters": [
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "hasLabel",
+            "parameters": [
+                {
+                    "param": "label",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "otherLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "hasNot",
+            "parameters": [
+                {
+                    "param": "propertyKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "hasValue",
+            "parameters": [
+                {
+                    "param": "value",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "values",
+                    "type": "object[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "hasValue",
+            "parameters": [
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "id",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "identity",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "in",
+            "parameters": [
+                {
+                    "param": "edgeLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "inE",
+            "parameters": [
+                {
+                    "param": "edgeLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "inV",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "index",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "inject",
+            "parameters": [
+                {
+                    "param": "injections",
+                    "type": "object[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "is",
+            "parameters": [
+                {
+                    "param": "value",
+                    "type": "object",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "is",
+            "parameters": [
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "key",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "label",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "limit",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                },
+                {
+                    "param": "limit",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "limit",
+            "parameters": [
+                {
+                    "param": "limit",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "local",
+            "parameters": [
+                {
+                    "param": "localTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "loops",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "loops",
+            "parameters": [
+                {
+                    "param": "loopName",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "map",
+            "parameters": [
+                {
+                    "param": "function",
+                    "type": "Function",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "map",
+            "parameters": [
+                {
+                    "param": "mapTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "match",
+            "parameters": [
+                {
+                    "param": "matchTraversals",
+                    "type": "Traversal[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "math",
+            "parameters": [
+                {
+                    "param": "expression",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "max",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "max",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "mean",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "mean",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "min",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "min",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "not",
+            "parameters": [
+                {
+                    "param": "notTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "optional",
+            "parameters": [
+                {
+                    "param": "optionalTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "or",
+            "parameters": [
+                {
+                    "param": "orTraversals",
+                    "type": "Traversal[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "order",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "order",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "otherV",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "out",
+            "parameters": [
+                {
+                    "param": "edgeLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "outE",
+            "parameters": [
+                {
+                    "param": "edgeLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "outV",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "path",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "project",
+            "parameters": [
+                {
+                    "param": "projectKey",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "projectKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "properties",
+            "parameters": [
+                {
+                    "param": "propertyKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "property",
+            "parameters": [
+                {
+                    "param": "cardinality",
+                    "type": "Cardinality",
+                    "variableArgs": false
+                },
+                {
+                    "param": "key",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "value",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "keyValues",
+                    "type": "object[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "property",
+            "parameters": [
+                {
+                    "param": "key",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "value",
+                    "type": "object",
+                    "variableArgs": false
+                },
+                {
+                    "param": "keyValues",
+                    "type": "object[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "propertyMap",
+            "parameters": [
+                {
+                    "param": "propertyKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "range",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                },
+                {
+                    "param": "low",
+                    "type": "long",
+                    "variableArgs": false
+                },
+                {
+                    "param": "high",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "range",
+            "parameters": [
+                {
+                    "param": "low",
+                    "type": "long",
+                    "variableArgs": false
+                },
+                {
+                    "param": "high",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "repeat",
+            "parameters": [
+                {
+                    "param": "loopName",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "traversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "repeat",
+            "parameters": [
+                {
+                    "param": "traversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "sack",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "sack",
+            "parameters": [
+                {
+                    "param": "sackOperator",
+                    "type": "BiFunction",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "sample",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                },
+                {
+                    "param": "amountToSample",
+                    "type": "int",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "sample",
+            "parameters": [
+                {
+                    "param": "amountToSample",
+                    "type": "int",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "select",
+            "parameters": [
+                {
+                    "param": "column",
+                    "type": "Column",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "select",
+            "parameters": [
+                {
+                    "param": "pop",
+                    "type": "Pop",
+                    "variableArgs": false
+                },
+                {
+                    "param": "selectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "select",
+            "parameters": [
+                {
+                    "param": "pop",
+                    "type": "Pop",
+                    "variableArgs": false
+                },
+                {
+                    "param": "selectKey1",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "selectKey2",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "otherSelectKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "select",
+            "parameters": [
+                {
+                    "param": "pop",
+                    "type": "Pop",
+                    "variableArgs": false
+                },
+                {
+                    "param": "keyTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "select",
+            "parameters": [
+                {
+                    "param": "selectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "select",
+            "parameters": [
+                {
+                    "param": "selectKey1",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "selectKey2",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "otherSelectKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "select",
+            "parameters": [
+                {
+                    "param": "keyTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "sideEffect",
+            "parameters": [
+                {
+                    "param": "consumer",
+                    "type": "Consumer",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "sideEffect",
+            "parameters": [
+                {
+                    "param": "sideEffectTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "simplePath",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "skip",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                },
+                {
+                    "param": "skip",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "skip",
+            "parameters": [
+                {
+                    "param": "skip",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "store",
+            "parameters": [
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "subgraph",
+            "parameters": [
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "sum",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "sum",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "tail",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "tail",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "tail",
+            "parameters": [
+                {
+                    "param": "scope",
+                    "type": "Scope",
+                    "variableArgs": false
+                },
+                {
+                    "param": "limit",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "tail",
+            "parameters": [
+                {
+                    "param": "limit",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "timeLimit",
+            "parameters": [
+                {
+                    "param": "timeLimit",
+                    "type": "long",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "times",
+            "parameters": [
+                {
+                    "param": "maxLoops",
+                    "type": "int",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "to",
+            "parameters": [
+                {
+                    "param": "direction",
+                    "type": "Direction",
+                    "variableArgs": false
+                },
+                {
+                    "param": "edgeLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "toE",
+            "parameters": [
+                {
+                    "param": "direction",
+                    "type": "Direction",
+                    "variableArgs": false
+                },
+                {
+                    "param": "edgeLabels",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "toV",
+            "parameters": [
+                {
+                    "param": "direction",
+                    "type": "Direction",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "tree",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "tree",
+            "parameters": [
+                {
+                    "param": "sideEffectKey",
+                    "type": "string",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "unfold",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "union",
+            "parameters": [
+                {
+                    "param": "traversals",
+                    "type": "Traversal[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "until",
+            "parameters": [
+                {
+                    "param": "untilPredicate",
+                    "type": "Predicate",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "until",
+            "parameters": [
+                {
+                    "param": "untilTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "value",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "valueMap",
+            "parameters": [
+                {
+                    "param": "propertyKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "valueMap",
+            "parameters": [
+                {
+                    "param": "includeTokens",
+                    "type": "bool",
+                    "variableArgs": false
+                },
+                {
+                    "param": "propertyKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "values",
+            "parameters": [
+                {
+                    "param": "propertyKeys",
+                    "type": "string[]",
+                    "variableArgs": true
+                }
+            ]
+        },
+        {
+            "methodName": "where",
+            "parameters": [
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "where",
+            "parameters": [
+                {
+                    "param": "startKey",
+                    "type": "string",
+                    "variableArgs": false
+                },
+                {
+                    "param": "predicate",
+                    "type": "P",
+                    "variableArgs": false
+                }
+            ]
+        },
+        {
+            "methodName": "where",
+            "parameters": [
+                {
+                    "param": "whereTraversal",
+                    "type": "Traversal",
+                    "variableArgs": false
+                }
+            ]
+        }
+    ]
+}
