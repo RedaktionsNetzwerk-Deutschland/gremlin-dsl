@@ -99,13 +99,13 @@ def getParams = { method, useGenericParams ->
     def resultParameters = parameters.
             toList().indexed().
             collect { index, param ->
-                ["param": param.name, "type": toGenericType(param.type.simpleName), "variableArgs": false]
+                ["name": param.name, "type": toGenericType(param.type.simpleName), "variadic": false]
             }.
             toArray()
 
     if (method.isVarArgs()) {
         def lastIndex = resultParameters.length - 1
-        resultParameters[lastIndex].variableArgs = true;
+        resultParameters[lastIndex].variadic = true;
     }
 
     resultParameters

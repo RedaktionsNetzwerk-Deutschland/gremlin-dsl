@@ -27,9 +27,9 @@
             "methodName": "with",
             "parameters": [
                 {
-                    "param": "key",
+                    "name": "key",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -37,14 +37,14 @@
             "methodName": "with",
             "parameters": [
                 {
-                    "param": "key",
+                    "name": "key",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "value",
+                    "name": "value",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -52,9 +52,9 @@
             "methodName": "withBulk",
             "parameters": [
                 {
-                    "param": "useBulk",
+                    "name": "useBulk",
                     "type": "bool",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -68,9 +68,9 @@
             "methodName": "withSack",
             "parameters": [
                 {
-                    "param": "initialValue",
+                    "name": "initialValue",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -78,14 +78,14 @@
             "methodName": "withSack",
             "parameters": [
                 {
-                    "param": "initialValue",
+                    "name": "initialValue",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "mergeOperator",
+                    "name": "mergeOperator",
                     "type": "BinaryOperator",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -93,14 +93,14 @@
             "methodName": "withSack",
             "parameters": [
                 {
-                    "param": "initialValue",
+                    "name": "initialValue",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "splitOperator",
+                    "name": "splitOperator",
                     "type": "UnaryOperator",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -108,19 +108,19 @@
             "methodName": "withSack",
             "parameters": [
                 {
-                    "param": "initialValue",
+                    "name": "initialValue",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "splitOperator",
+                    "name": "splitOperator",
                     "type": "UnaryOperator",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "mergeOperator",
+                    "name": "mergeOperator",
                     "type": "BinaryOperator",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -128,9 +128,9 @@
             "methodName": "withSack",
             "parameters": [
                 {
-                    "param": "initialValue",
+                    "name": "initialValue",
                     "type": "Supplier",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -138,14 +138,14 @@
             "methodName": "withSack",
             "parameters": [
                 {
-                    "param": "initialValue",
+                    "name": "initialValue",
                     "type": "Supplier",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "mergeOperator",
+                    "name": "mergeOperator",
                     "type": "BinaryOperator",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -153,14 +153,14 @@
             "methodName": "withSack",
             "parameters": [
                 {
-                    "param": "initialValue",
+                    "name": "initialValue",
                     "type": "Supplier",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "splitOperator",
+                    "name": "splitOperator",
                     "type": "UnaryOperator",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -168,19 +168,19 @@
             "methodName": "withSack",
             "parameters": [
                 {
-                    "param": "initialValue",
+                    "name": "initialValue",
                     "type": "Supplier",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "splitOperator",
+                    "name": "splitOperator",
                     "type": "UnaryOperator",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "mergeOperator",
+                    "name": "mergeOperator",
                     "type": "BinaryOperator",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -188,14 +188,14 @@
             "methodName": "withSideEffect",
             "parameters": [
                 {
-                    "param": "key",
+                    "name": "key",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "initialValue",
+                    "name": "initialValue",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -203,19 +203,19 @@
             "methodName": "withSideEffect",
             "parameters": [
                 {
-                    "param": "key",
+                    "name": "key",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "initialValue",
+                    "name": "initialValue",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "reducer",
+                    "name": "reducer",
                     "type": "BinaryOperator",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -223,14 +223,14 @@
             "methodName": "withSideEffect",
             "parameters": [
                 {
-                    "param": "key",
+                    "name": "key",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "initialValue",
+                    "name": "initialValue",
                     "type": "Supplier",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -238,19 +238,19 @@
             "methodName": "withSideEffect",
             "parameters": [
                 {
-                    "param": "key",
+                    "name": "key",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "initialValue",
+                    "name": "initialValue",
                     "type": "Supplier",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "reducer",
+                    "name": "reducer",
                     "type": "BinaryOperator",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -258,9 +258,9 @@
             "methodName": "withStrategies",
             "parameters": [
                 {
-                    "param": "traversalStrategies",
+                    "name": "traversalStrategies",
                     "type": "TraversalStrategy[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -268,9 +268,9 @@
             "methodName": "withoutStrategies",
             "parameters": [
                 {
-                    "param": "traversalStrategyClasses",
+                    "name": "traversalStrategyClasses",
                     "type": "Type[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         }
@@ -280,9 +280,9 @@
             "methodName": "E",
             "parameters": [
                 {
-                    "param": "edgesIds",
+                    "name": "edgesIds",
                     "type": "object[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -290,9 +290,9 @@
             "methodName": "V",
             "parameters": [
                 {
-                    "param": "vertexIds",
+                    "name": "vertexIds",
                     "type": "object[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -300,9 +300,9 @@
             "methodName": "addE",
             "parameters": [
                 {
-                    "param": "label",
+                    "name": "label",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -310,9 +310,9 @@
             "methodName": "addE",
             "parameters": [
                 {
-                    "param": "edgeLabelTraversal",
+                    "name": "edgeLabelTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -326,9 +326,9 @@
             "methodName": "addV",
             "parameters": [
                 {
-                    "param": "label",
+                    "name": "label",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -336,9 +336,9 @@
             "methodName": "addV",
             "parameters": [
                 {
-                    "param": "vertexLabelTraversal",
+                    "name": "vertexLabelTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -346,9 +346,9 @@
             "methodName": "inject",
             "parameters": [
                 {
-                    "param": "starts",
+                    "name": "starts",
                     "type": "object[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -356,9 +356,9 @@
             "methodName": "io",
             "parameters": [
                 {
-                    "param": "file",
+                    "name": "file",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         }
@@ -368,9 +368,9 @@
             "methodName": "V",
             "parameters": [
                 {
-                    "param": "vertexIdsOrElements",
+                    "name": "vertexIdsOrElements",
                     "type": "object[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -378,9 +378,9 @@
             "methodName": "addE",
             "parameters": [
                 {
-                    "param": "edgeLabel",
+                    "name": "edgeLabel",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -388,9 +388,9 @@
             "methodName": "addE",
             "parameters": [
                 {
-                    "param": "edgeLabelTraversal",
+                    "name": "edgeLabelTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -404,9 +404,9 @@
             "methodName": "addV",
             "parameters": [
                 {
-                    "param": "vertexLabel",
+                    "name": "vertexLabel",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -414,9 +414,9 @@
             "methodName": "addV",
             "parameters": [
                 {
-                    "param": "vertexLabelTraversal",
+                    "name": "vertexLabelTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -424,14 +424,14 @@
             "methodName": "aggregate",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -439,9 +439,9 @@
             "methodName": "aggregate",
             "parameters": [
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -449,9 +449,9 @@
             "methodName": "and",
             "parameters": [
                 {
-                    "param": "andTraversals",
+                    "name": "andTraversals",
                     "type": "Traversal[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -459,14 +459,14 @@
             "methodName": "as",
             "parameters": [
                 {
-                    "param": "stepLabel",
+                    "name": "stepLabel",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "stepLabels",
+                    "name": "stepLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -480,9 +480,9 @@
             "methodName": "barrier",
             "parameters": [
                 {
-                    "param": "barrierConsumer",
+                    "name": "barrierConsumer",
                     "type": "Consumer",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -490,9 +490,9 @@
             "methodName": "barrier",
             "parameters": [
                 {
-                    "param": "maxBarrierSize",
+                    "name": "maxBarrierSize",
                     "type": "int",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -500,9 +500,9 @@
             "methodName": "both",
             "parameters": [
                 {
-                    "param": "edgeLabels",
+                    "name": "edgeLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -510,9 +510,9 @@
             "methodName": "bothE",
             "parameters": [
                 {
-                    "param": "edgeLabels",
+                    "name": "edgeLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -526,9 +526,9 @@
             "methodName": "branch",
             "parameters": [
                 {
-                    "param": "function",
+                    "name": "function",
                     "type": "Function",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -536,9 +536,9 @@
             "methodName": "branch",
             "parameters": [
                 {
-                    "param": "branchTraversal",
+                    "name": "branchTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -552,9 +552,9 @@
             "methodName": "by",
             "parameters": [
                 {
-                    "param": "comparator",
+                    "name": "comparator",
                     "type": "Comparator",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -562,9 +562,9 @@
             "methodName": "by",
             "parameters": [
                 {
-                    "param": "function",
+                    "name": "function",
                     "type": "Function",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -572,14 +572,14 @@
             "methodName": "by",
             "parameters": [
                 {
-                    "param": "function",
+                    "name": "function",
                     "type": "Function",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "comparator",
+                    "name": "comparator",
                     "type": "Comparator",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -587,9 +587,9 @@
             "methodName": "by",
             "parameters": [
                 {
-                    "param": "order",
+                    "name": "order",
                     "type": "Order",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -597,9 +597,9 @@
             "methodName": "by",
             "parameters": [
                 {
-                    "param": "key",
+                    "name": "key",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -607,14 +607,14 @@
             "methodName": "by",
             "parameters": [
                 {
-                    "param": "key",
+                    "name": "key",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "comparator",
+                    "name": "comparator",
                     "type": "Comparator",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -622,9 +622,9 @@
             "methodName": "by",
             "parameters": [
                 {
-                    "param": "token",
+                    "name": "token",
                     "type": "T",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -632,9 +632,9 @@
             "methodName": "by",
             "parameters": [
                 {
-                    "param": "traversal",
+                    "name": "traversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -642,14 +642,14 @@
             "methodName": "by",
             "parameters": [
                 {
-                    "param": "traversal",
+                    "name": "traversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "comparator",
+                    "name": "comparator",
                     "type": "Comparator",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -657,14 +657,14 @@
             "methodName": "cap",
             "parameters": [
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "sideEffectKeys",
+                    "name": "sideEffectKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -672,9 +672,9 @@
             "methodName": "choose",
             "parameters": [
                 {
-                    "param": "choiceFunction",
+                    "name": "choiceFunction",
                     "type": "Function",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -682,14 +682,14 @@
             "methodName": "choose",
             "parameters": [
                 {
-                    "param": "choosePredicate",
+                    "name": "choosePredicate",
                     "type": "Predicate",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "trueChoice",
+                    "name": "trueChoice",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -697,19 +697,19 @@
             "methodName": "choose",
             "parameters": [
                 {
-                    "param": "choosePredicate",
+                    "name": "choosePredicate",
                     "type": "Predicate",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "trueChoice",
+                    "name": "trueChoice",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "falseChoice",
+                    "name": "falseChoice",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -717,9 +717,9 @@
             "methodName": "choose",
             "parameters": [
                 {
-                    "param": "choiceTraversal",
+                    "name": "choiceTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -727,14 +727,14 @@
             "methodName": "choose",
             "parameters": [
                 {
-                    "param": "traversalPredicate",
+                    "name": "traversalPredicate",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "trueChoice",
+                    "name": "trueChoice",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -742,19 +742,19 @@
             "methodName": "choose",
             "parameters": [
                 {
-                    "param": "traversalPredicate",
+                    "name": "traversalPredicate",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "trueChoice",
+                    "name": "trueChoice",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "falseChoice",
+                    "name": "falseChoice",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -762,9 +762,9 @@
             "methodName": "coalesce",
             "parameters": [
                 {
-                    "param": "coalesceTraversals",
+                    "name": "coalesceTraversals",
                     "type": "Traversal[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -772,9 +772,9 @@
             "methodName": "coin",
             "parameters": [
                 {
-                    "param": "probability",
+                    "name": "probability",
                     "type": "double",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -788,9 +788,9 @@
             "methodName": "constant",
             "parameters": [
                 {
-                    "param": "e",
+                    "name": "e",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -804,9 +804,9 @@
             "methodName": "count",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -820,14 +820,14 @@
             "methodName": "dedup",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "dedupLabels",
+                    "name": "dedupLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -835,9 +835,9 @@
             "methodName": "dedup",
             "parameters": [
                 {
-                    "param": "dedupLabels",
+                    "name": "dedupLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -851,9 +851,9 @@
             "methodName": "elementMap",
             "parameters": [
                 {
-                    "param": "propertyKeys",
+                    "name": "propertyKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -867,9 +867,9 @@
             "methodName": "emit",
             "parameters": [
                 {
-                    "param": "emitPredicate",
+                    "name": "emitPredicate",
                     "type": "Predicate",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -877,9 +877,9 @@
             "methodName": "emit",
             "parameters": [
                 {
-                    "param": "emitTraversal",
+                    "name": "emitTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -887,9 +887,9 @@
             "methodName": "filter",
             "parameters": [
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "Predicate",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -897,9 +897,9 @@
             "methodName": "filter",
             "parameters": [
                 {
-                    "param": "filterTraversal",
+                    "name": "filterTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -907,9 +907,9 @@
             "methodName": "flatMap",
             "parameters": [
                 {
-                    "param": "function",
+                    "name": "function",
                     "type": "Function",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -917,9 +917,9 @@
             "methodName": "flatMap",
             "parameters": [
                 {
-                    "param": "flatMapTraversal",
+                    "name": "flatMapTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -933,14 +933,14 @@
             "methodName": "fold",
             "parameters": [
                 {
-                    "param": "seed",
+                    "name": "seed",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "foldFunction",
+                    "name": "foldFunction",
                     "type": "BiFunction",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -948,9 +948,9 @@
             "methodName": "from",
             "parameters": [
                 {
-                    "param": "fromStepLabel",
+                    "name": "fromStepLabel",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -958,9 +958,9 @@
             "methodName": "from",
             "parameters": [
                 {
-                    "param": "fromVertex",
+                    "name": "fromVertex",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -968,9 +968,9 @@
             "methodName": "from",
             "parameters": [
                 {
-                    "param": "fromVertex",
+                    "name": "fromVertex",
                     "type": "Vertex",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -984,9 +984,9 @@
             "methodName": "group",
             "parameters": [
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1000,9 +1000,9 @@
             "methodName": "groupCount",
             "parameters": [
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1010,9 +1010,9 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "propertyKey",
+                    "name": "propertyKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1020,14 +1020,14 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "propertyKey",
+                    "name": "propertyKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "value",
+                    "name": "value",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1035,14 +1035,14 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "propertyKey",
+                    "name": "propertyKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1050,19 +1050,19 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "label",
+                    "name": "label",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "propertyKey",
+                    "name": "propertyKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "value",
+                    "name": "value",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1070,19 +1070,19 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "label",
+                    "name": "label",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "propertyKey",
+                    "name": "propertyKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1090,14 +1090,14 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "propertyKey",
+                    "name": "propertyKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "propertyTraversal",
+                    "name": "propertyTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1105,14 +1105,14 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "accessor",
+                    "name": "accessor",
                     "type": "T",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "value",
+                    "name": "value",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1120,14 +1120,14 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "accessor",
+                    "name": "accessor",
                     "type": "T",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1135,14 +1135,14 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "accessor",
+                    "name": "accessor",
                     "type": "T",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "propertyTraversal",
+                    "name": "propertyTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1150,14 +1150,14 @@
             "methodName": "hasId",
             "parameters": [
                 {
-                    "param": "id",
+                    "name": "id",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "otherIds",
+                    "name": "otherIds",
                     "type": "object[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1165,9 +1165,9 @@
             "methodName": "hasId",
             "parameters": [
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1175,9 +1175,9 @@
             "methodName": "hasKey",
             "parameters": [
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1185,14 +1185,14 @@
             "methodName": "hasKey",
             "parameters": [
                 {
-                    "param": "label",
+                    "name": "label",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "otherLabels",
+                    "name": "otherLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1200,9 +1200,9 @@
             "methodName": "hasLabel",
             "parameters": [
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1210,14 +1210,14 @@
             "methodName": "hasLabel",
             "parameters": [
                 {
-                    "param": "label",
+                    "name": "label",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "otherLabels",
+                    "name": "otherLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1225,9 +1225,9 @@
             "methodName": "hasNot",
             "parameters": [
                 {
-                    "param": "propertyKey",
+                    "name": "propertyKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1235,14 +1235,14 @@
             "methodName": "hasValue",
             "parameters": [
                 {
-                    "param": "value",
+                    "name": "value",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "otherValues",
+                    "name": "otherValues",
                     "type": "object[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1250,9 +1250,9 @@
             "methodName": "hasValue",
             "parameters": [
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1272,9 +1272,9 @@
             "methodName": "in",
             "parameters": [
                 {
-                    "param": "edgeLabels",
+                    "name": "edgeLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1282,9 +1282,9 @@
             "methodName": "inE",
             "parameters": [
                 {
-                    "param": "edgeLabels",
+                    "name": "edgeLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1304,9 +1304,9 @@
             "methodName": "inject",
             "parameters": [
                 {
-                    "param": "injections",
+                    "name": "injections",
                     "type": "object[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1314,9 +1314,9 @@
             "methodName": "is",
             "parameters": [
                 {
-                    "param": "value",
+                    "name": "value",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1324,9 +1324,9 @@
             "methodName": "is",
             "parameters": [
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1346,14 +1346,14 @@
             "methodName": "limit",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "limit",
+                    "name": "limit",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1361,9 +1361,9 @@
             "methodName": "limit",
             "parameters": [
                 {
-                    "param": "limit",
+                    "name": "limit",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1371,9 +1371,9 @@
             "methodName": "local",
             "parameters": [
                 {
-                    "param": "localTraversal",
+                    "name": "localTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1387,9 +1387,9 @@
             "methodName": "loops",
             "parameters": [
                 {
-                    "param": "loopName",
+                    "name": "loopName",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1397,9 +1397,9 @@
             "methodName": "map",
             "parameters": [
                 {
-                    "param": "function",
+                    "name": "function",
                     "type": "Function",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1407,9 +1407,9 @@
             "methodName": "map",
             "parameters": [
                 {
-                    "param": "mapTraversal",
+                    "name": "mapTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1417,9 +1417,9 @@
             "methodName": "match",
             "parameters": [
                 {
-                    "param": "matchTraversals",
+                    "name": "matchTraversals",
                     "type": "Traversal[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1427,9 +1427,9 @@
             "methodName": "math",
             "parameters": [
                 {
-                    "param": "expression",
+                    "name": "expression",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1443,9 +1443,9 @@
             "methodName": "max",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1459,9 +1459,9 @@
             "methodName": "mean",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1475,9 +1475,9 @@
             "methodName": "min",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1485,9 +1485,9 @@
             "methodName": "not",
             "parameters": [
                 {
-                    "param": "notTraversal",
+                    "name": "notTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1495,14 +1495,14 @@
             "methodName": "option",
             "parameters": [
                 {
-                    "param": "pickToken",
+                    "name": "pickToken",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "traversalOption",
+                    "name": "traversalOption",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1510,9 +1510,9 @@
             "methodName": "option",
             "parameters": [
                 {
-                    "param": "traversalOption",
+                    "name": "traversalOption",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1520,9 +1520,9 @@
             "methodName": "optional",
             "parameters": [
                 {
-                    "param": "optionalTraversal",
+                    "name": "optionalTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1530,9 +1530,9 @@
             "methodName": "or",
             "parameters": [
                 {
-                    "param": "orTraversals",
+                    "name": "orTraversals",
                     "type": "Traversal[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1546,9 +1546,9 @@
             "methodName": "order",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1562,9 +1562,9 @@
             "methodName": "out",
             "parameters": [
                 {
-                    "param": "edgeLabels",
+                    "name": "edgeLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1572,9 +1572,9 @@
             "methodName": "outE",
             "parameters": [
                 {
-                    "param": "edgeLabels",
+                    "name": "edgeLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1594,9 +1594,9 @@
             "methodName": "pageRank",
             "parameters": [
                 {
-                    "param": "alpha",
+                    "name": "alpha",
                     "type": "double",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1622,9 +1622,9 @@
             "methodName": "profile",
             "parameters": [
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1632,9 +1632,9 @@
             "methodName": "program",
             "parameters": [
                 {
-                    "param": "vertexProgram",
+                    "name": "vertexProgram",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1642,14 +1642,14 @@
             "methodName": "project",
             "parameters": [
                 {
-                    "param": "projectKey",
+                    "name": "projectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "otherProjectKeys",
+                    "name": "otherProjectKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1657,9 +1657,9 @@
             "methodName": "properties",
             "parameters": [
                 {
-                    "param": "propertyKeys",
+                    "name": "propertyKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1667,24 +1667,24 @@
             "methodName": "property",
             "parameters": [
                 {
-                    "param": "cardinality",
+                    "name": "cardinality",
                     "type": "Cardinality",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "key",
+                    "name": "key",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "value",
+                    "name": "value",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "keyValues",
+                    "name": "keyValues",
                     "type": "object[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1692,19 +1692,19 @@
             "methodName": "property",
             "parameters": [
                 {
-                    "param": "key",
+                    "name": "key",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "value",
+                    "name": "value",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "keyValues",
+                    "name": "keyValues",
                     "type": "object[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1712,9 +1712,9 @@
             "methodName": "propertyMap",
             "parameters": [
                 {
-                    "param": "propertyKeys",
+                    "name": "propertyKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1722,19 +1722,19 @@
             "methodName": "range",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "low",
+                    "name": "low",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "high",
+                    "name": "high",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1742,14 +1742,14 @@
             "methodName": "range",
             "parameters": [
                 {
-                    "param": "low",
+                    "name": "low",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "high",
+                    "name": "high",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1763,14 +1763,14 @@
             "methodName": "repeat",
             "parameters": [
                 {
-                    "param": "loopName",
+                    "name": "loopName",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "repeatTraversal",
+                    "name": "repeatTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1778,9 +1778,9 @@
             "methodName": "repeat",
             "parameters": [
                 {
-                    "param": "repeatTraversal",
+                    "name": "repeatTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1794,9 +1794,9 @@
             "methodName": "sack",
             "parameters": [
                 {
-                    "param": "sackOperator",
+                    "name": "sackOperator",
                     "type": "BiFunction",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1804,14 +1804,14 @@
             "methodName": "sample",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "amountToSample",
+                    "name": "amountToSample",
                     "type": "int",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1819,9 +1819,9 @@
             "methodName": "sample",
             "parameters": [
                 {
-                    "param": "amountToSample",
+                    "name": "amountToSample",
                     "type": "int",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1829,9 +1829,9 @@
             "methodName": "select",
             "parameters": [
                 {
-                    "param": "column",
+                    "name": "column",
                     "type": "Column",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1839,14 +1839,14 @@
             "methodName": "select",
             "parameters": [
                 {
-                    "param": "pop",
+                    "name": "pop",
                     "type": "Pop",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "selectKey",
+                    "name": "selectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1854,24 +1854,24 @@
             "methodName": "select",
             "parameters": [
                 {
-                    "param": "pop",
+                    "name": "pop",
                     "type": "Pop",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "selectKey1",
+                    "name": "selectKey1",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "selectKey2",
+                    "name": "selectKey2",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "otherSelectKeys",
+                    "name": "otherSelectKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1879,14 +1879,14 @@
             "methodName": "select",
             "parameters": [
                 {
-                    "param": "pop",
+                    "name": "pop",
                     "type": "Pop",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "keyTraversal",
+                    "name": "keyTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1894,9 +1894,9 @@
             "methodName": "select",
             "parameters": [
                 {
-                    "param": "selectKey",
+                    "name": "selectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1904,19 +1904,19 @@
             "methodName": "select",
             "parameters": [
                 {
-                    "param": "selectKey1",
+                    "name": "selectKey1",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "selectKey2",
+                    "name": "selectKey2",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "otherSelectKeys",
+                    "name": "otherSelectKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -1924,9 +1924,9 @@
             "methodName": "select",
             "parameters": [
                 {
-                    "param": "keyTraversal",
+                    "name": "keyTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1940,9 +1940,9 @@
             "methodName": "sideEffect",
             "parameters": [
                 {
-                    "param": "consumer",
+                    "name": "consumer",
                     "type": "Consumer",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1950,9 +1950,9 @@
             "methodName": "sideEffect",
             "parameters": [
                 {
-                    "param": "sideEffectTraversal",
+                    "name": "sideEffectTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1966,14 +1966,14 @@
             "methodName": "skip",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "skip",
+                    "name": "skip",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1981,9 +1981,9 @@
             "methodName": "skip",
             "parameters": [
                 {
-                    "param": "skip",
+                    "name": "skip",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -1991,9 +1991,9 @@
             "methodName": "store",
             "parameters": [
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2001,9 +2001,9 @@
             "methodName": "subgraph",
             "parameters": [
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2017,9 +2017,9 @@
             "methodName": "sum",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2033,9 +2033,9 @@
             "methodName": "tail",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2043,14 +2043,14 @@
             "methodName": "tail",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "limit",
+                    "name": "limit",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2058,9 +2058,9 @@
             "methodName": "tail",
             "parameters": [
                 {
-                    "param": "limit",
+                    "name": "limit",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2068,9 +2068,9 @@
             "methodName": "timeLimit",
             "parameters": [
                 {
-                    "param": "timeLimit",
+                    "name": "timeLimit",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2078,9 +2078,9 @@
             "methodName": "times",
             "parameters": [
                 {
-                    "param": "maxLoops",
+                    "name": "maxLoops",
                     "type": "int",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2088,14 +2088,14 @@
             "methodName": "to",
             "parameters": [
                 {
-                    "param": "direction",
+                    "name": "direction",
                     "type": "Direction",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "edgeLabels",
+                    "name": "edgeLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2103,9 +2103,9 @@
             "methodName": "to",
             "parameters": [
                 {
-                    "param": "toStepLabel",
+                    "name": "toStepLabel",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2113,9 +2113,9 @@
             "methodName": "to",
             "parameters": [
                 {
-                    "param": "toVertex",
+                    "name": "toVertex",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2123,9 +2123,9 @@
             "methodName": "to",
             "parameters": [
                 {
-                    "param": "toVertex",
+                    "name": "toVertex",
                     "type": "Vertex",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2133,14 +2133,14 @@
             "methodName": "toE",
             "parameters": [
                 {
-                    "param": "direction",
+                    "name": "direction",
                     "type": "Direction",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "edgeLabels",
+                    "name": "edgeLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2148,9 +2148,9 @@
             "methodName": "toV",
             "parameters": [
                 {
-                    "param": "direction",
+                    "name": "direction",
                     "type": "Direction",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2164,9 +2164,9 @@
             "methodName": "tree",
             "parameters": [
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2180,9 +2180,9 @@
             "methodName": "union",
             "parameters": [
                 {
-                    "param": "unionTraversals",
+                    "name": "unionTraversals",
                     "type": "Traversal[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2190,9 +2190,9 @@
             "methodName": "until",
             "parameters": [
                 {
-                    "param": "untilPredicate",
+                    "name": "untilPredicate",
                     "type": "Predicate",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2200,9 +2200,9 @@
             "methodName": "until",
             "parameters": [
                 {
-                    "param": "untilTraversal",
+                    "name": "untilTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2216,9 +2216,9 @@
             "methodName": "valueMap",
             "parameters": [
                 {
-                    "param": "propertyKeys",
+                    "name": "propertyKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2226,14 +2226,14 @@
             "methodName": "valueMap",
             "parameters": [
                 {
-                    "param": "includeTokens",
+                    "name": "includeTokens",
                     "type": "bool",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "propertyKeys",
+                    "name": "propertyKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2241,9 +2241,9 @@
             "methodName": "values",
             "parameters": [
                 {
-                    "param": "propertyKeys",
+                    "name": "propertyKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2251,9 +2251,9 @@
             "methodName": "where",
             "parameters": [
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2261,14 +2261,14 @@
             "methodName": "where",
             "parameters": [
                 {
-                    "param": "startKey",
+                    "name": "startKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2276,9 +2276,9 @@
             "methodName": "where",
             "parameters": [
                 {
-                    "param": "whereTraversal",
+                    "name": "whereTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2286,9 +2286,9 @@
             "methodName": "with",
             "parameters": [
                 {
-                    "param": "key",
+                    "name": "key",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2296,14 +2296,14 @@
             "methodName": "with",
             "parameters": [
                 {
-                    "param": "key",
+                    "name": "key",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "value",
+                    "name": "value",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2319,9 +2319,9 @@
             "methodName": "V",
             "parameters": [
                 {
-                    "param": "vertexIdsOrElements",
+                    "name": "vertexIdsOrElements",
                     "type": "object[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2329,9 +2329,9 @@
             "methodName": "addE",
             "parameters": [
                 {
-                    "param": "edgeLabel",
+                    "name": "edgeLabel",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2339,9 +2339,9 @@
             "methodName": "addE",
             "parameters": [
                 {
-                    "param": "edgeLabelTraversal",
+                    "name": "edgeLabelTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2355,9 +2355,9 @@
             "methodName": "addV",
             "parameters": [
                 {
-                    "param": "vertexLabel",
+                    "name": "vertexLabel",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2365,9 +2365,9 @@
             "methodName": "addV",
             "parameters": [
                 {
-                    "param": "vertexLabelTraversal",
+                    "name": "vertexLabelTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2375,14 +2375,14 @@
             "methodName": "aggregate",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2390,9 +2390,9 @@
             "methodName": "aggregate",
             "parameters": [
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2400,9 +2400,9 @@
             "methodName": "and",
             "parameters": [
                 {
-                    "param": "andTraversals",
+                    "name": "andTraversals",
                     "type": "Traversal[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2410,14 +2410,14 @@
             "methodName": "as",
             "parameters": [
                 {
-                    "param": "label",
+                    "name": "label",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "labels",
+                    "name": "labels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2431,9 +2431,9 @@
             "methodName": "barrier",
             "parameters": [
                 {
-                    "param": "barrierConsumer",
+                    "name": "barrierConsumer",
                     "type": "Consumer",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2441,9 +2441,9 @@
             "methodName": "barrier",
             "parameters": [
                 {
-                    "param": "maxBarrierSize",
+                    "name": "maxBarrierSize",
                     "type": "int",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2451,9 +2451,9 @@
             "methodName": "both",
             "parameters": [
                 {
-                    "param": "edgeLabels",
+                    "name": "edgeLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2461,9 +2461,9 @@
             "methodName": "bothE",
             "parameters": [
                 {
-                    "param": "edgeLabels",
+                    "name": "edgeLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2477,9 +2477,9 @@
             "methodName": "branch",
             "parameters": [
                 {
-                    "param": "function",
+                    "name": "function",
                     "type": "Function",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2487,9 +2487,9 @@
             "methodName": "branch",
             "parameters": [
                 {
-                    "param": "traversalFunction",
+                    "name": "traversalFunction",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2497,14 +2497,14 @@
             "methodName": "cap",
             "parameters": [
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "sideEffectKeys",
+                    "name": "sideEffectKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2512,9 +2512,9 @@
             "methodName": "choose",
             "parameters": [
                 {
-                    "param": "choiceFunction",
+                    "name": "choiceFunction",
                     "type": "Function",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2522,14 +2522,14 @@
             "methodName": "choose",
             "parameters": [
                 {
-                    "param": "choosePredicate",
+                    "name": "choosePredicate",
                     "type": "Predicate",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "trueChoice",
+                    "name": "trueChoice",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2537,19 +2537,19 @@
             "methodName": "choose",
             "parameters": [
                 {
-                    "param": "choosePredicate",
+                    "name": "choosePredicate",
                     "type": "Predicate",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "trueChoice",
+                    "name": "trueChoice",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "falseChoice",
+                    "name": "falseChoice",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2557,9 +2557,9 @@
             "methodName": "choose",
             "parameters": [
                 {
-                    "param": "traversalFunction",
+                    "name": "traversalFunction",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2567,14 +2567,14 @@
             "methodName": "choose",
             "parameters": [
                 {
-                    "param": "traversalPredicate",
+                    "name": "traversalPredicate",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "trueChoice",
+                    "name": "trueChoice",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2582,19 +2582,19 @@
             "methodName": "choose",
             "parameters": [
                 {
-                    "param": "traversalPredicate",
+                    "name": "traversalPredicate",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "trueChoice",
+                    "name": "trueChoice",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "falseChoice",
+                    "name": "falseChoice",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2602,9 +2602,9 @@
             "methodName": "coalesce",
             "parameters": [
                 {
-                    "param": "traversals",
+                    "name": "traversals",
                     "type": "Traversal[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2612,9 +2612,9 @@
             "methodName": "coin",
             "parameters": [
                 {
-                    "param": "probability",
+                    "name": "probability",
                     "type": "double",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2622,9 +2622,9 @@
             "methodName": "constant",
             "parameters": [
                 {
-                    "param": "a",
+                    "name": "a",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2638,9 +2638,9 @@
             "methodName": "count",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2654,14 +2654,14 @@
             "methodName": "dedup",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "dedupLabels",
+                    "name": "dedupLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2669,9 +2669,9 @@
             "methodName": "dedup",
             "parameters": [
                 {
-                    "param": "dedupLabels",
+                    "name": "dedupLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2685,9 +2685,9 @@
             "methodName": "elementMap",
             "parameters": [
                 {
-                    "param": "propertyKeys",
+                    "name": "propertyKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2701,9 +2701,9 @@
             "methodName": "emit",
             "parameters": [
                 {
-                    "param": "emitPredicate",
+                    "name": "emitPredicate",
                     "type": "Predicate",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2711,9 +2711,9 @@
             "methodName": "emit",
             "parameters": [
                 {
-                    "param": "emitTraversal",
+                    "name": "emitTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2721,9 +2721,9 @@
             "methodName": "filter",
             "parameters": [
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "Predicate",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2731,9 +2731,9 @@
             "methodName": "filter",
             "parameters": [
                 {
-                    "param": "filterTraversal",
+                    "name": "filterTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2741,9 +2741,9 @@
             "methodName": "flatMap",
             "parameters": [
                 {
-                    "param": "function",
+                    "name": "function",
                     "type": "Function",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2751,9 +2751,9 @@
             "methodName": "flatMap",
             "parameters": [
                 {
-                    "param": "flatMapTraversal",
+                    "name": "flatMapTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2767,14 +2767,14 @@
             "methodName": "fold",
             "parameters": [
                 {
-                    "param": "seed",
+                    "name": "seed",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "foldFunction",
+                    "name": "foldFunction",
                     "type": "BiFunction",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2788,9 +2788,9 @@
             "methodName": "group",
             "parameters": [
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2804,9 +2804,9 @@
             "methodName": "groupCount",
             "parameters": [
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2814,9 +2814,9 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "propertyKey",
+                    "name": "propertyKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2824,14 +2824,14 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "propertyKey",
+                    "name": "propertyKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "value",
+                    "name": "value",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2839,14 +2839,14 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "propertyKey",
+                    "name": "propertyKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2854,19 +2854,19 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "label",
+                    "name": "label",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "propertyKey",
+                    "name": "propertyKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "value",
+                    "name": "value",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2874,19 +2874,19 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "label",
+                    "name": "label",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "propertyKey",
+                    "name": "propertyKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2894,14 +2894,14 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "propertyKey",
+                    "name": "propertyKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "propertyTraversal",
+                    "name": "propertyTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2909,14 +2909,14 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "accessor",
+                    "name": "accessor",
                     "type": "T",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "value",
+                    "name": "value",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2924,14 +2924,14 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "accessor",
+                    "name": "accessor",
                     "type": "T",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2939,14 +2939,14 @@
             "methodName": "has",
             "parameters": [
                 {
-                    "param": "accessor",
+                    "name": "accessor",
                     "type": "T",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "propertyTraversal",
+                    "name": "propertyTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2954,14 +2954,14 @@
             "methodName": "hasId",
             "parameters": [
                 {
-                    "param": "id",
+                    "name": "id",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "otherIds",
+                    "name": "otherIds",
                     "type": "object[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -2969,9 +2969,9 @@
             "methodName": "hasId",
             "parameters": [
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2979,9 +2979,9 @@
             "methodName": "hasKey",
             "parameters": [
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -2989,14 +2989,14 @@
             "methodName": "hasKey",
             "parameters": [
                 {
-                    "param": "label",
+                    "name": "label",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "otherLabels",
+                    "name": "otherLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3004,9 +3004,9 @@
             "methodName": "hasLabel",
             "parameters": [
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3014,14 +3014,14 @@
             "methodName": "hasLabel",
             "parameters": [
                 {
-                    "param": "label",
+                    "name": "label",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "otherLabels",
+                    "name": "otherLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3029,9 +3029,9 @@
             "methodName": "hasNot",
             "parameters": [
                 {
-                    "param": "propertyKey",
+                    "name": "propertyKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3039,14 +3039,14 @@
             "methodName": "hasValue",
             "parameters": [
                 {
-                    "param": "value",
+                    "name": "value",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "values",
+                    "name": "values",
                     "type": "object[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3054,9 +3054,9 @@
             "methodName": "hasValue",
             "parameters": [
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3076,9 +3076,9 @@
             "methodName": "in",
             "parameters": [
                 {
-                    "param": "edgeLabels",
+                    "name": "edgeLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3086,9 +3086,9 @@
             "methodName": "inE",
             "parameters": [
                 {
-                    "param": "edgeLabels",
+                    "name": "edgeLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3108,9 +3108,9 @@
             "methodName": "inject",
             "parameters": [
                 {
-                    "param": "injections",
+                    "name": "injections",
                     "type": "object[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3118,9 +3118,9 @@
             "methodName": "is",
             "parameters": [
                 {
-                    "param": "value",
+                    "name": "value",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3128,9 +3128,9 @@
             "methodName": "is",
             "parameters": [
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3150,14 +3150,14 @@
             "methodName": "limit",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "limit",
+                    "name": "limit",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3165,9 +3165,9 @@
             "methodName": "limit",
             "parameters": [
                 {
-                    "param": "limit",
+                    "name": "limit",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3175,9 +3175,9 @@
             "methodName": "local",
             "parameters": [
                 {
-                    "param": "localTraversal",
+                    "name": "localTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3191,9 +3191,9 @@
             "methodName": "loops",
             "parameters": [
                 {
-                    "param": "loopName",
+                    "name": "loopName",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3201,9 +3201,9 @@
             "methodName": "map",
             "parameters": [
                 {
-                    "param": "function",
+                    "name": "function",
                     "type": "Function",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3211,9 +3211,9 @@
             "methodName": "map",
             "parameters": [
                 {
-                    "param": "mapTraversal",
+                    "name": "mapTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3221,9 +3221,9 @@
             "methodName": "match",
             "parameters": [
                 {
-                    "param": "matchTraversals",
+                    "name": "matchTraversals",
                     "type": "Traversal[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3231,9 +3231,9 @@
             "methodName": "math",
             "parameters": [
                 {
-                    "param": "expression",
+                    "name": "expression",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3247,9 +3247,9 @@
             "methodName": "max",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3263,9 +3263,9 @@
             "methodName": "mean",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3279,9 +3279,9 @@
             "methodName": "min",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3289,9 +3289,9 @@
             "methodName": "not",
             "parameters": [
                 {
-                    "param": "notTraversal",
+                    "name": "notTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3299,9 +3299,9 @@
             "methodName": "optional",
             "parameters": [
                 {
-                    "param": "optionalTraversal",
+                    "name": "optionalTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3309,9 +3309,9 @@
             "methodName": "or",
             "parameters": [
                 {
-                    "param": "orTraversals",
+                    "name": "orTraversals",
                     "type": "Traversal[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3325,9 +3325,9 @@
             "methodName": "order",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3341,9 +3341,9 @@
             "methodName": "out",
             "parameters": [
                 {
-                    "param": "edgeLabels",
+                    "name": "edgeLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3351,9 +3351,9 @@
             "methodName": "outE",
             "parameters": [
                 {
-                    "param": "edgeLabels",
+                    "name": "edgeLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3373,14 +3373,14 @@
             "methodName": "project",
             "parameters": [
                 {
-                    "param": "projectKey",
+                    "name": "projectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "projectKeys",
+                    "name": "projectKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3388,9 +3388,9 @@
             "methodName": "properties",
             "parameters": [
                 {
-                    "param": "propertyKeys",
+                    "name": "propertyKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3398,24 +3398,24 @@
             "methodName": "property",
             "parameters": [
                 {
-                    "param": "cardinality",
+                    "name": "cardinality",
                     "type": "Cardinality",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "key",
+                    "name": "key",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "value",
+                    "name": "value",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "keyValues",
+                    "name": "keyValues",
                     "type": "object[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3423,19 +3423,19 @@
             "methodName": "property",
             "parameters": [
                 {
-                    "param": "key",
+                    "name": "key",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "value",
+                    "name": "value",
                     "type": "object",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "keyValues",
+                    "name": "keyValues",
                     "type": "object[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3443,9 +3443,9 @@
             "methodName": "propertyMap",
             "parameters": [
                 {
-                    "param": "propertyKeys",
+                    "name": "propertyKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3453,19 +3453,19 @@
             "methodName": "range",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "low",
+                    "name": "low",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "high",
+                    "name": "high",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3473,14 +3473,14 @@
             "methodName": "range",
             "parameters": [
                 {
-                    "param": "low",
+                    "name": "low",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "high",
+                    "name": "high",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3488,14 +3488,14 @@
             "methodName": "repeat",
             "parameters": [
                 {
-                    "param": "loopName",
+                    "name": "loopName",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "traversal",
+                    "name": "traversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3503,9 +3503,9 @@
             "methodName": "repeat",
             "parameters": [
                 {
-                    "param": "traversal",
+                    "name": "traversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3519,9 +3519,9 @@
             "methodName": "sack",
             "parameters": [
                 {
-                    "param": "sackOperator",
+                    "name": "sackOperator",
                     "type": "BiFunction",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3529,14 +3529,14 @@
             "methodName": "sample",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "amountToSample",
+                    "name": "amountToSample",
                     "type": "int",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3544,9 +3544,9 @@
             "methodName": "sample",
             "parameters": [
                 {
-                    "param": "amountToSample",
+                    "name": "amountToSample",
                     "type": "int",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3554,9 +3554,9 @@
             "methodName": "select",
             "parameters": [
                 {
-                    "param": "column",
+                    "name": "column",
                     "type": "Column",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3564,14 +3564,14 @@
             "methodName": "select",
             "parameters": [
                 {
-                    "param": "pop",
+                    "name": "pop",
                     "type": "Pop",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "selectKey",
+                    "name": "selectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3579,24 +3579,24 @@
             "methodName": "select",
             "parameters": [
                 {
-                    "param": "pop",
+                    "name": "pop",
                     "type": "Pop",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "selectKey1",
+                    "name": "selectKey1",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "selectKey2",
+                    "name": "selectKey2",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "otherSelectKeys",
+                    "name": "otherSelectKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3604,14 +3604,14 @@
             "methodName": "select",
             "parameters": [
                 {
-                    "param": "pop",
+                    "name": "pop",
                     "type": "Pop",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "keyTraversal",
+                    "name": "keyTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3619,9 +3619,9 @@
             "methodName": "select",
             "parameters": [
                 {
-                    "param": "selectKey",
+                    "name": "selectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3629,19 +3629,19 @@
             "methodName": "select",
             "parameters": [
                 {
-                    "param": "selectKey1",
+                    "name": "selectKey1",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "selectKey2",
+                    "name": "selectKey2",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "otherSelectKeys",
+                    "name": "otherSelectKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3649,9 +3649,9 @@
             "methodName": "select",
             "parameters": [
                 {
-                    "param": "keyTraversal",
+                    "name": "keyTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3659,9 +3659,9 @@
             "methodName": "sideEffect",
             "parameters": [
                 {
-                    "param": "consumer",
+                    "name": "consumer",
                     "type": "Consumer",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3669,9 +3669,9 @@
             "methodName": "sideEffect",
             "parameters": [
                 {
-                    "param": "sideEffectTraversal",
+                    "name": "sideEffectTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3685,14 +3685,14 @@
             "methodName": "skip",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "skip",
+                    "name": "skip",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3700,9 +3700,9 @@
             "methodName": "skip",
             "parameters": [
                 {
-                    "param": "skip",
+                    "name": "skip",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3710,9 +3710,9 @@
             "methodName": "store",
             "parameters": [
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3720,9 +3720,9 @@
             "methodName": "subgraph",
             "parameters": [
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3736,9 +3736,9 @@
             "methodName": "sum",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3752,9 +3752,9 @@
             "methodName": "tail",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3762,14 +3762,14 @@
             "methodName": "tail",
             "parameters": [
                 {
-                    "param": "scope",
+                    "name": "scope",
                     "type": "Scope",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "limit",
+                    "name": "limit",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3777,9 +3777,9 @@
             "methodName": "tail",
             "parameters": [
                 {
-                    "param": "limit",
+                    "name": "limit",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3787,9 +3787,9 @@
             "methodName": "timeLimit",
             "parameters": [
                 {
-                    "param": "timeLimit",
+                    "name": "timeLimit",
                     "type": "long",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3797,9 +3797,9 @@
             "methodName": "times",
             "parameters": [
                 {
-                    "param": "maxLoops",
+                    "name": "maxLoops",
                     "type": "int",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3807,14 +3807,14 @@
             "methodName": "to",
             "parameters": [
                 {
-                    "param": "direction",
+                    "name": "direction",
                     "type": "Direction",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "edgeLabels",
+                    "name": "edgeLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3822,14 +3822,14 @@
             "methodName": "toE",
             "parameters": [
                 {
-                    "param": "direction",
+                    "name": "direction",
                     "type": "Direction",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "edgeLabels",
+                    "name": "edgeLabels",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3837,9 +3837,9 @@
             "methodName": "toV",
             "parameters": [
                 {
-                    "param": "direction",
+                    "name": "direction",
                     "type": "Direction",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3853,9 +3853,9 @@
             "methodName": "tree",
             "parameters": [
                 {
-                    "param": "sideEffectKey",
+                    "name": "sideEffectKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3869,9 +3869,9 @@
             "methodName": "union",
             "parameters": [
                 {
-                    "param": "traversals",
+                    "name": "traversals",
                     "type": "Traversal[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3879,9 +3879,9 @@
             "methodName": "until",
             "parameters": [
                 {
-                    "param": "untilPredicate",
+                    "name": "untilPredicate",
                     "type": "Predicate",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3889,9 +3889,9 @@
             "methodName": "until",
             "parameters": [
                 {
-                    "param": "untilTraversal",
+                    "name": "untilTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3905,9 +3905,9 @@
             "methodName": "valueMap",
             "parameters": [
                 {
-                    "param": "propertyKeys",
+                    "name": "propertyKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3915,14 +3915,14 @@
             "methodName": "valueMap",
             "parameters": [
                 {
-                    "param": "includeTokens",
+                    "name": "includeTokens",
                     "type": "bool",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "propertyKeys",
+                    "name": "propertyKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3930,9 +3930,9 @@
             "methodName": "values",
             "parameters": [
                 {
-                    "param": "propertyKeys",
+                    "name": "propertyKeys",
                     "type": "string[]",
-                    "variableArgs": true
+                    "variadic": true
                 }
             ]
         },
@@ -3940,9 +3940,9 @@
             "methodName": "where",
             "parameters": [
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3950,14 +3950,14 @@
             "methodName": "where",
             "parameters": [
                 {
-                    "param": "startKey",
+                    "name": "startKey",
                     "type": "string",
-                    "variableArgs": false
+                    "variadic": false
                 },
                 {
-                    "param": "predicate",
+                    "name": "predicate",
                     "type": "P",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         },
@@ -3965,9 +3965,9 @@
             "methodName": "where",
             "parameters": [
                 {
-                    "param": "whereTraversal",
+                    "name": "whereTraversal",
                     "type": "Traversal",
-                    "variableArgs": false
+                    "variadic": false
                 }
             ]
         }
