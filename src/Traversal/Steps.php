@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace RND\GremlinDSL\Traversal;
 
+use Iterator;
 use RND\GremlinDSL\Traversal\Steps\AbstractStep;
 
-class Steps implements \Iterator
+class Steps implements Iterator
 {
     /** @var AbstractStep[] */
     protected array $steps;
@@ -32,9 +33,11 @@ class Steps implements \Iterator
         return static::$instance;
     }
 
-    public function add(AbstractStep $step)
+    public function add(AbstractStep $step): self
     {
         $this->steps[] = $step;
+
+        return $this;
     }
 
     /**
@@ -46,6 +49,7 @@ class Steps implements \Iterator
 
     /**
      * prevent from being unserialized (which would create a second instance of it)
+     * @noinspection PhpUnusedPrivateMethodInspection
      */
     private function __wakeup()
     {
@@ -56,22 +60,22 @@ class Steps implements \Iterator
         return $this->steps[$this->position];
     }
 
-    public function next()
+    public function next(): void
     {
         $this->position++;
     }
 
-    public function key()
+    public function key(): int
     {
         return $this->position;
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return isset($this->steps[$this->position]);
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         $this->position = 0;
     }
