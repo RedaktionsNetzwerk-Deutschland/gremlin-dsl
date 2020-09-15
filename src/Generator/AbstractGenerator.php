@@ -6,6 +6,7 @@ namespace RND\GremlinDSL\Generator;
 
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\PhpFile;
+use Nette\PhpGenerator\PhpNamespace;
 
 abstract class AbstractGenerator
 {
@@ -36,13 +37,16 @@ abstract class AbstractGenerator
     protected function bootstrapClass(
         string $className,
         string $namespaceName,
+        ?string $abstractClass = null,
         ?PhpFile &$file = null,
-        ?string $abstractClass = null
+        ?PhpNamespace &$namespace = null
     ): ClassType {
         if (!$file) {
             $file = $this->bootstrapFile();
         }
-        $namespace = $file->addNamespace($namespaceName);
+        if (!$namespace) {
+            $namespace = $file->addNamespace($namespaceName);
+        }
         $class = $namespace->addClass($className);
 
         if ($abstractClass) {

@@ -31,7 +31,7 @@ class PredicatesGenerator extends AbstractGenerator
     {
         $abstractClass = static::ABSTRACT_CLASS;
         $namespaceName = $this->detectNamespaceForClassName($abstractClass);
-        $predicateClass = $this->bootstrapClass(ucfirst($predicateName), $namespaceName, $file, $abstractClass);
+        $predicateClass = $this->bootstrapClass(ucfirst($predicateName), $namespaceName, $abstractClass, $file);
 
         $predicateClass
             ->addComment(sprintf(static::PREDICATE_COMMENT, $predicateName))

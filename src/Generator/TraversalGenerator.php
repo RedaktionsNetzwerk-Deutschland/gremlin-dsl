@@ -23,7 +23,15 @@ class TraversalGenerator extends AbstractGenerator
     {
         (new PredicatesGenerator($this->writer, $this->getMethodList('predicates')))->generate();
         (new TextPredicatesGenerator($this->writer, $this->getMethodList('textPredicates')))->generate();
-
+        (new GraphTraversalSourceGenerator(
+            $this->writer,
+            $this->getMethodList('sourceStepMethods'),
+            $this->getMethodList('sourceSpawnMethods')
+        ))->generate();
+        (new GraphTraversalGenerator(
+            $this->writer,
+            $this->getMethodList('graphStepMethods')
+        ))->generate();
     }
 
     protected function getMethodList(string $listType): array
