@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace RND\GremlinDSL\Traversal;
 
-class AbstractGraphTraversal
+class AbstractGraphTraversal implements GraphTraversalInterface
 {
 
     protected Steps $steps;

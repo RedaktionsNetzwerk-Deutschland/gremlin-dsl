@@ -6,7 +6,7 @@ namespace RND\GremlinDSL\Traversal\Predicates;
 
 use RND\GremlinDSL\Utils\ArgumentUtil;
 
-abstract class AbstractPredicate
+abstract class AbstractPredicate implements PredicateInterface
 {
 
     private array $args;

@@ -9,6 +9,8 @@ use Nette\PhpGenerator\Method;
 use Nette\PhpGenerator\Parameter;
 use Nette\PhpGenerator\PhpFile;
 use Nette\PhpGenerator\PhpNamespace;
+use RND\GremlinDSL\Traversal\GraphTraversalInterface;
+use RND\GremlinDSL\Traversal\Predicates\PredicateInterface;
 use RND\GremlinDSL\Traversal\Steps\AbstractStep;
 
 abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
@@ -68,15 +70,15 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
         $generatedParameter = $method->addParameter($parameterDefinition['name']);
         $generatedParameter->setNullable(false);
         $generatedParameter->setType($this->getParameterType($parameterDefinition['type']));
-        if ($parameterDefinition['variadic']) {
-            $method->setVariadic(true);
-        }
+        $variadic = $parameterDefinition['variadic'] ?? false;
+        $method->setVariadic($variadic);
+        $unresolvedType = $this->getParameterType($parameterDefinition['type'], true, true);
         $method->addComment(
             sprintf(
                 '@param %2$s $%1$s%3$s',
                 $generatedParameter->getName(),
-                $generatedParameter->getType() ?? 'mixed',
-                $parameterDefinition['variadic'] ? ',...' : ''
+                $unresolvedType . ($variadic ? '[]' : ''),
+                $variadic ? ',...' : ''
             )
         );
 
@@ -140,7 +142,7 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
         $method->addComment(sprintf('@param mixed $args being any of:'));
         foreach ($methodDefinition['parameters'] as $parameterGroup) {
             $parameters = array_map(
-                fn($item) => $this->getParameterType($item['type'], true) . ' ' . $item['name'],
+                fn($item) => $this->getParameterType($item['type'], true, true) . ' ' . $item['name'],
                 $parameterGroup
             );
             if (empty($parameters)) {
@@ -150,11 +152,30 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
         }
     }
 
-    protected function getParameterType(string $inType, bool $mixed = false): ?string
+    protected function getParameterType(string $inType, bool $mixed = false, bool $unresolve = false): ?string
     {
+        $inType = rtrim($inType, '[]');
         switch ($inType) {
             case 'string':
+            case 'string[]':
                 return 'string';
+            case 'int':
+            case 'long':
+                return 'int';
+            case 'double':
+                return 'float';
+            case 'Predicate':
+                $this->graphTraversalNs->addUse(PredicateInterface::class);
+
+                return $unresolve
+                    ? $this->graphTraversalNs->unresolveName(PredicateInterface::class)
+                    : PredicateInterface::class;
+            case 'Traversal':
+                $this->graphTraversalNs->addUse(GraphTraversalInterface::class);
+
+                return $unresolve
+                    ? $this->graphTraversalNs->unresolveName(GraphTraversalInterface::class)
+                    : GraphTraversalInterface::class;
         }
 
         return $mixed ? 'mixed' : null;

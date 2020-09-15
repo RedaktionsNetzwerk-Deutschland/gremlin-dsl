@@ -113,7 +113,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     /**
      * The "withStrategies" source step.
      *
-     * @param mixed $traversalStrategies,...
+     * @param mixed[] $traversalStrategies,...
      * @return GraphTraversalSource
      */
     public function withStrategies(...$traversalStrategies): GraphTraversalSource
@@ -127,7 +127,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     /**
      * The "withoutStrategies" source step.
      *
-     * @param mixed $traversalStrategyClasses,...
+     * @param mixed[] $traversalStrategyClasses,...
      * @return GraphTraversalSource
      */
     public function withoutStrategies(...$traversalStrategyClasses): GraphTraversalSource
@@ -141,7 +141,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     /**
      * The "E" source step.
      *
-     * @param mixed $edgesIds,...
+     * @param mixed[] $edgesIds,...
      * @return GraphTraversal
      */
     public function E(...$edgesIds): GraphTraversal
@@ -155,7 +155,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     /**
      * The "V" source step.
      *
-     * @param mixed $vertexIds,...
+     * @param mixed[] $vertexIds,...
      * @return GraphTraversal
      */
     public function V(...$vertexIds): GraphTraversal
@@ -171,7 +171,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
      *
      * @param mixed $args being any of:
      *                    - string label
-     *                    - mixed edgeLabelTraversal
+     *                    - GraphTraversalInterface edgeLabelTraversal
      * @return GraphTraversal
      */
     public function addE(...$args): GraphTraversal
@@ -188,7 +188,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
      * @param mixed $args being any of:
      *                    - empty
      *                    - string label
-     *                    - mixed vertexLabelTraversal
+     *                    - GraphTraversalInterface vertexLabelTraversal
      * @return GraphTraversal
      */
     public function addV(...$args): GraphTraversal
@@ -202,7 +202,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     /**
      * The "inject" source step.
      *
-     * @param mixed $starts,...
+     * @param mixed[] $starts,...
      * @return GraphTraversal
      */
     public function inject(...$starts): GraphTraversal

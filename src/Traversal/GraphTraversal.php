@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace RND\GremlinDSL\Traversal;
 
+use RND\GremlinDSL\Traversal\Predicates\PredicateInterface;
 use RND\GremlinDSL\Traversal\Steps\Generated\AddEStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\AddVStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\AggregateStep;
@@ -119,7 +120,7 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "V" source step.
      *
-     * @param mixed $vertexIdsOrElements,...
+     * @param mixed[] $vertexIdsOrElements,...
      * @return GraphTraversal
      */
     public function V(...$vertexIdsOrElements): GraphTraversal
@@ -135,7 +136,7 @@ class GraphTraversal extends AbstractGraphTraversal
      *
      * @param mixed $args being any of:
      *                    - string edgeLabel
-     *                    - mixed edgeLabelTraversal
+     *                    - GraphTraversalInterface edgeLabelTraversal
      * @return GraphTraversal
      */
     public function addE(...$args): GraphTraversal
@@ -152,7 +153,7 @@ class GraphTraversal extends AbstractGraphTraversal
      * @param mixed $args being any of:
      *                    - empty
      *                    - string vertexLabel
-     *                    - mixed vertexLabelTraversal
+     *                    - GraphTraversalInterface vertexLabelTraversal
      * @return GraphTraversal
      */
     public function addV(...$args): GraphTraversal
@@ -182,10 +183,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "and" source step.
      *
-     * @param mixed $andTraversals,...
+     * @param GraphTraversalInterface[] $andTraversals,...
      * @return GraphTraversal
      */
-    public function and(...$andTraversals): GraphTraversal
+    public function and(GraphTraversalInterface ...$andTraversals): GraphTraversal
     {
         $step = new AndStep(...$andTraversals);
         $this->steps->add($step);
@@ -197,10 +198,10 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "as" source step.
      *
      * @param string $stepLabel
-     * @param mixed $stepLabels,...
+     * @param string[] $stepLabels,...
      * @return GraphTraversal
      */
-    public function as(string $stepLabel, ...$stepLabels): GraphTraversal
+    public function as(string $stepLabel, string ...$stepLabels): GraphTraversal
     {
         $step = new AsStep($stepLabel, ...$stepLabels);
         $this->steps->add($step);
@@ -214,7 +215,7 @@ class GraphTraversal extends AbstractGraphTraversal
      * @param mixed $args being any of:
      *                    - empty
      *                    - mixed barrierConsumer
-     *                    - mixed maxBarrierSize
+     *                    - int maxBarrierSize
      * @return GraphTraversal
      */
     public function barrier(...$args): GraphTraversal
@@ -228,10 +229,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "both" source step.
      *
-     * @param mixed $edgeLabels,...
+     * @param string[] $edgeLabels,...
      * @return GraphTraversal
      */
-    public function both(...$edgeLabels): GraphTraversal
+    public function both(string ...$edgeLabels): GraphTraversal
     {
         $step = new BothStep(...$edgeLabels);
         $this->steps->add($step);
@@ -242,10 +243,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "bothE" source step.
      *
-     * @param mixed $edgeLabels,...
+     * @param string[] $edgeLabels,...
      * @return GraphTraversal
      */
-    public function bothE(...$edgeLabels): GraphTraversal
+    public function bothE(string ...$edgeLabels): GraphTraversal
     {
         $step = new BothEStep(...$edgeLabels);
         $this->steps->add($step);
@@ -271,7 +272,7 @@ class GraphTraversal extends AbstractGraphTraversal
      *
      * @param mixed $args being any of:
      *                    - mixed function
-     *                    - mixed branchTraversal
+     *                    - GraphTraversalInterface branchTraversal
      * @return GraphTraversal
      */
     public function branch(...$args): GraphTraversal
@@ -294,8 +295,8 @@ class GraphTraversal extends AbstractGraphTraversal
      *                    - string key
      *                    - string key, mixed comparator
      *                    - mixed token
-     *                    - mixed traversal
-     *                    - mixed traversal, mixed comparator
+     *                    - GraphTraversalInterface traversal
+     *                    - GraphTraversalInterface traversal, mixed comparator
      * @return GraphTraversal
      */
     public function by(...$args): GraphTraversal
@@ -310,10 +311,10 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "cap" source step.
      *
      * @param string $sideEffectKey
-     * @param mixed $sideEffectKeys,...
+     * @param string[] $sideEffectKeys,...
      * @return GraphTraversal
      */
-    public function cap(string $sideEffectKey, ...$sideEffectKeys): GraphTraversal
+    public function cap(string $sideEffectKey, string ...$sideEffectKeys): GraphTraversal
     {
         $step = new CapStep($sideEffectKey, ...$sideEffectKeys);
         $this->steps->add($step);
@@ -326,11 +327,11 @@ class GraphTraversal extends AbstractGraphTraversal
      *
      * @param mixed $args being any of:
      *                    - mixed choiceFunction
-     *                    - mixed choosePredicate, mixed trueChoice
-     *                    - mixed choosePredicate, mixed trueChoice, mixed falseChoice
-     *                    - mixed choiceTraversal
-     *                    - mixed traversalPredicate, mixed trueChoice
-     *                    - mixed traversalPredicate, mixed trueChoice, mixed falseChoice
+     *                    - PredicateInterface choosePredicate, GraphTraversalInterface trueChoice
+     *                    - PredicateInterface choosePredicate, GraphTraversalInterface trueChoice, GraphTraversalInterface falseChoice
+     *                    - GraphTraversalInterface choiceTraversal
+     *                    - GraphTraversalInterface traversalPredicate, GraphTraversalInterface trueChoice
+     *                    - GraphTraversalInterface traversalPredicate, GraphTraversalInterface trueChoice, GraphTraversalInterface falseChoice
      * @return GraphTraversal
      */
     public function choose(...$args): GraphTraversal
@@ -344,10 +345,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "coalesce" source step.
      *
-     * @param mixed $coalesceTraversals,...
+     * @param GraphTraversalInterface[] $coalesceTraversals,...
      * @return GraphTraversal
      */
-    public function coalesce(...$coalesceTraversals): GraphTraversal
+    public function coalesce(GraphTraversalInterface ...$coalesceTraversals): GraphTraversal
     {
         $step = new CoalesceStep(...$coalesceTraversals);
         $this->steps->add($step);
@@ -358,10 +359,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "coin" source step.
      *
-     * @param mixed $probability
+     * @param float $probability
      * @return GraphTraversal
      */
-    public function coin($probability): GraphTraversal
+    public function coin(float $probability): GraphTraversal
     {
         $step = new CoinStep($probability);
         $this->steps->add($step);
@@ -429,8 +430,8 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "dedup" source step.
      *
      * @param mixed $args being any of:
-     *                    - mixed scope, mixed dedupLabels
-     *                    - mixed dedupLabels
+     *                    - mixed scope, string dedupLabels
+     *                    - string dedupLabels
      * @return GraphTraversal
      */
     public function dedup(...$args): GraphTraversal
@@ -457,10 +458,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "elementMap" source step.
      *
-     * @param mixed $propertyKeys,...
+     * @param string[] $propertyKeys,...
      * @return GraphTraversal
      */
-    public function elementMap(...$propertyKeys): GraphTraversal
+    public function elementMap(string ...$propertyKeys): GraphTraversal
     {
         $step = new ElementMapStep(...$propertyKeys);
         $this->steps->add($step);
@@ -473,8 +474,8 @@ class GraphTraversal extends AbstractGraphTraversal
      *
      * @param mixed $args being any of:
      *                    - empty
-     *                    - mixed emitPredicate
-     *                    - mixed emitTraversal
+     *                    - PredicateInterface emitPredicate
+     *                    - GraphTraversalInterface emitTraversal
      * @return GraphTraversal
      */
     public function emit(...$args): GraphTraversal
@@ -489,8 +490,8 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "filter" source step.
      *
      * @param mixed $args being any of:
-     *                    - mixed predicate
-     *                    - mixed filterTraversal
+     *                    - PredicateInterface predicate
+     *                    - GraphTraversalInterface filterTraversal
      * @return GraphTraversal
      */
     public function filter(...$args): GraphTraversal
@@ -506,7 +507,7 @@ class GraphTraversal extends AbstractGraphTraversal
      *
      * @param mixed $args being any of:
      *                    - mixed function
-     *                    - mixed flatMapTraversal
+     *                    - GraphTraversalInterface flatMapTraversal
      * @return GraphTraversal
      */
     public function flatMap(...$args): GraphTraversal
@@ -538,7 +539,7 @@ class GraphTraversal extends AbstractGraphTraversal
      *
      * @param mixed $args being any of:
      *                    - string fromStepLabel
-     *                    - mixed fromVertex
+     *                    - GraphTraversalInterface fromVertex
      *                    - mixed fromVertex
      * @return GraphTraversal
      */
@@ -591,10 +592,10 @@ class GraphTraversal extends AbstractGraphTraversal
      *                    - string propertyKey, mixed predicate
      *                    - string label, string propertyKey, mixed value
      *                    - string label, string propertyKey, mixed predicate
-     *                    - string propertyKey, mixed propertyTraversal
+     *                    - string propertyKey, GraphTraversalInterface propertyTraversal
      *                    - mixed accessor, mixed value
      *                    - mixed accessor, mixed predicate
-     *                    - mixed accessor, mixed propertyTraversal
+     *                    - mixed accessor, GraphTraversalInterface propertyTraversal
      * @return GraphTraversal
      */
     public function has(...$args): GraphTraversal
@@ -626,7 +627,7 @@ class GraphTraversal extends AbstractGraphTraversal
      *
      * @param mixed $args being any of:
      *                    - mixed predicate
-     *                    - string label, mixed otherLabels
+     *                    - string label, string otherLabels
      * @return GraphTraversal
      */
     public function hasKey(...$args): GraphTraversal
@@ -642,7 +643,7 @@ class GraphTraversal extends AbstractGraphTraversal
      *
      * @param mixed $args being any of:
      *                    - mixed predicate
-     *                    - string label, mixed otherLabels
+     *                    - string label, string otherLabels
      * @return GraphTraversal
      */
     public function hasLabel(...$args): GraphTraversal
@@ -712,10 +713,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "in" source step.
      *
-     * @param mixed $edgeLabels,...
+     * @param string[] $edgeLabels,...
      * @return GraphTraversal
      */
-    public function in(...$edgeLabels): GraphTraversal
+    public function in(string ...$edgeLabels): GraphTraversal
     {
         $step = new InStep(...$edgeLabels);
         $this->steps->add($step);
@@ -726,10 +727,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "inE" source step.
      *
-     * @param mixed $edgeLabels,...
+     * @param string[] $edgeLabels,...
      * @return GraphTraversal
      */
-    public function inE(...$edgeLabels): GraphTraversal
+    public function inE(string ...$edgeLabels): GraphTraversal
     {
         $step = new InEStep(...$edgeLabels);
         $this->steps->add($step);
@@ -766,7 +767,7 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "inject" source step.
      *
-     * @param mixed $injections,...
+     * @param mixed[] $injections,...
      * @return GraphTraversal
      */
     public function inject(...$injections): GraphTraversal
@@ -823,8 +824,8 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "limit" source step.
      *
      * @param mixed $args being any of:
-     *                    - mixed scope, mixed limit
-     *                    - mixed limit
+     *                    - mixed scope, int limit
+     *                    - int limit
      * @return GraphTraversal
      */
     public function limit(...$args): GraphTraversal
@@ -838,10 +839,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "local" source step.
      *
-     * @param mixed $localTraversal
+     * @param GraphTraversalInterface $localTraversal
      * @return GraphTraversal
      */
-    public function local($localTraversal): GraphTraversal
+    public function local(GraphTraversalInterface $localTraversal): GraphTraversal
     {
         $step = new LocalStep($localTraversal);
         $this->steps->add($step);
@@ -870,7 +871,7 @@ class GraphTraversal extends AbstractGraphTraversal
      *
      * @param mixed $args being any of:
      *                    - mixed function
-     *                    - mixed mapTraversal
+     *                    - GraphTraversalInterface mapTraversal
      * @return GraphTraversal
      */
     public function map(...$args): GraphTraversal
@@ -884,10 +885,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "match" source step.
      *
-     * @param mixed $matchTraversals,...
+     * @param GraphTraversalInterface[] $matchTraversals,...
      * @return GraphTraversal
      */
-    public function match(...$matchTraversals): GraphTraversal
+    public function match(GraphTraversalInterface ...$matchTraversals): GraphTraversal
     {
         $step = new MatchStep(...$matchTraversals);
         $this->steps->add($step);
@@ -960,10 +961,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "not" source step.
      *
-     * @param mixed $notTraversal
+     * @param GraphTraversalInterface $notTraversal
      * @return GraphTraversal
      */
-    public function not($notTraversal): GraphTraversal
+    public function not(GraphTraversalInterface $notTraversal): GraphTraversal
     {
         $step = new NotStep($notTraversal);
         $this->steps->add($step);
@@ -975,8 +976,8 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "option" source step.
      *
      * @param mixed $args being any of:
-     *                    - mixed pickToken, mixed traversalOption
-     *                    - mixed traversalOption
+     *                    - mixed pickToken, GraphTraversalInterface traversalOption
+     *                    - GraphTraversalInterface traversalOption
      * @return GraphTraversal
      */
     public function option(...$args): GraphTraversal
@@ -990,10 +991,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "optional" source step.
      *
-     * @param mixed $optionalTraversal
+     * @param GraphTraversalInterface $optionalTraversal
      * @return GraphTraversal
      */
-    public function optional($optionalTraversal): GraphTraversal
+    public function optional(GraphTraversalInterface $optionalTraversal): GraphTraversal
     {
         $step = new OptionalStep($optionalTraversal);
         $this->steps->add($step);
@@ -1004,10 +1005,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "or" source step.
      *
-     * @param mixed $orTraversals,...
+     * @param GraphTraversalInterface[] $orTraversals,...
      * @return GraphTraversal
      */
-    public function or(...$orTraversals): GraphTraversal
+    public function or(GraphTraversalInterface ...$orTraversals): GraphTraversal
     {
         $step = new OrStep(...$orTraversals);
         $this->steps->add($step);
@@ -1047,10 +1048,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "out" source step.
      *
-     * @param mixed $edgeLabels,...
+     * @param string[] $edgeLabels,...
      * @return GraphTraversal
      */
-    public function out(...$edgeLabels): GraphTraversal
+    public function out(string ...$edgeLabels): GraphTraversal
     {
         $step = new OutStep(...$edgeLabels);
         $this->steps->add($step);
@@ -1061,10 +1062,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "outE" source step.
      *
-     * @param mixed $edgeLabels,...
+     * @param string[] $edgeLabels,...
      * @return GraphTraversal
      */
-    public function outE(...$edgeLabels): GraphTraversal
+    public function outE(string ...$edgeLabels): GraphTraversal
     {
         $step = new OutEStep(...$edgeLabels);
         $this->steps->add($step);
@@ -1090,7 +1091,7 @@ class GraphTraversal extends AbstractGraphTraversal
      *
      * @param mixed $args being any of:
      *                    - empty
-     *                    - mixed alpha
+     *                    - float alpha
      * @return GraphTraversal
      */
     public function pageRank(...$args): GraphTraversal
@@ -1161,10 +1162,10 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "project" source step.
      *
      * @param string $projectKey
-     * @param mixed $otherProjectKeys,...
+     * @param string[] $otherProjectKeys,...
      * @return GraphTraversal
      */
-    public function project(string $projectKey, ...$otherProjectKeys): GraphTraversal
+    public function project(string $projectKey, string ...$otherProjectKeys): GraphTraversal
     {
         $step = new ProjectStep($projectKey, ...$otherProjectKeys);
         $this->steps->add($step);
@@ -1175,10 +1176,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "properties" source step.
      *
-     * @param mixed $propertyKeys,...
+     * @param string[] $propertyKeys,...
      * @return GraphTraversal
      */
-    public function properties(...$propertyKeys): GraphTraversal
+    public function properties(string ...$propertyKeys): GraphTraversal
     {
         $step = new PropertiesStep(...$propertyKeys);
         $this->steps->add($step);
@@ -1205,10 +1206,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "propertyMap" source step.
      *
-     * @param mixed $propertyKeys,...
+     * @param string[] $propertyKeys,...
      * @return GraphTraversal
      */
-    public function propertyMap(...$propertyKeys): GraphTraversal
+    public function propertyMap(string ...$propertyKeys): GraphTraversal
     {
         $step = new PropertyMapStep(...$propertyKeys);
         $this->steps->add($step);
@@ -1220,8 +1221,8 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "range" source step.
      *
      * @param mixed $args being any of:
-     *                    - mixed scope, mixed low, mixed high
-     *                    - mixed low, mixed high
+     *                    - mixed scope, int low, int high
+     *                    - int low, int high
      * @return GraphTraversal
      */
     public function range(...$args): GraphTraversal
@@ -1249,8 +1250,8 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "repeat" source step.
      *
      * @param mixed $args being any of:
-     *                    - string loopName, mixed repeatTraversal
-     *                    - mixed repeatTraversal
+     *                    - string loopName, GraphTraversalInterface repeatTraversal
+     *                    - GraphTraversalInterface repeatTraversal
      * @return GraphTraversal
      */
     public function repeat(...$args): GraphTraversal
@@ -1281,8 +1282,8 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "sample" source step.
      *
      * @param mixed $args being any of:
-     *                    - mixed scope, mixed amountToSample
-     *                    - mixed amountToSample
+     *                    - mixed scope, int amountToSample
+     *                    - int amountToSample
      * @return GraphTraversal
      */
     public function sample(...$args): GraphTraversal
@@ -1299,11 +1300,11 @@ class GraphTraversal extends AbstractGraphTraversal
      * @param mixed $args being any of:
      *                    - mixed column
      *                    - mixed pop, string selectKey
-     *                    - mixed pop, string selectKey1, string selectKey2, mixed otherSelectKeys
-     *                    - mixed pop, mixed keyTraversal
+     *                    - mixed pop, string selectKey1, string selectKey2, string otherSelectKeys
+     *                    - mixed pop, GraphTraversalInterface keyTraversal
      *                    - string selectKey
-     *                    - string selectKey1, string selectKey2, mixed otherSelectKeys
-     *                    - mixed keyTraversal
+     *                    - string selectKey1, string selectKey2, string otherSelectKeys
+     *                    - GraphTraversalInterface keyTraversal
      * @return GraphTraversal
      */
     public function select(...$args): GraphTraversal
@@ -1332,7 +1333,7 @@ class GraphTraversal extends AbstractGraphTraversal
      *
      * @param mixed $args being any of:
      *                    - mixed consumer
-     *                    - mixed sideEffectTraversal
+     *                    - GraphTraversalInterface sideEffectTraversal
      * @return GraphTraversal
      */
     public function sideEffect(...$args): GraphTraversal
@@ -1360,8 +1361,8 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "skip" source step.
      *
      * @param mixed $args being any of:
-     *                    - mixed scope, mixed skip
-     *                    - mixed skip
+     *                    - mixed scope, int skip
+     *                    - int skip
      * @return GraphTraversal
      */
     public function skip(...$args): GraphTraversal
@@ -1422,8 +1423,8 @@ class GraphTraversal extends AbstractGraphTraversal
      * @param mixed $args being any of:
      *                    - empty
      *                    - mixed scope
-     *                    - mixed scope, mixed limit
-     *                    - mixed limit
+     *                    - mixed scope, int limit
+     *                    - int limit
      * @return GraphTraversal
      */
     public function tail(...$args): GraphTraversal
@@ -1437,10 +1438,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "timeLimit" source step.
      *
-     * @param mixed $timeLimit
+     * @param int $timeLimit
      * @return GraphTraversal
      */
-    public function timeLimit($timeLimit): GraphTraversal
+    public function timeLimit(int $timeLimit): GraphTraversal
     {
         $step = new TimeLimitStep($timeLimit);
         $this->steps->add($step);
@@ -1451,10 +1452,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "times" source step.
      *
-     * @param mixed $maxLoops
+     * @param int $maxLoops
      * @return GraphTraversal
      */
-    public function times($maxLoops): GraphTraversal
+    public function times(int $maxLoops): GraphTraversal
     {
         $step = new TimesStep($maxLoops);
         $this->steps->add($step);
@@ -1466,9 +1467,9 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "to" source step.
      *
      * @param mixed $args being any of:
-     *                    - mixed direction, mixed edgeLabels
+     *                    - mixed direction, string edgeLabels
      *                    - string toStepLabel
-     *                    - mixed toVertex
+     *                    - GraphTraversalInterface toVertex
      *                    - mixed toVertex
      * @return GraphTraversal
      */
@@ -1484,10 +1485,10 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "toE" source step.
      *
      * @param mixed $direction
-     * @param mixed $edgeLabels,...
+     * @param string[] $edgeLabels,...
      * @return GraphTraversal
      */
-    public function toE($direction, ...$edgeLabels): GraphTraversal
+    public function toE($direction, string ...$edgeLabels): GraphTraversal
     {
         $step = new ToEStep($direction, ...$edgeLabels);
         $this->steps->add($step);
@@ -1541,10 +1542,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "union" source step.
      *
-     * @param mixed $unionTraversals,...
+     * @param GraphTraversalInterface[] $unionTraversals,...
      * @return GraphTraversal
      */
-    public function union(...$unionTraversals): GraphTraversal
+    public function union(GraphTraversalInterface ...$unionTraversals): GraphTraversal
     {
         $step = new UnionStep(...$unionTraversals);
         $this->steps->add($step);
@@ -1556,8 +1557,8 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "until" source step.
      *
      * @param mixed $args being any of:
-     *                    - mixed untilPredicate
-     *                    - mixed untilTraversal
+     *                    - PredicateInterface untilPredicate
+     *                    - GraphTraversalInterface untilTraversal
      * @return GraphTraversal
      */
     public function until(...$args): GraphTraversal
@@ -1585,8 +1586,8 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "valueMap" source step.
      *
      * @param mixed $args being any of:
-     *                    - mixed propertyKeys
-     *                    - mixed includeTokens, mixed propertyKeys
+     *                    - string propertyKeys
+     *                    - mixed includeTokens, string propertyKeys
      * @return GraphTraversal
      */
     public function valueMap(...$args): GraphTraversal
@@ -1600,10 +1601,10 @@ class GraphTraversal extends AbstractGraphTraversal
     /**
      * The "values" source step.
      *
-     * @param mixed $propertyKeys,...
+     * @param string[] $propertyKeys,...
      * @return GraphTraversal
      */
-    public function values(...$propertyKeys): GraphTraversal
+    public function values(string ...$propertyKeys): GraphTraversal
     {
         $step = new ValuesStep(...$propertyKeys);
         $this->steps->add($step);
@@ -1617,7 +1618,7 @@ class GraphTraversal extends AbstractGraphTraversal
      * @param mixed $args being any of:
      *                    - mixed predicate
      *                    - string startKey, mixed predicate
-     *                    - mixed whereTraversal
+     *                    - GraphTraversalInterface whereTraversal
      * @return GraphTraversal
      */
     public function where(...$args): GraphTraversal
