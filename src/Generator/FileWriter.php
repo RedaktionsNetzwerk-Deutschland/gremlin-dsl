@@ -74,8 +74,10 @@ class FileWriter
 
         $lastIndex = strrpos($target, '/');
         $directory = substr($target, 0, $lastIndex);
-        if (!@mkdir($directory, 644, true) && !is_dir($directory)) {
-            throw new \RuntimeException(sprintf('Directory "%s" was not created', $directory));
+        if (!is_dir($directory)) {
+            if (!mkdir($directory, 0777, true) && !is_dir($directory)) {
+                throw new \RuntimeException(sprintf('Directory "%s" was not created', $directory));
+            }
         }
 
         file_put_contents($target, $this->printer->printFile($file));

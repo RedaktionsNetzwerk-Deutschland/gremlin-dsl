@@ -39,12 +39,4 @@ class GraphTraversalGenerator extends AbstractGraphTraversalGenerator
 
         $this->writeTraversalFile();
     }
-
-    protected function generateClassAndMethod(string $methodName, array $methodDefinition, string $returnType)
-    {
-        $stepNamespace = $this->detectNamespaceForClassName(self::ABSTRACT_STEP_CLASS);
-        $stepClass = $this->createStepClass($methodName, $stepNamespace);
-
-        $this->generateMethod($methodName, $methodDefinition, $returnType, $stepClass);
-    }
 }

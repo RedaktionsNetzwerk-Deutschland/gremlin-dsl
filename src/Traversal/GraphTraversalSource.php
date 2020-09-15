@@ -8,19 +8,19 @@ declare(strict_types=1);
 
 namespace RND\GremlinDSL\Traversal;
 
-use RND\GremlinDSL\Traversal\Steps\Source\AddESourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\AddVSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\ESourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\InjectSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\IoSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\VSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\WithBulkSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\WithPathSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\WithSackSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\WithSideEffectSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\WithSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\WithStrategiesSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\WithoutStrategiesSourceStep;
+use RND\GremlinDSL\Traversal\Steps\Source\Generated\AddESourceStep;
+use RND\GremlinDSL\Traversal\Steps\Source\Generated\AddVSourceStep;
+use RND\GremlinDSL\Traversal\Steps\Source\Generated\ESourceStep;
+use RND\GremlinDSL\Traversal\Steps\Source\Generated\InjectSourceStep;
+use RND\GremlinDSL\Traversal\Steps\Source\Generated\IoSourceStep;
+use RND\GremlinDSL\Traversal\Steps\Source\Generated\VSourceStep;
+use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithBulkSourceStep;
+use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithPathSourceStep;
+use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithSackSourceStep;
+use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithSideEffectSourceStep;
+use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithSourceStep;
+use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithStrategiesSourceStep;
+use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithoutStrategiesSourceStep;
 
 /**
  * @see https://tinkerpop.apache.org/docs/current/reference/
@@ -37,7 +37,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
      */
     public function with(...$args): GraphTraversalSource
     {
-        $step = new WithSourceStep([...$args]);
+        $step = new WithSourceStep(...$args);
         $this->steps->add($step);
 
         return new static();
@@ -51,7 +51,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
      */
     public function withBulk($useBulk): GraphTraversalSource
     {
-        $step = new WithBulkSourceStep([$useBulk]);
+        $step = new WithBulkSourceStep($useBulk);
         $this->steps->add($step);
 
         return new static();
@@ -64,7 +64,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
      */
     public function withPath(): GraphTraversalSource
     {
-        $step = new WithPathSourceStep([]);
+        $step = new WithPathSourceStep();
         $this->steps->add($step);
 
         return new static();
@@ -86,7 +86,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
      */
     public function withSack(...$args): GraphTraversalSource
     {
-        $step = new WithSackSourceStep([...$args]);
+        $step = new WithSackSourceStep(...$args);
         $this->steps->add($step);
 
         return new static();
@@ -104,7 +104,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
      */
     public function withSideEffect(...$args): GraphTraversalSource
     {
-        $step = new WithSideEffectSourceStep([...$args]);
+        $step = new WithSideEffectSourceStep(...$args);
         $this->steps->add($step);
 
         return new static();
@@ -118,7 +118,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
      */
     public function withStrategies(...$traversalStrategies): GraphTraversalSource
     {
-        $step = new WithStrategiesSourceStep([...$traversalStrategies]);
+        $step = new WithStrategiesSourceStep(...$traversalStrategies);
         $this->steps->add($step);
 
         return new static();
@@ -132,7 +132,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
      */
     public function withoutStrategies(...$traversalStrategyClasses): GraphTraversalSource
     {
-        $step = new WithoutStrategiesSourceStep([...$traversalStrategyClasses]);
+        $step = new WithoutStrategiesSourceStep(...$traversalStrategyClasses);
         $this->steps->add($step);
 
         return new static();
@@ -146,7 +146,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
      */
     public function E(...$edgesIds): GraphTraversal
     {
-        $step = new ESourceStep([...$edgesIds]);
+        $step = new ESourceStep(...$edgesIds);
         $this->steps->add($step);
 
         return new GraphTraversal();
@@ -160,7 +160,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
      */
     public function V(...$vertexIds): GraphTraversal
     {
-        $step = new VSourceStep([...$vertexIds]);
+        $step = new VSourceStep(...$vertexIds);
         $this->steps->add($step);
 
         return new GraphTraversal();
@@ -176,7 +176,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
      */
     public function addE(...$args): GraphTraversal
     {
-        $step = new AddESourceStep([...$args]);
+        $step = new AddESourceStep(...$args);
         $this->steps->add($step);
 
         return new GraphTraversal();
@@ -193,7 +193,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
      */
     public function addV(...$args): GraphTraversal
     {
-        $step = new AddVSourceStep([...$args]);
+        $step = new AddVSourceStep(...$args);
         $this->steps->add($step);
 
         return new GraphTraversal();
@@ -207,7 +207,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
      */
     public function inject(...$starts): GraphTraversal
     {
-        $step = new InjectSourceStep([...$starts]);
+        $step = new InjectSourceStep(...$starts);
         $this->steps->add($step);
 
         return new GraphTraversal();
@@ -221,7 +221,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
      */
     public function io(string $file): GraphTraversal
     {
-        $step = new IoSourceStep([$file]);
+        $step = new IoSourceStep($file);
         $this->steps->add($step);
 
         return new GraphTraversal();

@@ -13,6 +13,7 @@ class GraphTraversalSourceGenerator extends AbstractGraphTraversalGenerator
     protected const CLASS_PATH = 'RND\\GremlinDSL\\Traversal';
     protected const ABSTRACT_CLASS = AbstractGraphTraversalSource::class;
     protected const ABSTRACT_STEP_CLASS = AbstractSourceStep::class;
+    protected const STEP_NAMESPACE = 'RND\\GremlinDSL\\Traversal\\Steps\\Source\\Generated';
     protected const STEP_CLASS_SUFFIX = 'SourceStep';
 
     private array $stepMethods;
@@ -50,13 +51,5 @@ class GraphTraversalSourceGenerator extends AbstractGraphTraversalGenerator
         }
 
         $this->writeTraversalFile();
-    }
-
-    protected function generateClassAndMethod(string $methodName, array $methodDefinition, string $returnType)
-    {
-        $stepNamespace = $this->detectNamespaceForClassName(self::ABSTRACT_STEP_CLASS);
-        $stepClass = $this->createStepClass($methodName, $stepNamespace);
-
-        $this->generateMethod($methodName, $methodDefinition, $returnType, $stepClass);
     }
 }

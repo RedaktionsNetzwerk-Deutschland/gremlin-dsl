@@ -18,6 +18,7 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
     protected const CLASS_PATH = 'RND\\GremlinDSL\\Traversal';
     protected const ABSTRACT_CLASS = '';
     protected const ABSTRACT_STEP_CLASS = AbstractStep::class;
+    protected const STEP_NAMESPACE = 'RND\\GremlinDSL\\Traversal\\Steps\\Generated';
     protected const STEP_CLASS_SUFFIX = 'Step';
 
     protected PhpFile $graphTraversalFile;
@@ -37,16 +38,26 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
         $this->graphTraversalClass->addComment('@see https://tinkerpop.apache.org/docs/current/reference/');
     }
 
+    protected function generateClassAndMethod(string $methodName, array $methodDefinition, string $returnType)
+    {
+        $stepClass = $this->createStepClass($methodName, static::STEP_NAMESPACE);
+
+        $this->generateMethod($methodName, $methodDefinition, $returnType, $stepClass);
+    }
+
     protected function createStepClass(string $methodName, string $stepNamespace): ClassType
     {
-        $methodName = ucfirst($methodName) . static::STEP_CLASS_SUFFIX;
+        $className = ucfirst($methodName) . static::STEP_CLASS_SUFFIX;
         $stepNamespace = $stepNamespace ?? $this->detectNamespaceForClassName(self::ABSTRACT_STEP_CLASS);
         $class = $this->bootstrapClass(
-            $methodName,
+            $className,
             $stepNamespace,
             self::ABSTRACT_STEP_CLASS,
             $classFile
         );
+        $class->addConstant('STEP_NAME', $methodName)
+              ->setPublic();
+
         $this->write($classFile);
 
         return $class;
@@ -113,7 +124,7 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
 
     protected function addMethodBody(Method $method, ClassType $stepClass, array $parameters, string $returnType)
     {
-        $method->addBody(sprintf('$step = new %s([%s]);', $stepClass->getName(), implode(', ', $parameters)));
+        $method->addBody(sprintf('$step = new %s(%s);', $stepClass->getName(), implode(', ', $parameters)));
         $method->addBody('$this->steps->add($step);');
         $method->addBody('');
 
