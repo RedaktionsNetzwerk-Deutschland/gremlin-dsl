@@ -14,7 +14,7 @@
             "RND\\GremlinDSL\\": "src/"
         },
         "files": [
-            "src/functions.php"
+            "src/loader.php"
         ]
     },
     "require": {

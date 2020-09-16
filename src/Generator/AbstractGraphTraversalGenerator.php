@@ -30,6 +30,9 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
     protected function generateSourceClass()
     {
         $this->graphTraversalFile = $this->bootstrapFile();
+        $this->graphTraversalFile->addComment('@phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps');
+        $this->graphTraversalFile->addComment('@phpcs:disable Generic.Files.LineLength.TooLong');
+
         $this->graphTraversalClass = $this->bootstrapClass(
             static::CLASS_NAME,
             static::CLASS_PATH,
@@ -202,5 +205,4 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
     {
         $this->write($this->graphTraversalFile);
     }
-
 }

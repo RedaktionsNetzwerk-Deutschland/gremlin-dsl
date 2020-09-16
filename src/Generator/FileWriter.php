@@ -97,5 +97,4 @@ class FileWriter
 
         return $this->autoloadConfig;
     }
-
 }

@@ -22,5 +22,4 @@ class ArgumentUtil
 
         return implode(', ', $result);
     }
-
 }
