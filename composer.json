@@ -13,7 +13,9 @@
         "psr-4": {
             "RND\\GremlinDSL\\": "src/"
         },
-        "files": ["functions.php"]
+        "files": [
+            "src/functions.php"
+        ]
     },
     "require": {
         "php": "^7.4",
