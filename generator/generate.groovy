@@ -99,13 +99,13 @@ def getParams = { method, useGenericParams ->
     def resultParameters = parameters.
             toList().indexed().
             collect { index, param ->
-                ["param": param.name, "type": toGenericType(param.type.simpleName), "variableArgs": false]
+                ["name": param.name, "type": toGenericType(param.type.simpleName), "variadic": false]
             }.
             toArray()
 
     if (method.isVarArgs()) {
         def lastIndex = resultParameters.length - 1
-        resultParameters[lastIndex].variableArgs = true;
+        resultParameters[lastIndex].variadic = true;
     }
 
     resultParameters
@@ -116,14 +116,14 @@ def getMethodDescription = { method ->
 }
 
 def methods = [
-    'pmethods': P.getMethods().
+    'predicates': P.getMethods().
         findAll { Modifier.isStatic(it.getModifiers()) }.
         findAll { P.isAssignableFrom(it.returnType) }.
         collect { it.name }.
         unique().
         sort { a, b -> a <=> b },
 
-    'tpmethods': TextP.getMethods().
+    'textPredicates': TextP.getMethods().
             findAll { Modifier.isStatic(it.getModifiers()) }.
             findAll { TextP.isAssignableFrom(it.returnType) }.
             collect { it.name }.
