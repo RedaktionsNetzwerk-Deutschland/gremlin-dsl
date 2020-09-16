@@ -3,3 +3,5 @@
 generator/target
 composer.lock
 vendor
+
+.phpcs-cache
