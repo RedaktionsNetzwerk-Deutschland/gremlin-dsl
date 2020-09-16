@@ -6,10 +6,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - uses: php-actions/composer@v2
-              with:
-                  command: update
-            - uses: RedaktionsNetzwerk-Deutschland/reviewdog-action-php@v1
+            - uses: shirobrak/action-phpcs@v1
               with:
                   reporter: github-pr-review
                   fail_on_error: true
+                  phpcs_flags: --standard=phpcs.xml.dist
