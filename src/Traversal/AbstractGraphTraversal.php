@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace RND\GremlinDSL\Traversal;
 
+use RND\GremlinDSL\Traversal\Steps\GStep;
+
 class AbstractGraphTraversal implements GraphTraversalInterface
 {
 
@@ -22,5 +24,13 @@ class AbstractGraphTraversal implements GraphTraversalInterface
         }
 
         return implode('.', $steps);
+    }
+
+    public static function g(): self
+    {
+        $instance = new static();
+        $instance->steps->add(new GStep());
+
+        return $instance;
     }
 }

@@ -12,7 +12,8 @@
     "autoload": {
         "psr-4": {
             "RND\\GremlinDSL\\": "src/"
-        }
+        },
+        "files": ["functions.php"]
     },
     "require": {
         "php": "^7.4",
