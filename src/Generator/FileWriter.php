@@ -72,6 +72,11 @@ class FileWriter
             return;
         }
 
+        $this->writePlain($this->printer->printFile($file), $target);
+    }
+
+    public function writePlain(string $contents, string $target)
+    {
         $lastIndex = strrpos($target, '/');
         $directory = substr($target, 0, $lastIndex);
         if (!is_dir($directory)) {
@@ -80,7 +85,7 @@ class FileWriter
             }
         }
 
-        file_put_contents($target, $this->printer->printFile($file));
+        file_put_contents($target, $contents);
     }
 
     public function getAutoloadConfig(): array

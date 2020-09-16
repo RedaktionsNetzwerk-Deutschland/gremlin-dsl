@@ -27,4 +27,12 @@ class Utils
         );
     }
 
+    public static function indent(string $input, int $size = 4): string
+    {
+        $lines = explode(PHP_EOL, $input);
+        $lines = array_map(fn($line) => !empty($line) ? str_repeat(' ', $size) . $line : '', $lines);
+
+        return implode(PHP_EOL, $lines);
+    }
+
 }
