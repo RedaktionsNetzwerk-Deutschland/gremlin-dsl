@@ -40,7 +40,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
         $step = new WithSourceStep(...$args);
         $this->steps->add($step);
 
-        return new static();
+        return new static($this->steps);
     }
 
     /**
@@ -54,7 +54,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
         $step = new WithBulkSourceStep($useBulk);
         $this->steps->add($step);
 
-        return new static();
+        return new static($this->steps);
     }
 
     /**
@@ -67,7 +67,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
         $step = new WithPathSourceStep();
         $this->steps->add($step);
 
-        return new static();
+        return new static($this->steps);
     }
 
     /**
@@ -89,7 +89,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
         $step = new WithSackSourceStep(...$args);
         $this->steps->add($step);
 
-        return new static();
+        return new static($this->steps);
     }
 
     /**
@@ -107,7 +107,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
         $step = new WithSideEffectSourceStep(...$args);
         $this->steps->add($step);
 
-        return new static();
+        return new static($this->steps);
     }
 
     /**
@@ -121,7 +121,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
         $step = new WithStrategiesSourceStep(...$traversalStrategies);
         $this->steps->add($step);
 
-        return new static();
+        return new static($this->steps);
     }
 
     /**
@@ -135,7 +135,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
         $step = new WithoutStrategiesSourceStep(...$traversalStrategyClasses);
         $this->steps->add($step);
 
-        return new static();
+        return new static($this->steps);
     }
 
     /**
@@ -149,7 +149,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
         $step = new ESourceStep(...$edgesIds);
         $this->steps->add($step);
 
-        return new GraphTraversal();
+        return new GraphTraversal($this->steps);
     }
 
     /**
@@ -163,7 +163,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
         $step = new VSourceStep(...$vertexIds);
         $this->steps->add($step);
 
-        return new GraphTraversal();
+        return new GraphTraversal($this->steps);
     }
 
     /**
@@ -179,7 +179,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
         $step = new AddESourceStep(...$args);
         $this->steps->add($step);
 
-        return new GraphTraversal();
+        return new GraphTraversal($this->steps);
     }
 
     /**
@@ -196,7 +196,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
         $step = new AddVSourceStep(...$args);
         $this->steps->add($step);
 
-        return new GraphTraversal();
+        return new GraphTraversal($this->steps);
     }
 
     /**
@@ -210,7 +210,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
         $step = new InjectSourceStep(...$starts);
         $this->steps->add($step);
 
-        return new GraphTraversal();
+        return new GraphTraversal($this->steps);
     }
 
     /**
@@ -224,6 +224,6 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
         $step = new IoSourceStep($file);
         $this->steps->add($step);
 
-        return new GraphTraversal();
+        return new GraphTraversal($this->steps);
     }
 }

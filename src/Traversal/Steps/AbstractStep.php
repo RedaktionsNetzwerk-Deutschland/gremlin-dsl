@@ -19,13 +19,6 @@ abstract class AbstractStep
 
     public function __toString()
     {
-        $args = [];
-        foreach ($this->args as $arg) {
-            if (is_string($arg)) {
-                $args[] = $arg;
-            }
-        }
-
-        return sprintf('%s(%s)', static::STEP_NAME, ArgumentUtil::implode($args));
+        return sprintf('%s(%s)', static::STEP_NAME, ArgumentUtil::implode($this->args));
     }
 }

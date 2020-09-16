@@ -134,7 +134,7 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
             $returnType = 'static';
         }
 
-        $method->addBody(sprintf('return new %s();', $returnType));
+        $method->addBody(sprintf('return new %s($this->steps);', $returnType));
     }
 
     protected function addMethodDocs(Method $method, array $methodDefinition)

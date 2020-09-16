@@ -12,25 +12,19 @@ class Steps implements Iterator
     /** @var AbstractStep[] */
     protected array $steps;
 
-    private static ?Steps $instance = null;
-
     private int $position = 0;
 
     /**
      * Steps constructor.
      */
-    private function __construct()
+    public function __construct()
     {
-        $this->steps = [];
+        $this->clear();
     }
 
-    public static function getInstance(): Steps
+    public static function create(): Steps
     {
-        if (static::$instance === null) {
-            static::$instance = new static();
-        }
-
-        return static::$instance;
+        return new static();
     }
 
     public function add(AbstractStep $step): self
@@ -38,6 +32,12 @@ class Steps implements Iterator
         $this->steps[] = $step;
 
         return $this;
+    }
+
+    public function clear()
+    {
+        $this->steps = [];
+        $this->position = 0;
     }
 
     /**

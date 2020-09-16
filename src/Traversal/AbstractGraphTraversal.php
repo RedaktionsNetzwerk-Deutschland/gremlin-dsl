@@ -9,9 +9,9 @@ class AbstractGraphTraversal implements GraphTraversalInterface
 
     protected Steps $steps;
 
-    public function __construct()
+    public function __construct(?Steps $steps = null)
     {
-        $this->steps = Steps::getInstance();
+        $this->steps = $steps ?? Steps::create();
     }
 
     public function __toString()
