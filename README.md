@@ -1,6 +1,6 @@
 # gremlin-dsl
 
-___
+![PHPCS](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/workflows/PHPCS/badge.svg)
 
 ## DSL generation
 
