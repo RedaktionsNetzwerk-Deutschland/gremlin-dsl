@@ -39,7 +39,7 @@ echo \RND\GremlinDSL\Traversal\GraphTraversal::g()
 ### Short functions
 Short functions are simplifying the graph traversal generation and usage of predicates.
 
-You've to enable `GREMLIN_DSL_REGISTER_GLOBAL_FUNCTIONS` or manually load e.g. [src/predicates.php](src/predicates.php) to make short functions available.
+You've to enable `GREMLIN_DSL_REGISTER_GLOBAL_FUNCTIONS` or manually load e.g. [resources/predicates.php](resources/predicates.php) to make short functions available.
 
 ```php
 <?php
