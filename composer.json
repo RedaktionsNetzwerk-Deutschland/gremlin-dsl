@@ -14,7 +14,7 @@
             "RND\\GremlinDSL\\": "src/"
         },
         "files": [
-            "src/functions.php"
+            "src/loader.php"
         ]
     },
     "require": {
@@ -24,7 +24,12 @@
     "require-dev": {
         "nette/php-generator": "^3.4",
         "symfony/console": "^5.1",
-        "symfony/var-dumper": "^5.1"
+        "symfony/var-dumper": "^5.1",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "scripts": {
+        "cs": "vendor/bin/phpcs",
+        "cs:fix": "vendor/bin/phpcbf"
     },
     "suggest": {
         "brightzone/gremlin-php": "gremlin-server client for php"

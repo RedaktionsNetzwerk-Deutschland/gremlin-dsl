@@ -34,5 +34,4 @@ class Utils
 
         return implode(PHP_EOL, $lines);
     }
-
 }

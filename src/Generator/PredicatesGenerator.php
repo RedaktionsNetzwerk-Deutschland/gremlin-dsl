@@ -20,7 +20,7 @@ class PredicatesGenerator extends AbstractGenerator
 
     private PhpFile $functionsFile;
 
-    /** @var GlobalFunction[]  */
+    /** @var GlobalFunction[] */
     protected ?array $functions = [];
 
     public function __construct(FileWriter $writer, array $methods)
@@ -72,9 +72,9 @@ class PredicatesGenerator extends AbstractGenerator
     {
         $output = $this->writer->printer->printFile($this->functionsFile);
         foreach ($this->functions as $functionName => $function) {
-            $output .= PHP_EOL.sprintf('if (!function_exists(\'%s\')) {', $functionName);
-            $output .= PHP_EOL.Utils::indent($this->writer->printer->printFunction($function), 4);
-            $output .= '}'.PHP_EOL;
+            $output .= PHP_EOL . sprintf('if (!function_exists(\'%s\')) {', $functionName);
+            $output .= PHP_EOL . Utils::indent($this->writer->printer->printFunction($function), 4);
+            $output .= '}' . PHP_EOL;
         }
 
         $this->writer->writePlain($output, static::FUNCTIONS_FILE);
