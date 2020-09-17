@@ -13,7 +13,7 @@ class PredicatesGenerator extends AbstractGenerator
 {
     protected const PREDICATE_COMMENT = 'The "%s" predicate.';
     protected const ABSTRACT_CLASS = AbstractPredicate::class;
-    protected const FUNCTIONS_FILE = 'src/predicates.php';
+    protected const FUNCTIONS_FILE = 'resources/predicates.php';
 
     /** @var string[] list of predicate methods */
     private array $methods;
