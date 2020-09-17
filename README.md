@@ -1,19 +1,66 @@
-# gremlin-dsl
+# PHP Gremlin DSL implementation
 
 ![PHPCS](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/workflows/PHPCS/badge.svg)
 
-## DSL generation
+## Introduction
 
-The gremlin dsl generation is based on the [java base-classes](https://github.com/apache/tinkerpop/tree/master/gremlin-core/src/main/java/org/apache/tinkerpop/gremlin/process/traversal/dsl/graph).
+Gremlin is a graph traversal language developed by [Apache TinkerPop](https://tinkerpop.apache.org/).
 
-To generate the DSL just call `make generate` that will first generate the JSON methods structure and afterwards the php file generation.
+Many graph vendors like [Neo4j](https://neo4j.com/), [Azure Cosmos](https://azure.microsoft.com/services/cosmos-db/), [AWS Neptune](https://aws.amazon.com/neptune/) and [many more](https://tinkerpop.apache.org/#graph-systems) supports Gremlin.
 
-### JSON only
+This package provides a basic integration of gremlin for php applications.
+
+## Installation
+```shell
+composer require rnd/gremlin-dsl
+```
+
+## Configuration
+| Option                                | Scope    | Type    | Default | Description                                   |
+|---------------------------------------|----------|---------|---------|-----------------------------------------------|
+| GREMLIN_DSL_REGISTER_GLOBAL_FUNCTIONS | Constant | boolean | false   | Globally register [short-functions](#short-functions) for gremlin.<br>E.g. the global `g`-function will be available to start the traversal. |
+
+## Usage
+Just [install the package](#installation) and begin traversing.
+
+```php
+<?php
+require_once 'vendor/autoload.php';
+
+echo \RND\GremlinDSL\Traversal\GraphTraversal::g()
+    ->V(1)->out('knows')->has('age', new \RND\GremlinDSL\Traversal\Predicates\Gt(30))->values('name');
+# g.V(1).out("knows").has("age", gt(30)).values("name")
+
+```
+
+### Short functions
+Short functions are simplifying the graph traversal generation and usage of predicates.
+
+You've to enable `GREMLIN_DSL_REGISTER_GLOBAL_FUNCTIONS` or manually load e.g. [src/predicates.php](src/predicates.php) to make short functions available.
+
+```php
+<?php
+
+define('GREMLIN_DSL_REGISTER_GLOBAL_FUNCTIONS', true);
+require_once 'vendor/autoload.php';
+
+# With GREMLIN_DSL_REGISTER_GLOBAL_FUNCTIONS enabled:
+g()->V(1)->out('knows')->has('age', gt(30))->values('name');
+# g.V(1).out("knows").has("age", gt(30)).values("name")
+```
+
+## Development
+### DSL generation
+
+The DSL generation is based on the [java base-classes](https://github.com/apache/tinkerpop/tree/master/gremlin-core/src/main/java/org/apache/tinkerpop/gremlin/process/traversal/dsl/graph).
+
+To (re)generate the DSL just call `make generate` that will first generate the JSON methods structure and afterwards the php file generation.
+
+#### Generate JSON only
 Just call `make generate-json` or `mvn -f generator -P glv-json compile`
 
-### PHP only
-To e.g. adjust the php file generation you can call
-`php generate.php [dsl:generate [<in-file>]]` or `make generate-php`
+#### Generate PHP only
+To e.g. adjust the php file generation you can either call `php generate.php [dsl:generate [<in-file>]]` or `make generate-php`
 
 ___
 ♥ RND Technical Hub
