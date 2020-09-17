@@ -1,6 +1,7 @@
 {
     "name": "rnd/gremlin-dsl",
     "description": "Gremlin DSL PHP integration",
+    "version": "0.0.1",
     "type": "library",
     "license": "MIT",
     "authors": [
