@@ -1,39 +1,39 @@
 {
-  "name": "rnd/gremlin-dsl",
-  "description": "Gremlin DSL PHP integration",
-  "version": "0.1.0",
-  "type": "library",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Dominik Jansen",
-      "email": "dominik.jansen@rnd.de"
-    }
-  ],
-  "autoload": {
-    "psr-4": {
-      "RND\\GremlinDSL\\": "src/"
+    "name": "rnd/gremlin-dsl",
+    "description": "Gremlin DSL PHP integration",
+    "version": "0.1.0",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dominik Jansen",
+            "email": "dominik.jansen@rnd.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "RND\\GremlinDSL\\": "src/"
+        },
+        "files": [
+            "resources/loader.php"
+        ]
     },
-    "files": [
-      "resources/loader.php"
-    ]
-  },
-  "require": {
-    "php": "^7.4",
-    "ext-json": "*"
-  },
-  "require-dev": {
-    "nette/php-generator": "^3.4",
-    "symfony/console": "^5.1",
-    "symfony/var-dumper": "^5.1",
-    "squizlabs/php_codesniffer": "^3.5",
-    "phpcompatibility/php-compatibility": "^9.3"
-  },
-  "scripts": {
-    "cs": "vendor/bin/phpcs",
-    "cs:fix": "vendor/bin/phpcbf"
-  },
-  "suggest": {
-    "brightzone/gremlin-php": "gremlin-server client for php"
-  }
+    "require": {
+        "php": "^7.4",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "nette/php-generator": "^3.4",
+        "symfony/console": "^5.1",
+        "symfony/var-dumper": "^5.1",
+        "squizlabs/php_codesniffer": "^3.5",
+        "phpcompatibility/php-compatibility": "^9.3"
+    },
+    "scripts": {
+        "cs": "vendor/bin/phpcs",
+        "cs:fix": "vendor/bin/phpcbf"
+    },
+    "suggest": {
+        "brightzone/gremlin-php": "gremlin-server client for php"
+    }
 }
