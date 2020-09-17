@@ -1,4 +1,4 @@
-name: PHPCS check
+name: PHPCS
 on: pull_request
 jobs:
     phpcs:
