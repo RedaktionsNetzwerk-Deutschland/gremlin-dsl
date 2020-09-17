@@ -25,7 +25,8 @@
         "nette/php-generator": "^3.4",
         "symfony/console": "^5.1",
         "symfony/var-dumper": "^5.1",
-        "squizlabs/php_codesniffer": "^3.5"
+        "squizlabs/php_codesniffer": "^3.5",
+        "phpcompatibility/php-compatibility": "^9.3"
     },
     "scripts": {
         "cs": "vendor/bin/phpcs",
