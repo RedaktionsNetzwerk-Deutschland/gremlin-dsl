@@ -1,5 +1,7 @@
 name: PHPCS
-on: pull_request
+on:
+  - push
+  - pull_request
 jobs:
     phpcs:
         name: PHPCS
