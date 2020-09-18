@@ -1,0 +1,23 @@
+name: PHPUnit
+on:
+  - push
+  - pull_request
+jobs:
+    phpunit:
+        runs-on: ubuntu-latest
+        name: PHPUnit
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Composer dependencies
+              uses: php-actions/composer@v2
+              with:
+                  command: update
+            - name: Generate report
+              uses: docker://mileschou/xdebug:7.4
+              with:
+                args: vendor/bin/phpunit -c phpunit.xml.dist
+            - name: Export to codecov
+              uses: codecov/codecov-action@v1
+              with:
+                  fail_ci_if_error: true

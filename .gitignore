@@ -6,3 +6,4 @@ vendor
 
 .phpcs-cache
 .phpunit.result.cache
+coverage.xml

@@ -10,8 +10,16 @@ use PHPUnit\Framework\TestCase;
 class ConfigurationTest extends TestCase
 {
 
+    public function resetConfiguration()
+    {
+        $instanceProperty = new \ReflectionProperty(Configuration::class, 'instance');
+        $instanceProperty->setAccessible(true);
+        $instanceProperty->setValue(null);
+    }
+
     public function testFromConfig(): void
     {
+        $this->resetConfiguration();
         $closure = fn() => 'closure';
         $config = [
             'enableShortFunctions' => true,
@@ -25,6 +33,7 @@ class ConfigurationTest extends TestCase
 
     public function testGetSendClosure(): void
     {
+        $this->resetConfiguration();
         $closure = fn() => 'closure';
         $object = Configuration::getInstance()->setSendClosure($closure);
         $configuredClosure = $object->getSendClosure();
@@ -34,13 +43,13 @@ class ConfigurationTest extends TestCase
 
     public function testGetInstance(): void
     {
+        $this->resetConfiguration();
         self::assertSame(Configuration::getInstance(), Configuration::getInstance());
     }
 
     public function testEnableShortFunctions(): void
     {
-        $exists = function_exists('g');
-        self::assertFalse($exists);
+        $this->resetConfiguration();
         Configuration::getInstance()->enableShortFunctions();
         self::assertTrue(function_exists('g'));
     }
