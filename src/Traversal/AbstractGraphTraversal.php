@@ -6,9 +6,9 @@ namespace RND\GremlinDSL\Traversal;
 
 use Closure;
 use RND\GremlinDSL\Configuration;
+use RND\GremlinDSL\Exception\NoSendClosureException;
 use RND\GremlinDSL\Traversal\Steps\GStep;
 use RND\GremlinDSL\Traversal\Steps\NextStep;
-use RuntimeException;
 
 class AbstractGraphTraversal implements GraphTraversalInterface
 {
@@ -72,12 +72,7 @@ class AbstractGraphTraversal implements GraphTraversalInterface
     {
         $closure = $closure ?? Configuration::getInstance()->getSendClosure();
         if (!$closure) {
-            throw new RuntimeException(
-                sprintf(
-                    'You must either configure the sendClosure or provide a closure to enable the SendStep: `%s::getInstance()->setSendClosure(function(string $traversalString) {})`',
-                    Configuration::class
-                )
-            );
+            throw new NoSendClosureException();
         }
 
         return $closure->call($this, $this->__toString());
