@@ -19,9 +19,45 @@ composer require rnd/gremlin-dsl
 ```
 
 ## Configuration
-| Option                                | Scope    | Type    | Default | Description                                   |
-|---------------------------------------|----------|---------|---------|-----------------------------------------------|
-| GREMLIN_DSL_REGISTER_GLOBAL_FUNCTIONS | Constant | boolean | false   | Globally register [short-functions](#short-functions) for gremlin.<br>E.g. the global `g`-function will be available to start the traversal. |
+This packages provides a static [Configuration](src/Configuration.php) Class with some configuration options.
+
+| Option                                | Scope         | Type    | Default | Description                                   |
+|---------------------------------------|---------------|---------|---------|-----------------------------------------------|
+| GREMLIN_DSL_REGISTER_GLOBAL_FUNCTIONS | Constant      | boolean | false   | Globally register [short-functions](#short-functions) for gremlin.<br>E.g. the global `g`-function will be available to start the traversal. |
+| enableShortFunctions                  | Configuration | boolean | false   | Globally register [short-functions](#short-functions) for gremlin.<br>E.g. the global `g`-function will be available to start the traversal. |
+| sendClosure                           | Configuration | Closure | null    | Register a global callback for the [pseudo send step](#sending-the-graph-traversal-string) |
+
+You can either configure it from array:
+```php
+use RND\GremlinDSL\Configuration;
+
+/** @var \Brightzone\GremlinDriver\Connection $connection */
+$connection = null;
+
+Configuration::fromConfig([
+    'sendClosure' => function (string $traversalString) use ($connection) {
+         return $connection->send($traversalString);
+     },
+    'enableShortFunctions' => true,
+]);
+```
+
+or set the desired settings directly:
+```php
+use RND\GremlinDSL\Configuration;
+
+/** @var \Brightzone\GremlinDriver\Connection $connection */
+$connection = null;
+
+Configuration::getInstance()
+    ->setSendClosure(function (string $traversalString) use ($connection) {
+        return $connection->send($traversalString);
+    })
+    ->enableShortFunctions()
+;
+
+```
+
 
 ## Usage
 Just [install the package](#installation) and begin traversing.
@@ -33,14 +69,51 @@ require_once 'vendor/autoload.php';
 echo \RND\GremlinDSL\Traversal\GraphTraversal::g()
     ->V(1)->out('knows')->has('age', new \RND\GremlinDSL\Traversal\Predicates\Gt(30))->values('name');
 # g.V(1).out("knows").has("age", gt(30)).values("name")
+```
 
+### Sending the graph traversal string
+There is a pseudo `send` step provided with this package.
+
+You can either globally configure a closure for the send step or provide it with every call.
+
+```php
+<?php
+require_once 'vendor/autoload.php';
+
+use RND\GremlinDSL\Configuration;
+
+/** @var \Brightzone\GremlinDriver\Connection $connection */
+$connection = null;
+$sendClosure = function (string $traversalString) use ($connection) {
+    return $connection->send($traversalString);
+};
+
+Configuration::setSendClosure($sendClosure);
+g.V(1).out("knows").has("age", gt(30)).values("name")->send();
+
+# or
+
+g.V(1).out("knows").has("age", gt(30)).values("name")->send($sendClosure);
 ```
 
 ### Short functions
 Short functions are simplifying the graph traversal generation and usage of predicates.
 
-You've to enable `GREMLIN_DSL_REGISTER_GLOBAL_FUNCTIONS` or manually load e.g. [resources/predicates.php](resources/predicates.php) to make short functions available.
+You've to enable `GREMLIN_DSL_REGISTER_GLOBAL_FUNCTIONS`,
+manually load e.g. [resources/predicates.php](resources/predicates.php)
+or call `Configuration::enableShortFunctions()` to make short functions available.
 
+```php
+<?php
+
+require_once 'vendor/autoload.php';
+
+\RND\GremlinDSL\Configuration::enableShortFunctions();
+g()->V(1)->out('knows')->has('age', gt(30))->values('name');
+# g.V(1).out("knows").has("age", gt(30)).values("name")
+```
+
+With `GREMLIN_DSL_REGISTER_GLOBAL_FUNCTIONS` constant:
 ```php
 <?php
 
