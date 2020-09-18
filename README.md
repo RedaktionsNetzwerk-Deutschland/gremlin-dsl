@@ -1,9 +1,11 @@
 # PHP Gremlin DSL implementation
 
 [![PHPCS](https://img.shields.io/github/workflow/status/RedaktionsNetzwerk-Deutschland/gremlin-dsl/PHPCS?label=PHPCS)](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/actions?query=workflow%3APHPCS)
+[![PHPUnit](https://img.shields.io/github/workflow/status/RedaktionsNetzwerk-Deutschland/gremlin-dsl/PHPUnit?label=PHPUnit)](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/actions?query=workflow%3APHPCS)
 [![License](https://img.shields.io/github/license/RedaktionsNetzwerk-Deutschland/gremlin-dsl)](LICENSE.md)
 [![Downloads](https://img.shields.io/packagist/dt/rnd/gremlin-dsl)](https://packagist.org/packages/rnd/gremlin-dsl)
 [![Latest version](https://img.shields.io/packagist/v/rnd/gremlin-dsl)](https://packagist.org/packages/rnd/gremlin-dsl)
+[![codecov](https://codecov.io/gh/RedaktionsNetzwerk-Deutschland/gremlin-dsl/branch/master/graph/badge.svg)](https://codecov.io/gh/RedaktionsNetzwerk-Deutschland/gremlin-dsl)
 
 ## Introduction
 
