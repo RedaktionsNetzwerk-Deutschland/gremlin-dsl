@@ -88,7 +88,7 @@ $sendClosure = function (string $traversalString) use ($connection) {
     return $connection->send($traversalString);
 };
 
-Configuration::setSendClosure($sendClosure);
+Configuration::getInstance()->setSendClosure($sendClosure);
 g.V(1).out("knows").has("age", gt(30)).values("name")->send();
 
 # or
@@ -108,7 +108,7 @@ or call `Configuration::enableShortFunctions()` to make short functions availabl
 
 require_once 'vendor/autoload.php';
 
-\RND\GremlinDSL\Configuration::enableShortFunctions();
+\RND\GremlinDSL\Configuration::getInstance()->enableShortFunctions();
 g()->V(1)->out('knows')->has('age', gt(30))->values('name');
 # g.V(1).out("knows").has("age", gt(30)).values("name")
 ```
