@@ -42,6 +42,7 @@ class Steps implements Iterator
 
     /**
      * prevent the instance from being cloned (which would create a second instance of it)
+     * @codeCoverageIgnore
      */
     private function __clone()
     {
@@ -50,6 +51,7 @@ class Steps implements Iterator
     /**
      * prevent from being unserialized (which would create a second instance of it)
      * @noinspection PhpUnusedPrivateMethodInspection
+     * @codeCoverageIgnore
      */
     private function __wakeup()
     {

@@ -26,6 +26,7 @@ use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithoutStrategiesSourceStep;
 
 /**
  * @see https://tinkerpop.apache.org/docs/current/reference/
+ * @codeCoverageIgnore
  */
 class GraphTraversalSource extends AbstractGraphTraversalSource
 {

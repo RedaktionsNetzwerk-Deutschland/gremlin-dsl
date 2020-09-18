@@ -116,6 +116,7 @@ use RND\GremlinDSL\Traversal\Steps\Generated\WriteStep;
 
 /**
  * @see https://tinkerpop.apache.org/docs/current/reference/
+ * @codeCoverageIgnore
  */
 class GraphTraversal extends AbstractGraphTraversal
 {

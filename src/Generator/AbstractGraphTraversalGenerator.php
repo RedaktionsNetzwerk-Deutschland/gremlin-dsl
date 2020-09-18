@@ -41,6 +41,7 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
             $this->graphTraversalNs
         );
         $this->graphTraversalClass->addComment('@see https://tinkerpop.apache.org/docs/current/reference/');
+        $this->graphTraversalClass->addComment('@codeCoverageIgnore');
     }
 
     protected function generateClassAndMethod(string $methodName, array $methodDefinition, string $returnType)

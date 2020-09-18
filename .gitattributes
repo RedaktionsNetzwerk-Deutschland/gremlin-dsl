@@ -8,3 +8,4 @@ src/Generator/ export-ignore
 Makefile export-ignore
 generate.php export-ignore
 phpcs.xml.dist export-ignore
+phpunit.xml.dist export-ignore
