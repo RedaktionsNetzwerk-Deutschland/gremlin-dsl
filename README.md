@@ -100,6 +100,20 @@ g.V(1).out("knows").has("age", gt(30)).values("name")->send();
 g.V(1).out("knows").has("age", gt(30)).values("name")->send($sendClosure);
 ```
 
+Instead of a closure you can also provide an instance of SendClosureInterface.
+
+```php
+use RND\GremlinDSL\Traversal\SendClosureInterface;
+use RND\GremlinDSL\Traversal\GraphTraversalInterface;
+
+class SendClosure implements SendClosureInterface
+{
+    public function __invoke(GraphTraversalInterface $graphTraversal, string $traversalString) {
+        // handle the send
+    }
+}
+```
+
 ### Short functions
 Short functions are simplifying the graph traversal generation and usage of predicates.
 

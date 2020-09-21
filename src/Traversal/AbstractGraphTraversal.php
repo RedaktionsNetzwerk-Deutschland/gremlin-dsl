@@ -57,24 +57,24 @@ class AbstractGraphTraversal implements GraphTraversalInterface
      *   g()->send();
      * ```
      *
-     * @param Closure|null $closure The function handling the send step.
-     *                              If not provided the configured `Configuration::setSendClosure()` one will be used.
-     *                              The context of the closure will be set to the current GraphTraversal.
-     *                              The first parameter is the compiled traversal string.
-     *                              Example closure:
-     *                              <code>
+     * @param SendClosureInterface|Closure|null $closure The function handling the send step.
+     *                                                   If not provided the configured `Configuration::setSendClosure()` one will be used.
+     *                                                   The context of the closure will be set to the current GraphTraversal.
+ *                                                       The first parameter is the compiled traversal string.
+     *                                                   Example closure:
+     *                                                   <code>
      * function (string $traversalString) use ($connection) { return $connection->send($traversalString); }
-     *                              </code>
+     *                                                   </code>
      * @return mixed the result
      * @see Configuration::setSendClosure()
      */
-    public function send(?Closure $closure = null)
+    public function send($closure = null)
     {
         $closure = $closure ?? Configuration::getInstance()->getSendClosure();
         if (!$closure) {
             throw new NoSendClosureException();
         }
 
-        return $closure->call($this, $this->__toString());
+        return $closure instanceof SendClosureInterface ? $closure($this, $this->__toString()) : $closure->call($this, $this->__toString());
     }
 }

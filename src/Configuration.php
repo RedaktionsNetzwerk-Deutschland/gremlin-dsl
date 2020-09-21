@@ -5,13 +5,15 @@ declare(strict_types=1);
 namespace RND\GremlinDSL;
 
 use Closure;
+use RND\GremlinDSL\Traversal\SendClosureInterface;
 
 class Configuration
 {
 
     private static ?Configuration $instance = null;
 
-    protected ?Closure $sendClosure = null;
+    /** @var SendClosureInterface|Closure|null */
+    protected $sendClosure;
 
     public static function getInstance(): Configuration
     {
@@ -42,7 +44,7 @@ class Configuration
         return $this;
     }
 
-    public function getSendClosure(): ?Closure
+    public function getSendClosure()
     {
         return $this->sendClosure;
     }
@@ -53,16 +55,16 @@ class Configuration
      * $configuration->setSendClosure(function (string $traversalString) {})
      * ```
      *
-     * @param Closure $closure The function used for handling the send step.
-     *                         The context of the closure will be set to the current GraphTraversal.
-     *                         The first parameter is the compiled traversal string.
-     *                         Example closure:
-     *                         <code>
+     * @param SendClosureInterface|Closure $closure The function used for handling the send step.
+     *                                              The context of the closure will be set to the current GraphTraversal.
+     *                                              The first parameter is the compiled traversal string.
+     *                                              Example closure:
+     *                                              <code>
      * function (string $traversalString) use ($connection) { return $connection->send($traversalString); }
-     *                         </code>
+     *                                              </code>
      * @return Configuration
      */
-    public function setSendClosure(Closure $closure): Configuration
+    public function setSendClosure($closure): Configuration
     {
         $this->sendClosure = $closure;
 
