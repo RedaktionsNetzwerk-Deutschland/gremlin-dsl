@@ -15,6 +15,8 @@ Many graph vendors like [Neo4j](https://neo4j.com/), [Azure Cosmos](https://azur
 
 This package provides a basic integration of gremlin for php applications.
 
+This version is built from [TinkerPop v3.4.8](generator/pom.xml#L24).
+
 ## Installation
 ```shell
 composer require rnd/gremlin-dsl
