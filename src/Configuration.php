@@ -25,15 +25,21 @@ class Configuration
     public static function fromConfig(array $configuration): Configuration
     {
         $instance = static::getInstance();
-
-        if (isset($configuration['sendClosure'])) {
-            $instance->setSendClosure($configuration['sendClosure']);
-        }
-        if (isset($configuration['enableShortFunctions'])) {
-            $instance->enableShortFunctions();
-        }
+        $instance->setConfig($configuration);
 
         return $instance;
+    }
+
+    public function setConfig(array $configuration): Configuration
+    {
+        if (isset($configuration['sendClosure'])) {
+            $this->setSendClosure($configuration['sendClosure']);
+        }
+        if (isset($configuration['enableShortFunctions'])) {
+            $this->enableShortFunctions();
+        }
+
+        return $this;
     }
 
     public function getSendClosure(): ?Closure
