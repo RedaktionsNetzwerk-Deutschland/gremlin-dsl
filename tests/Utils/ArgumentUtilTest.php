@@ -35,4 +35,12 @@ class ArgumentUtilTest extends TestCase
             ArgumentUtil::implode([123, 456])
         );
     }
+
+    public function testWithUuidHelper()
+    {
+        self::assertSame(
+            'T.id, UUID.fromString("013fcca0-4791-4b3a-9e48-ba7f783045df")',
+            ArgumentUtil::implode(['T.id', 'UUID.fromString("013fcca0-4791-4b3a-9e48-ba7f783045df")'])
+        );
+    }
 }

@@ -13,10 +13,14 @@ class ArgumentUtil
     {
         $result = [];
         foreach ($args as $arg) {
-            if (in_array($arg, static::RESERVED_KEYWORDS, true)) {
-                $result[] = $arg;
-            } elseif (is_string($arg)) {
-                $result[] = sprintf('"%s"', $arg);
+            if (is_string($arg)) {
+                if (in_array($arg, static::RESERVED_KEYWORDS, true)) {
+                    $result[] = $arg;
+                } elseif (strpos($arg, 'UUID.') === 0) {
+                    $result[] = $arg;
+                } else {
+                    $result[] = sprintf('"%s"', $arg);
+                }
             } else {
                 $result[] = sprintf('%s', $arg);
             }
