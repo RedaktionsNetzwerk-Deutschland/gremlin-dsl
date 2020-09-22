@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Traversal;
+namespace RND\GremlinDSL\Tests\Traversal;
 
 use RND\GremlinDSL\Traversal\Steps;
 use PHPUnit\Framework\TestCase;

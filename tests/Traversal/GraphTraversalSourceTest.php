@@ -2,18 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Traversal;
+namespace RND\GremlinDSL\Tests\Traversal;
 
 use PHPUnit\Framework\TestCase;
-use RND\GremlinDSL\Configuration;
-use RND\GremlinDSL\Exception\NoSendClosureException;
-use RND\GremlinDSL\Traversal\GraphTraversal;
 use RND\GremlinDSL\Traversal\GraphTraversalSource;
-use RND\GremlinDSL\Traversal\Predicates\Gt;
 
 class GraphTraversalSourceTest extends TestCase
 {
-
 
     public function testConstruct()
     {

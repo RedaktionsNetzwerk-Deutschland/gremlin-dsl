@@ -18,6 +18,11 @@
       "resources/loader.php"
     ]
   },
+  "autoload-dev": {
+    "psr-4": {
+      "RND\\GremlinDSL\\Tests\\": "tests/"
+    }
+  },
   "require": {
     "php": "^7.4",
     "ext-json": "*"
