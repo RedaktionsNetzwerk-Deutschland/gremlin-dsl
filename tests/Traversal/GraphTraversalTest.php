@@ -82,6 +82,15 @@ class GraphTraversalTest extends TestCase
         self::assertInstanceOf(GraphTraversal::class, $result['instance']);
     }
 
+    public function testSendWithSendClosureInterface()
+    {
+        $this->resetConfiguration();
+        $sendClosure = new SendClosure();
+        $result = $this->traversalInstance()->send($sendClosure);
+
+        self::assertEquals($sendClosure::PREFIX . $this->traversalString(), $result);
+    }
+
     public function traversalInstance(): GraphTraversal
     {
         return GraphTraversal::g()

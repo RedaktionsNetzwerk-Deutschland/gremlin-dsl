@@ -6,6 +6,7 @@ namespace RND\GremlinDSL\Tests;
 
 use RND\GremlinDSL\Configuration;
 use PHPUnit\Framework\TestCase;
+use RND\GremlinDSL\Tests\Traversal\SendClosure;
 
 class ConfigurationTest extends TestCase
 {
@@ -39,6 +40,16 @@ class ConfigurationTest extends TestCase
         $configuredClosure = $object->getSendClosure();
         self::assertSame($closure, $configuredClosure);
         self::assertEquals('closure', $configuredClosure->call($this));
+    }
+
+    public function testAcceptSendClosureInterface()
+    {
+        $this->resetConfiguration();
+        $sendClosure = new SendClosure();
+
+        Configuration::getInstance()->setSendClosure($sendClosure);
+
+        self::assertSame($sendClosure, Configuration::getInstance()->getSendClosure());
     }
 
     public function testGetInstance(): void
