@@ -93,11 +93,11 @@ $sendClosure = function (string $traversalString) use ($connection) {
 };
 
 Configuration::getInstance()->setSendClosure($sendClosure);
-g.V(1).out("knows").has("age", gt(30)).values("name")->send();
+g()->V(1)->out("knows")->has("age", gt(30))->values("name")->send();
 
 # or
 
-g.V(1).out("knows").has("age", gt(30)).values("name")->send($sendClosure);
+g()->V(1)->out("knows")->has("age", gt(30))->values("name")->send($sendClosure);
 ```
 
 Instead of a closure you can also provide an instance of SendClosureInterface.
