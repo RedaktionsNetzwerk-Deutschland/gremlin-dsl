@@ -34,6 +34,13 @@ class Steps implements Iterator
         return $this;
     }
 
+    public function prepend(StepInterface $step): self
+    {
+        array_unshift($this->steps, $step);
+
+        return $this;
+    }
+
     public function clear()
     {
         $this->steps = [];

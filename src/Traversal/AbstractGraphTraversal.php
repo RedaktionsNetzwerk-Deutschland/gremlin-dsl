@@ -7,8 +7,10 @@ namespace RND\GremlinDSL\Traversal;
 use Closure;
 use RND\GremlinDSL\Configuration;
 use RND\GremlinDSL\Exception\NoSendClosureException;
+use RND\GremlinDSL\Traversal\Steps\AssignStep;
 use RND\GremlinDSL\Traversal\Steps\GStep;
 use RND\GremlinDSL\Traversal\Steps\NextStep;
+use RND\GremlinDSL\Traversal\Steps\RawStep;
 use RND\GremlinDSL\Traversal\Steps\TraversalStepInterface;
 
 class AbstractGraphTraversal implements GraphTraversalInterface
@@ -23,12 +25,21 @@ class AbstractGraphTraversal implements GraphTraversalInterface
 
     public function __toString()
     {
-        $steps = [];
-        foreach ($this->steps as $step) {
-            $steps[] = $step->__toString();
+        $steps = '';
+        $previousStep = null;
+        foreach ($this->steps as $index => $step) {
+            if ($step instanceof TraversalStepInterface
+                && $index !== 0
+                && !$previousStep instanceof RawStep
+                && !$previousStep instanceof AssignStep
+            ) {
+                $steps .= '.';
+            }
+            $previousStep = $step;
+            $steps .= $step->__toString();
         }
 
-        return implode('.', $steps);
+        return $steps;
     }
 
     public static function g(): self
@@ -37,6 +48,20 @@ class AbstractGraphTraversal implements GraphTraversalInterface
         $instance->steps->add(new GStep());
 
         return $instance;
+    }
+
+    public function raw(string $raw): self
+    {
+        $this->steps->prepend(new RawStep($raw));
+
+        return $this;
+    }
+
+    public function assign(string $assignment): self
+    {
+        $this->steps->prepend(new AssignStep($assignment));
+
+        return $this;
     }
 
     public function next(...$args): self

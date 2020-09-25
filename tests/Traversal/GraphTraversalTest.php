@@ -93,6 +93,20 @@ class GraphTraversalTest extends TestCase
         self::assertEquals($sendClosure::PREFIX . self::DEFAULT_TRAVERSAL_STRING, $result);
     }
 
+    public function testRaw()
+    {
+        $result = (new GraphTraversal())->raw('foo = bar.baz');
+
+        self::assertEquals('foo = bar.baz', $result->__toString());
+    }
+
+    public function testAssign()
+    {
+        $result = $this->traversalInstance()->assign('foo');
+
+        self::assertEquals('foo = ' . self::DEFAULT_TRAVERSAL_STRING, $result->__toString());
+    }
+
     public function traversalInstance(): GraphTraversal
     {
         return $this->appendDemoTraversal(GraphTraversal::g());
