@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace RND\GremlinDSL\Traversal\Steps\Source\Generated;
 
-class AddESourceStep extends \RND\GremlinDSL\Traversal\Steps\AbstractStep
+class AddESourceStep extends \RND\GremlinDSL\Traversal\Steps\BasicStep
 {
     public const STEP_NAME = 'addE';
 }

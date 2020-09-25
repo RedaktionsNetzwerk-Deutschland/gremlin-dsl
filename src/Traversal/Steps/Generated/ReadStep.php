@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace RND\GremlinDSL\Traversal\Steps\Generated;
 
-class ReadStep extends \RND\GremlinDSL\Traversal\Steps\AbstractStep
+class ReadStep extends \RND\GremlinDSL\Traversal\Steps\BasicStep
 {
     public const STEP_NAME = 'read';
 }
