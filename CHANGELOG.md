@@ -1,3 +1,13 @@
+# [0.3.0](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/compare/v0.2.2...v0.3.0) (2020-09-25)
+
+
+### Features
+
+* add gremlin UUID helper as reserved keyword ([a44b98c](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/commit/a44b98cc1dd2e3262c59e962ac934e1e8cb5d7e0))
+* add raw and assign step ([0470e05](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/commit/0470e05b54e5f7f3af0b5bd41956cb62d5965e22))
+
+
+
 ## [0.2.2](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/compare/v0.2.1...v0.2.2) (2020-09-21)
 
 
