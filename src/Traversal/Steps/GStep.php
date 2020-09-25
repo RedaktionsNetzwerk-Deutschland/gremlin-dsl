@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace RND\GremlinDSL\Traversal\Steps;
 
-class GStep extends AbstractStep
+class GStep extends BasicStep
 {
     public const STEP_NAME = 'g';
 

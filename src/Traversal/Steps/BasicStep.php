@@ -6,7 +6,7 @@ namespace RND\GremlinDSL\Traversal\Steps;
 
 use RND\GremlinDSL\Utils\ArgumentUtil;
 
-abstract class AbstractStep
+abstract class BasicStep implements TraversalStepInterface
 {
     public const STEP_NAME = 'undefined';
 

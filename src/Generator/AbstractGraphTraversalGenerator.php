@@ -11,7 +11,7 @@ use Nette\PhpGenerator\PhpFile;
 use Nette\PhpGenerator\PhpNamespace;
 use RND\GremlinDSL\Traversal\GraphTraversalInterface;
 use RND\GremlinDSL\Traversal\Predicates\PredicateInterface;
-use RND\GremlinDSL\Traversal\Steps\AbstractStep;
+use RND\GremlinDSL\Traversal\Steps\BasicStep;
 
 abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
 {
@@ -19,7 +19,7 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
     protected const CLASS_NAME = '';
     protected const CLASS_PATH = 'RND\\GremlinDSL\\Traversal';
     protected const ABSTRACT_CLASS = '';
-    protected const ABSTRACT_STEP_CLASS = AbstractStep::class;
+    protected const ABSTRACT_STEP_CLASS = BasicStep::class;
     protected const STEP_NAMESPACE = 'RND\\GremlinDSL\\Traversal\\Steps\\Generated';
     protected const STEP_CLASS_SUFFIX = 'Step';
 

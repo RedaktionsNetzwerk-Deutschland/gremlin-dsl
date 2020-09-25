@@ -13,6 +13,8 @@ use RND\GremlinDSL\Traversal\Predicates\Gt;
 class GraphTraversalTest extends TestCase
 {
 
+    public const DEFAULT_TRAVERSAL_STRING = 'g.V(1).out("knows").has("age", gt(30)).values("name")';
+
     public function resetConfiguration()
     {
         $instanceProperty = new \ReflectionProperty(Configuration::class, 'instance');
@@ -36,7 +38,7 @@ class GraphTraversalTest extends TestCase
 
     public function testSteps()
     {
-        self::assertEquals($this->traversalString(), $this->traversalInstance()->__toString());
+        self::assertEquals(self::DEFAULT_TRAVERSAL_STRING, $this->traversalInstance()->__toString());
     }
 
     public function testNext()
@@ -65,7 +67,7 @@ class GraphTraversalTest extends TestCase
         );
         $result = $this->traversalInstance()->send();
 
-        self::assertEquals('Result from configured closure:' . $this->traversalString(), $result['string']);
+        self::assertEquals('Result from configured closure:' . self::DEFAULT_TRAVERSAL_STRING, $result['string']);
         self::assertInstanceOf(GraphTraversal::class, $result['instance']);
     }
 
@@ -78,7 +80,7 @@ class GraphTraversalTest extends TestCase
         ];
         $result = $this->traversalInstance()->send($closure);
 
-        self::assertEquals('Result from provided closure:' . $this->traversalString(), $result['string']);
+        self::assertEquals('Result from provided closure:' . self::DEFAULT_TRAVERSAL_STRING, $result['string']);
         self::assertInstanceOf(GraphTraversal::class, $result['instance']);
     }
 
@@ -88,21 +90,21 @@ class GraphTraversalTest extends TestCase
         $sendClosure = new SendClosure();
         $result = $this->traversalInstance()->send($sendClosure);
 
-        self::assertEquals($sendClosure::PREFIX . $this->traversalString(), $result);
+        self::assertEquals($sendClosure::PREFIX . self::DEFAULT_TRAVERSAL_STRING, $result);
     }
 
     public function traversalInstance(): GraphTraversal
     {
-        return GraphTraversal::g()
-                             ->V(1)
-                             ->out('knows')
-                             ->has('age', new Gt(30))
-                             ->values('name');
+        return $this->appendDemoTraversal(GraphTraversal::g());
     }
 
-    public function traversalString(): string
+    public function appendDemoTraversal(GraphTraversal $traversal): GraphTraversal
     {
-        return 'g.V(1).out("knows").has("age", gt(30)).values("name")';
+        return $traversal
+            ->V(1)
+            ->out('knows')
+            ->has('age', new Gt(30))
+            ->values('name');
     }
 
 }

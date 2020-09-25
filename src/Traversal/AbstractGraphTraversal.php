@@ -9,6 +9,7 @@ use RND\GremlinDSL\Configuration;
 use RND\GremlinDSL\Exception\NoSendClosureException;
 use RND\GremlinDSL\Traversal\Steps\GStep;
 use RND\GremlinDSL\Traversal\Steps\NextStep;
+use RND\GremlinDSL\Traversal\Steps\TraversalStepInterface;
 
 class AbstractGraphTraversal implements GraphTraversalInterface
 {
@@ -60,7 +61,7 @@ class AbstractGraphTraversal implements GraphTraversalInterface
      * @param SendClosureInterface|Closure|null $closure The function handling the send step.
      *                                                   If not provided the configured `Configuration::setSendClosure()` one will be used.
      *                                                   The context of the closure will be set to the current GraphTraversal.
- *                                                       The first parameter is the compiled traversal string.
+     *                                                   The first parameter is the compiled traversal string.
      *                                                   Example closure:
      *                                                   <code>
      * function (string $traversalString) use ($connection) { return $connection->send($traversalString); }
@@ -75,6 +76,8 @@ class AbstractGraphTraversal implements GraphTraversalInterface
             throw new NoSendClosureException();
         }
 
-        return $closure instanceof SendClosureInterface ? $closure($this, $this->__toString()) : $closure->call($this, $this->__toString());
+        return $closure instanceof SendClosureInterface
+            ? $closure($this, $this->__toString())
+            : $closure->call($this, $this->__toString());
     }
 }

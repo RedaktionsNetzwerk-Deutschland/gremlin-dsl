@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace RND\GremlinDSL\Traversal\Steps;
 
-class NextStep extends BasicStep
+interface StepInterface
 {
-    public const STEP_NAME = 'next';
+    public function __toString();
 }

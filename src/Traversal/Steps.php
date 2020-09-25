@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace RND\GremlinDSL\Traversal;
 
 use Iterator;
-use RND\GremlinDSL\Traversal\Steps\AbstractStep;
+use RND\GremlinDSL\Traversal\Steps\StepInterface;
 
 class Steps implements Iterator
 {
-    /** @var AbstractStep[] */
+    /** @var StepInterface[] */
     protected array $steps;
 
     private int $position = 0;
@@ -27,7 +27,7 @@ class Steps implements Iterator
         return new static();
     }
 
-    public function add(AbstractStep $step): self
+    public function add(StepInterface $step): self
     {
         $this->steps[] = $step;
 
@@ -57,7 +57,7 @@ class Steps implements Iterator
     {
     }
 
-    public function current(): AbstractStep
+    public function current(): StepInterface
     {
         return $this->steps[$this->position];
     }

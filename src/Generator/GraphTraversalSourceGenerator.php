@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace RND\GremlinDSL\Generator;
 
 use RND\GremlinDSL\Traversal\AbstractGraphTraversalSource;
-use RND\GremlinDSL\Traversal\Steps\Source\AbstractSourceStep;
+use RND\GremlinDSL\Traversal\Steps\Source\BasicSourceStep;
 
 class GraphTraversalSourceGenerator extends AbstractGraphTraversalGenerator
 {
     protected const CLASS_NAME = 'GraphTraversalSource';
     protected const CLASS_PATH = 'RND\\GremlinDSL\\Traversal';
     protected const ABSTRACT_CLASS = AbstractGraphTraversalSource::class;
-    protected const ABSTRACT_STEP_CLASS = AbstractSourceStep::class;
+    protected const ABSTRACT_STEP_CLASS = BasicSourceStep::class;
     protected const STEP_NAMESPACE = 'RND\\GremlinDSL\\Traversal\\Steps\\Source\\Generated';
     protected const STEP_CLASS_SUFFIX = 'SourceStep';
 
