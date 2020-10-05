@@ -29,7 +29,6 @@ class ConfigurationTest extends TestCase
 
         $object = Configuration::fromConfig($config);
         self::assertSame($closure, $object->getSendClosure());
-
     }
 
     public function testGetSendClosure(): void
@@ -63,5 +62,6 @@ class ConfigurationTest extends TestCase
         $this->resetConfiguration();
         Configuration::getInstance()->enableShortFunctions();
         self::assertTrue(function_exists('g'));
+        self::assertTrue(function_exists('addE'));
     }
 }
