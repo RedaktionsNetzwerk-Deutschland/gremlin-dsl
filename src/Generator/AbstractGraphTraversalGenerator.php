@@ -47,8 +47,11 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
     protected function generateClassAndMethod(string $methodName, array $methodDefinition, string $returnType)
     {
         $stepClass = $this->createStepClass($methodName, static::STEP_NAMESPACE);
+        $method = $this->generateMethod($methodName, $methodDefinition, $returnType, $stepClass);
 
-        $this->generateMethod($methodName, $methodDefinition, $returnType, $stepClass);
+        if (method_exists($this, 'additionalGenerator')) {
+            $this->additionalGenerator($methodName, $methodDefinition, $returnType, $stepClass, $method);
+        }
     }
 
     protected function createStepClass(string $methodName, string $stepNamespace): ClassType
@@ -96,7 +99,7 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
         ClassType $stepClass
     ): Method {
         $method = $this->graphTraversalClass->addMethod($methodName);
-        $method->addComment(sprintf('The "%s" source step.', $methodName));
+        $method->addComment(sprintf('The "%s" step.', $methodName));
         $method->addComment('');
         $method->setReturnType($returnType);
         $parameters = [];

@@ -73,9 +73,7 @@ class Configuration
 
     public function enableShortFunctions(): Configuration
     {
-        require_once dirname(__DIR__).'/resources/traversal.php';
-        require_once dirname(__DIR__).'/resources/predicates.php';
-        require_once dirname(__DIR__).'/resources/text_predicates.php';
+        gremlinLoadGlobalFunctions();
 
         return $this;
     }

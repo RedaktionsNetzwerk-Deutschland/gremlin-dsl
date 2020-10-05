@@ -121,7 +121,7 @@ use RND\GremlinDSL\Traversal\Steps\Generated\WriteStep;
 class GraphTraversal extends AbstractGraphTraversal
 {
     /**
-     * The "V" source step.
+     * The "V" step.
      *
      * @param mixed[] $vertexIdsOrElements,...
      * @return GraphTraversal
@@ -135,7 +135,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "addE" source step.
+     * The "addE" step.
      *
      * @param mixed $args being any of:
      *                    - string edgeLabel
@@ -151,7 +151,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "addV" source step.
+     * The "addV" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -168,7 +168,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "aggregate" source step.
+     * The "aggregate" step.
      *
      * @param mixed $args being any of:
      *                    - mixed scope, string sideEffectKey
@@ -184,7 +184,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "and" source step.
+     * The "and" step.
      *
      * @param GraphTraversalInterface[] $andTraversals,...
      * @return GraphTraversal
@@ -198,7 +198,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "as" source step.
+     * The "as" step.
      *
      * @param string $stepLabel
      * @param string[] $stepLabels,...
@@ -213,7 +213,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "barrier" source step.
+     * The "barrier" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -230,7 +230,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "both" source step.
+     * The "both" step.
      *
      * @param string[] $edgeLabels,...
      * @return GraphTraversal
@@ -244,7 +244,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "bothE" source step.
+     * The "bothE" step.
      *
      * @param string[] $edgeLabels,...
      * @return GraphTraversal
@@ -258,7 +258,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "bothV" source step.
+     * The "bothV" step.
      *
      * @return GraphTraversal
      */
@@ -271,7 +271,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "branch" source step.
+     * The "branch" step.
      *
      * @param mixed $args being any of:
      *                    - mixed function
@@ -287,7 +287,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "by" source step.
+     * The "by" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -311,7 +311,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "cap" source step.
+     * The "cap" step.
      *
      * @param string $sideEffectKey
      * @param string[] $sideEffectKeys,...
@@ -326,7 +326,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "choose" source step.
+     * The "choose" step.
      *
      * @param mixed $args being any of:
      *                    - mixed choiceFunction
@@ -346,7 +346,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "coalesce" source step.
+     * The "coalesce" step.
      *
      * @param GraphTraversalInterface[] $coalesceTraversals,...
      * @return GraphTraversal
@@ -360,7 +360,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "coin" source step.
+     * The "coin" step.
      *
      * @param float $probability
      * @return GraphTraversal
@@ -374,7 +374,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "connectedComponent" source step.
+     * The "connectedComponent" step.
      *
      * @return GraphTraversal
      */
@@ -387,7 +387,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "constant" source step.
+     * The "constant" step.
      *
      * @param mixed $e
      * @return GraphTraversal
@@ -401,7 +401,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "count" source step.
+     * The "count" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -417,7 +417,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "cyclicPath" source step.
+     * The "cyclicPath" step.
      *
      * @return GraphTraversal
      */
@@ -430,7 +430,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "dedup" source step.
+     * The "dedup" step.
      *
      * @param mixed $args being any of:
      *                    - mixed scope, string dedupLabels
@@ -446,7 +446,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "drop" source step.
+     * The "drop" step.
      *
      * @return GraphTraversal
      */
@@ -459,7 +459,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "elementMap" source step.
+     * The "elementMap" step.
      *
      * @param string[] $propertyKeys,...
      * @return GraphTraversal
@@ -473,7 +473,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "emit" source step.
+     * The "emit" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -490,7 +490,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "filter" source step.
+     * The "filter" step.
      *
      * @param mixed $args being any of:
      *                    - PredicateInterface predicate
@@ -506,7 +506,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "flatMap" source step.
+     * The "flatMap" step.
      *
      * @param mixed $args being any of:
      *                    - mixed function
@@ -522,7 +522,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "fold" source step.
+     * The "fold" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -538,7 +538,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "from" source step.
+     * The "from" step.
      *
      * @param mixed $args being any of:
      *                    - string fromStepLabel
@@ -555,7 +555,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "group" source step.
+     * The "group" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -571,7 +571,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "groupCount" source step.
+     * The "groupCount" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -587,7 +587,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "has" source step.
+     * The "has" step.
      *
      * @param mixed $args being any of:
      *                    - string propertyKey
@@ -610,7 +610,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "hasId" source step.
+     * The "hasId" step.
      *
      * @param mixed $args being any of:
      *                    - mixed id, mixed otherIds
@@ -626,7 +626,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "hasKey" source step.
+     * The "hasKey" step.
      *
      * @param mixed $args being any of:
      *                    - mixed predicate
@@ -642,7 +642,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "hasLabel" source step.
+     * The "hasLabel" step.
      *
      * @param mixed $args being any of:
      *                    - mixed predicate
@@ -658,7 +658,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "hasNot" source step.
+     * The "hasNot" step.
      *
      * @param string $propertyKey
      * @return GraphTraversal
@@ -672,7 +672,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "hasValue" source step.
+     * The "hasValue" step.
      *
      * @param mixed $args being any of:
      *                    - mixed value, mixed otherValues
@@ -688,7 +688,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "id" source step.
+     * The "id" step.
      *
      * @return GraphTraversal
      */
@@ -701,7 +701,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "identity" source step.
+     * The "identity" step.
      *
      * @return GraphTraversal
      */
@@ -714,7 +714,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "in" source step.
+     * The "in" step.
      *
      * @param string[] $edgeLabels,...
      * @return GraphTraversal
@@ -728,7 +728,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "inE" source step.
+     * The "inE" step.
      *
      * @param string[] $edgeLabels,...
      * @return GraphTraversal
@@ -742,7 +742,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "inV" source step.
+     * The "inV" step.
      *
      * @return GraphTraversal
      */
@@ -755,7 +755,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "index" source step.
+     * The "index" step.
      *
      * @return GraphTraversal
      */
@@ -768,7 +768,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "inject" source step.
+     * The "inject" step.
      *
      * @param mixed[] $injections,...
      * @return GraphTraversal
@@ -782,7 +782,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "is" source step.
+     * The "is" step.
      *
      * @param mixed $args being any of:
      *                    - mixed value
@@ -798,7 +798,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "key" source step.
+     * The "key" step.
      *
      * @return GraphTraversal
      */
@@ -811,7 +811,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "label" source step.
+     * The "label" step.
      *
      * @return GraphTraversal
      */
@@ -824,7 +824,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "limit" source step.
+     * The "limit" step.
      *
      * @param mixed $args being any of:
      *                    - mixed scope, int limit
@@ -840,7 +840,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "local" source step.
+     * The "local" step.
      *
      * @param GraphTraversalInterface $localTraversal
      * @return GraphTraversal
@@ -854,7 +854,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "loops" source step.
+     * The "loops" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -870,7 +870,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "map" source step.
+     * The "map" step.
      *
      * @param mixed $args being any of:
      *                    - mixed function
@@ -886,7 +886,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "match" source step.
+     * The "match" step.
      *
      * @param GraphTraversalInterface[] $matchTraversals,...
      * @return GraphTraversal
@@ -900,7 +900,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "math" source step.
+     * The "math" step.
      *
      * @param string $expression
      * @return GraphTraversal
@@ -914,7 +914,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "max" source step.
+     * The "max" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -930,7 +930,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "mean" source step.
+     * The "mean" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -946,7 +946,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "min" source step.
+     * The "min" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -962,7 +962,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "not" source step.
+     * The "not" step.
      *
      * @param GraphTraversalInterface $notTraversal
      * @return GraphTraversal
@@ -976,7 +976,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "option" source step.
+     * The "option" step.
      *
      * @param mixed $args being any of:
      *                    - mixed pickToken, GraphTraversalInterface traversalOption
@@ -992,7 +992,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "optional" source step.
+     * The "optional" step.
      *
      * @param GraphTraversalInterface $optionalTraversal
      * @return GraphTraversal
@@ -1006,7 +1006,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "or" source step.
+     * The "or" step.
      *
      * @param GraphTraversalInterface[] $orTraversals,...
      * @return GraphTraversal
@@ -1020,7 +1020,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "order" source step.
+     * The "order" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -1036,7 +1036,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "otherV" source step.
+     * The "otherV" step.
      *
      * @return GraphTraversal
      */
@@ -1049,7 +1049,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "out" source step.
+     * The "out" step.
      *
      * @param string[] $edgeLabels,...
      * @return GraphTraversal
@@ -1063,7 +1063,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "outE" source step.
+     * The "outE" step.
      *
      * @param string[] $edgeLabels,...
      * @return GraphTraversal
@@ -1077,7 +1077,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "outV" source step.
+     * The "outV" step.
      *
      * @return GraphTraversal
      */
@@ -1090,7 +1090,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "pageRank" source step.
+     * The "pageRank" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -1106,7 +1106,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "path" source step.
+     * The "path" step.
      *
      * @return GraphTraversal
      */
@@ -1119,7 +1119,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "peerPressure" source step.
+     * The "peerPressure" step.
      *
      * @return GraphTraversal
      */
@@ -1132,7 +1132,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "profile" source step.
+     * The "profile" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -1148,7 +1148,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "program" source step.
+     * The "program" step.
      *
      * @param mixed $vertexProgram
      * @return GraphTraversal
@@ -1162,7 +1162,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "project" source step.
+     * The "project" step.
      *
      * @param string $projectKey
      * @param string[] $otherProjectKeys,...
@@ -1177,7 +1177,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "properties" source step.
+     * The "properties" step.
      *
      * @param string[] $propertyKeys,...
      * @return GraphTraversal
@@ -1191,7 +1191,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "property" source step.
+     * The "property" step.
      *
      * @param mixed $args being any of:
      *                    - mixed cardinality, mixed key, mixed value, mixed keyValues
@@ -1207,7 +1207,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "propertyMap" source step.
+     * The "propertyMap" step.
      *
      * @param string[] $propertyKeys,...
      * @return GraphTraversal
@@ -1221,7 +1221,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "range" source step.
+     * The "range" step.
      *
      * @param mixed $args being any of:
      *                    - mixed scope, int low, int high
@@ -1237,7 +1237,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "read" source step.
+     * The "read" step.
      *
      * @return GraphTraversal
      */
@@ -1250,7 +1250,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "repeat" source step.
+     * The "repeat" step.
      *
      * @param mixed $args being any of:
      *                    - string loopName, GraphTraversalInterface repeatTraversal
@@ -1266,7 +1266,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "sack" source step.
+     * The "sack" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -1282,7 +1282,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "sample" source step.
+     * The "sample" step.
      *
      * @param mixed $args being any of:
      *                    - mixed scope, int amountToSample
@@ -1298,7 +1298,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "select" source step.
+     * The "select" step.
      *
      * @param mixed $args being any of:
      *                    - mixed column
@@ -1319,7 +1319,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "shortestPath" source step.
+     * The "shortestPath" step.
      *
      * @return GraphTraversal
      */
@@ -1332,7 +1332,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "sideEffect" source step.
+     * The "sideEffect" step.
      *
      * @param mixed $args being any of:
      *                    - mixed consumer
@@ -1348,7 +1348,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "simplePath" source step.
+     * The "simplePath" step.
      *
      * @return GraphTraversal
      */
@@ -1361,7 +1361,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "skip" source step.
+     * The "skip" step.
      *
      * @param mixed $args being any of:
      *                    - mixed scope, int skip
@@ -1377,7 +1377,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "store" source step.
+     * The "store" step.
      *
      * @param string $sideEffectKey
      * @return GraphTraversal
@@ -1391,7 +1391,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "subgraph" source step.
+     * The "subgraph" step.
      *
      * @param string $sideEffectKey
      * @return GraphTraversal
@@ -1405,7 +1405,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "sum" source step.
+     * The "sum" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -1421,7 +1421,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "tail" source step.
+     * The "tail" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -1439,7 +1439,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "timeLimit" source step.
+     * The "timeLimit" step.
      *
      * @param int $timeLimit
      * @return GraphTraversal
@@ -1453,7 +1453,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "times" source step.
+     * The "times" step.
      *
      * @param int $maxLoops
      * @return GraphTraversal
@@ -1467,7 +1467,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "to" source step.
+     * The "to" step.
      *
      * @param mixed $args being any of:
      *                    - mixed direction, string edgeLabels
@@ -1485,7 +1485,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "toE" source step.
+     * The "toE" step.
      *
      * @param mixed $direction
      * @param string[] $edgeLabels,...
@@ -1500,7 +1500,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "toV" source step.
+     * The "toV" step.
      *
      * @param mixed $direction
      * @return GraphTraversal
@@ -1514,7 +1514,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "tree" source step.
+     * The "tree" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -1530,7 +1530,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "unfold" source step.
+     * The "unfold" step.
      *
      * @return GraphTraversal
      */
@@ -1543,7 +1543,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "union" source step.
+     * The "union" step.
      *
      * @param GraphTraversalInterface[] $unionTraversals,...
      * @return GraphTraversal
@@ -1557,7 +1557,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "until" source step.
+     * The "until" step.
      *
      * @param mixed $args being any of:
      *                    - PredicateInterface untilPredicate
@@ -1573,7 +1573,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "value" source step.
+     * The "value" step.
      *
      * @return GraphTraversal
      */
@@ -1586,7 +1586,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "valueMap" source step.
+     * The "valueMap" step.
      *
      * @param mixed $args being any of:
      *                    - string propertyKeys
@@ -1602,7 +1602,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "values" source step.
+     * The "values" step.
      *
      * @param string[] $propertyKeys,...
      * @return GraphTraversal
@@ -1616,7 +1616,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "where" source step.
+     * The "where" step.
      *
      * @param mixed $args being any of:
      *                    - mixed predicate
@@ -1633,7 +1633,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "with" source step.
+     * The "with" step.
      *
      * @param mixed $args being any of:
      *                    - string key
@@ -1649,7 +1649,7 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
-     * The "write" source step.
+     * The "write" step.
      *
      * @return GraphTraversal
      */

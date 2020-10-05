@@ -31,7 +31,7 @@ use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithoutStrategiesSourceStep;
 class GraphTraversalSource extends AbstractGraphTraversalSource
 {
     /**
-     * The "with" source step.
+     * The "with" step.
      *
      * @param mixed $args being any of:
      *                    - string key
@@ -47,7 +47,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     }
 
     /**
-     * The "withBulk" source step.
+     * The "withBulk" step.
      *
      * @param mixed $useBulk
      * @return GraphTraversalSource
@@ -61,7 +61,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     }
 
     /**
-     * The "withPath" source step.
+     * The "withPath" step.
      *
      * @return GraphTraversalSource
      */
@@ -74,7 +74,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     }
 
     /**
-     * The "withSack" source step.
+     * The "withSack" step.
      *
      * @param mixed $args being any of:
      *                    - mixed initialValue
@@ -96,7 +96,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     }
 
     /**
-     * The "withSideEffect" source step.
+     * The "withSideEffect" step.
      *
      * @param mixed $args being any of:
      *                    - string key, mixed initialValue
@@ -114,7 +114,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     }
 
     /**
-     * The "withStrategies" source step.
+     * The "withStrategies" step.
      *
      * @param mixed[] $traversalStrategies,...
      * @return GraphTraversalSource
@@ -128,7 +128,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     }
 
     /**
-     * The "withoutStrategies" source step.
+     * The "withoutStrategies" step.
      *
      * @param mixed[] $traversalStrategyClasses,...
      * @return GraphTraversalSource
@@ -142,7 +142,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     }
 
     /**
-     * The "E" source step.
+     * The "E" step.
      *
      * @param mixed[] $edgesIds,...
      * @return GraphTraversal
@@ -156,7 +156,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     }
 
     /**
-     * The "V" source step.
+     * The "V" step.
      *
      * @param mixed[] $vertexIds,...
      * @return GraphTraversal
@@ -170,7 +170,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     }
 
     /**
-     * The "addE" source step.
+     * The "addE" step.
      *
      * @param mixed $args being any of:
      *                    - string label
@@ -186,7 +186,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     }
 
     /**
-     * The "addV" source step.
+     * The "addV" step.
      *
      * @param mixed $args being any of:
      *                    - empty
@@ -203,7 +203,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     }
 
     /**
-     * The "inject" source step.
+     * The "inject" step.
      *
      * @param mixed[] $starts,...
      * @return GraphTraversal
@@ -217,7 +217,7 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     }
 
     /**
-     * The "io" source step.
+     * The "io" step.
      *
      * @param string $file
      * @return GraphTraversal
