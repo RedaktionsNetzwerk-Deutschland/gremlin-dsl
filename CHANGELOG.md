@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/compare/v0.3.0...v0.4.0) (2020-10-05)
+
+
+### Features
+
+* add all graph traversal functions as global functions ([5829e54](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/commit/5829e54dc63d50f6182ada0f1846db134c161696))
+
+
+
 # [0.3.0](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/compare/v0.2.2...v0.3.0) (2020-09-25)
 
 
@@ -22,15 +31,6 @@
 ### Features
 
 * implement configuration an pseudo send step ([#6](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/issues/6)) ([8efaa96](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/commit/8efaa963112450e3fc2ae0b87bda2da66bfd2f0a))
-
-
-
-# [0.1.0](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/compare/80ee05baf3e382b637d1f9c8a399c7ef8b6e7ae0...v0.1.0) (2020-09-17)
-
-
-### Features
-
-* basic gremlin-dsl integration ([#1](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/issues/1)) ([80ee05b](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/commit/80ee05baf3e382b637d1f9c8a399c7ef8b6e7ae0))
 
 
 
