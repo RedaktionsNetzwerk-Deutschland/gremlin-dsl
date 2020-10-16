@@ -1,3 +1,12 @@
+## [0.4.1](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/compare/v0.4.0...v0.4.1) (2020-10-16)
+
+
+### Bug Fixes
+
+* loader should not redeclare function ([30159ce](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/commit/30159ce64a13a284e0e5beda5dd4dbd0dc880211))
+
+
+
 # [0.4.0](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/compare/v0.3.0...v0.4.0) (2020-10-05)
 
 
@@ -22,15 +31,6 @@
 
 
 ## [0.2.1](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/compare/v0.2.0...v0.2.1) (2020-09-18)
-
-
-
-# [0.2.0](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/compare/v0.1.0...v0.2.0) (2020-09-18)
-
-
-### Features
-
-* implement configuration an pseudo send step ([#6](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/issues/6)) ([8efaa96](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/commit/8efaa963112450e3fc2ae0b87bda2da66bfd2f0a))
 
 
 
