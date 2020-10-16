@@ -5,7 +5,7 @@ on:
       ref:
         description: 'Git ref'
         required: true
-        default: 'master'
+        default: 'main'
 jobs:
     release:
         name: Release
