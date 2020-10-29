@@ -20,6 +20,7 @@ jobs:
               uses: TriPSs/conventional-changelog-action@v3
               with:
                   github-token: ${{ github.token }}
+                  preset: conventionalcommits
                   version-file: composer.json
                   skip-on-empty: false
             - name: Create Release
