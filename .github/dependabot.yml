@@ -13,3 +13,9 @@ updates:
     interval: "daily"
   labels:
   - dependabot
+- package-ecosystem: maven
+  directory: "/generator"
+  schedule:
+    interval: "daily"
+  labels:
+  - dependabot
