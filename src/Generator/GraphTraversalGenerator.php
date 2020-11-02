@@ -116,7 +116,7 @@ class GraphTraversalGenerator extends AbstractGraphTraversalGenerator
             $this->generateClassAndMethod(
                 $methodName,
                 $methodDefinition,
-                Utils::createFQN(self::CLASS_PATH, self::CLASS_NAME)
+                Utils::createFQN(static::CLASS_PATH, static::CLASS_NAME)
             );
         }
 
@@ -139,7 +139,7 @@ class GraphTraversalGenerator extends AbstractGraphTraversalGenerator
         $this->functionsFile->addUse(Utils::getFQN($traversalClass));
 
         $methodName = $method->getName();
-        if (in_array($methodName, self::RESERVED_FUNCTIONS)) {
+        if (in_array($methodName, static::RESERVED_FUNCTIONS)) {
             $methodName = '_' . $methodName;
         }
 

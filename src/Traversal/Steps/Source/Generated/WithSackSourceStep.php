@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace RND\GremlinDSL\Traversal\Steps\Source\Generated;
 
-use RND\GremlinDSL\Traversal\Steps\BasicStep;
+use RND\GremlinDSL\Traversal\Steps\Source\BasicSourceStep;
 
-class WithSackSourceStep extends BasicStep
+class WithSackSourceStep extends BasicSourceStep
 {
     public const STEP_NAME = 'withSack';
 }

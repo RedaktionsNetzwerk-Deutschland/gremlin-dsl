@@ -57,11 +57,11 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
     protected function createStepClass(string $methodName, string $stepNamespace): ClassType
     {
         $className = ucfirst($methodName) . static::STEP_CLASS_SUFFIX;
-        $stepNamespace = $stepNamespace ?? $this->detectNamespaceForClassName(self::ABSTRACT_STEP_CLASS);
+        $stepNamespace = $stepNamespace ?? $this->detectNamespaceForClassName(static::ABSTRACT_STEP_CLASS);
         $class = $this->bootstrapClass(
             $className,
             $stepNamespace,
-            self::ABSTRACT_STEP_CLASS,
+            static::ABSTRACT_STEP_CLASS,
             $classFile
         );
         $class->addConstant('STEP_NAME', $methodName)

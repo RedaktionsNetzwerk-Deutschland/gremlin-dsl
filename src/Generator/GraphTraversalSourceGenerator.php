@@ -38,7 +38,7 @@ class GraphTraversalSourceGenerator extends AbstractGraphTraversalGenerator
             $this->generateClassAndMethod(
                 $methodName,
                 $methodDefinition,
-                Utils::createFQN(self::CLASS_PATH, self::CLASS_NAME)
+                Utils::createFQN(static::CLASS_PATH, static::CLASS_NAME)
             );
         }
 
@@ -46,7 +46,7 @@ class GraphTraversalSourceGenerator extends AbstractGraphTraversalGenerator
             $this->generateClassAndMethod(
                 $methodName,
                 $methodDefinition,
-                Utils::createFQN(self::CLASS_PATH, 'GraphTraversal')
+                Utils::createFQN(static::CLASS_PATH, 'GraphTraversal')
             );
         }
 
