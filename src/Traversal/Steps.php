@@ -41,7 +41,7 @@ class Steps implements Iterator
         return $this;
     }
 
-    public function clear()
+    public function clear(): void
     {
         $this->steps = [];
         $this->position = 0;
