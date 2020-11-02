@@ -13,6 +13,6 @@ if (!function_exists('g')) {
 if (!function_exists('__')) {
     function __()
     {
-        return new GraphTraversal();
+        return GraphTraversal::__();
     }
 }
