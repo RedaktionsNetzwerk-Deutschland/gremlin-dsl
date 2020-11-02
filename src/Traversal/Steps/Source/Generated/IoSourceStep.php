@@ -8,7 +8,9 @@ declare(strict_types=1);
 
 namespace RND\GremlinDSL\Traversal\Steps\Source\Generated;
 
-class IoSourceStep extends \RND\GremlinDSL\Traversal\Steps\BasicStep
+use RND\GremlinDSL\Traversal\Steps\BasicStep;
+
+class IoSourceStep extends BasicStep
 {
     public const STEP_NAME = 'io';
 }
