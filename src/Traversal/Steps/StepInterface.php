@@ -6,5 +6,5 @@ namespace RND\GremlinDSL\Traversal\Steps;
 
 interface StepInterface
 {
-    public function __toString();
+    public function __toString(): string;
 }

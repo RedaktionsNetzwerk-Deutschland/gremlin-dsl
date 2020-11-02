@@ -17,7 +17,7 @@ class AbstractGraphTraversalSource implements GraphTraversalInterface
         $this->steps = $steps ?? Steps::create();
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         $steps = [];
         foreach ($this->steps as $step) {

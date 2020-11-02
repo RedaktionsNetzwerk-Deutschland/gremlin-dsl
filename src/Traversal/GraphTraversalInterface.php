@@ -6,5 +6,5 @@ namespace RND\GremlinDSL\Traversal;
 
 interface GraphTraversalInterface
 {
-    public function __toString();
+    public function __toString(): string;
 }

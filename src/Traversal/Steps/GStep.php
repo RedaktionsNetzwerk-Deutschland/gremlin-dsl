@@ -8,7 +8,7 @@ class GStep extends BasicStep
 {
     public const STEP_NAME = 'g';
 
-    public function __toString()
+    public function __toString(): string
     {
         return static::STEP_NAME;
     }

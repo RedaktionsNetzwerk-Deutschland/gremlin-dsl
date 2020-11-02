@@ -6,7 +6,6 @@ namespace RND\GremlinDSL\Generator;
 
 use JsonException;
 use RuntimeException;
-use stdClass;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

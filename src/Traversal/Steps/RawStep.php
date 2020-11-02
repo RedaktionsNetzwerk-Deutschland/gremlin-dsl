@@ -13,7 +13,7 @@ class RawStep implements StepInterface
         $this->raw = $raw;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->raw;
     }

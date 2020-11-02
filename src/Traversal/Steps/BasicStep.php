@@ -17,7 +17,7 @@ abstract class BasicStep implements TraversalStepInterface
         $this->args = $args;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return sprintf('%s(%s)', static::STEP_NAME, ArgumentUtil::implode($this->args));
     }

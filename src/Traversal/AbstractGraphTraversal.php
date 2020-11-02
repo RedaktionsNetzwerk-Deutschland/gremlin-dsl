@@ -24,12 +24,18 @@ class AbstractGraphTraversal implements GraphTraversalInterface
         $this->steps = $steps ?? Steps::create();
     }
 
-    public function __toString()
+    /**
+     * Convert the current graph traversal to string
+     *
+     * @return string
+     */
+    public function __toString(): string
     {
         $steps = '';
         $previousStep = null;
         foreach ($this->steps as $index => $step) {
-            if ($step instanceof TraversalStepInterface
+            if (
+                $step instanceof TraversalStepInterface
                 && $index !== 0
                 && !$previousStep instanceof RawStep
                 && !$previousStep instanceof AssignStep
@@ -43,6 +49,9 @@ class AbstractGraphTraversal implements GraphTraversalInterface
         return $steps;
     }
 
+    /**
+     * @return static
+     */
     public static function g(): self
     {
         $instance = new static();
@@ -51,6 +60,9 @@ class AbstractGraphTraversal implements GraphTraversalInterface
         return $instance;
     }
 
+    /**
+     * @return static
+     */
     public static function __(): self
     {
         $instance = new static();
@@ -59,6 +71,10 @@ class AbstractGraphTraversal implements GraphTraversalInterface
         return $instance;
     }
 
+    /**
+     * @param string $raw
+     * @return $this
+     */
     public function raw(string $raw): self
     {
         $this->steps->prepend(new RawStep($raw));
@@ -66,6 +82,10 @@ class AbstractGraphTraversal implements GraphTraversalInterface
         return $this;
     }
 
+    /**
+     * @param string $assignment
+     * @return $this
+     */
     public function assign(string $assignment): self
     {
         $this->steps->prepend(new AssignStep($assignment));
@@ -73,6 +93,10 @@ class AbstractGraphTraversal implements GraphTraversalInterface
         return $this;
     }
 
+    /**
+     * @param mixed ...$args
+     * @return $this
+     */
     public function next(...$args): self
     {
         $this->steps->add(new NextStep(...$args));
@@ -93,8 +117,9 @@ class AbstractGraphTraversal implements GraphTraversalInterface
      * ```
      *
      * @param SendClosureInterface|Closure|null $closure The function handling the send step.
-     *                                                   If not provided the configured `Configuration::setSendClosure()` one will be used.
-     *                                                   The context of the closure will be set to the current GraphTraversal.
+     *                                                   If not provided the configured
+     *                                                   `Configuration::setSendClosure()` one will be used.
+     *                                                   The context of the closure will be the current GraphTraversal.
      *                                                   The first parameter is the compiled traversal string.
      *                                                   Example closure:
      *                                                   <code>

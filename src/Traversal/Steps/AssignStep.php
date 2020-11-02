@@ -13,7 +13,7 @@ class AssignStep implements StepInterface
         $this->assignment = $assignment;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return sprintf('%s = ', $this->assignment);
     }
