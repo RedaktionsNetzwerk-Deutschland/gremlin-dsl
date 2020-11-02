@@ -7,6 +7,7 @@ namespace RND\GremlinDSL\Traversal;
 use Closure;
 use RND\GremlinDSL\Configuration;
 use RND\GremlinDSL\Exception\NoSendClosureException;
+use RND\GremlinDSL\Traversal\Steps\AnonymousStep;
 use RND\GremlinDSL\Traversal\Steps\AssignStep;
 use RND\GremlinDSL\Traversal\Steps\GStep;
 use RND\GremlinDSL\Traversal\Steps\NextStep;
@@ -46,6 +47,14 @@ class AbstractGraphTraversal implements GraphTraversalInterface
     {
         $instance = new static();
         $instance->steps->add(new GStep());
+
+        return $instance;
+    }
+
+    public static function __(): self
+    {
+        $instance = new static();
+        $instance->steps->add(new AnonymousStep());
 
         return $instance;
     }

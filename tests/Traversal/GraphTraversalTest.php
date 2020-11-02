@@ -36,6 +36,21 @@ class GraphTraversalTest extends TestCase
         self::assertEquals('g', $instance->__toString());
     }
 
+    public function testAnonymous()
+    {
+        $instance = GraphTraversal::__();
+
+        self::assertEquals('__', $instance->__toString());
+    }
+
+    public function testTraversalWithAnonymous()
+    {
+        $instance = GraphTraversal::g();
+        $instance->V()->repeat(__()->out('edgeType'))->until(__()->hasLabel('label'));
+
+        self::assertEquals('g.V().repeat(__.out("edgeType")).until(__.hasLabel("label"))', $instance->__toString());
+    }
+
     public function testSteps()
     {
         self::assertEquals(self::DEFAULT_TRAVERSAL_STRING, $this->traversalInstance()->__toString());
