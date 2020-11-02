@@ -8,7 +8,9 @@ declare(strict_types=1);
 
 namespace RND\GremlinDSL\Traversal\Steps\Generated;
 
-class LocalStep extends \RND\GremlinDSL\Traversal\Steps\BasicStep
+use RND\GremlinDSL\Traversal\Steps\BasicStep;
+
+class LocalStep extends BasicStep
 {
     public const STEP_NAME = 'local';
 }

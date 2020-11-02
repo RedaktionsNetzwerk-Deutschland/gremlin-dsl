@@ -8,7 +8,9 @@ declare(strict_types=1);
 
 namespace RND\GremlinDSL\Traversal\Steps\Generated;
 
-class GroupStep extends \RND\GremlinDSL\Traversal\Steps\BasicStep
+use RND\GremlinDSL\Traversal\Steps\BasicStep;
+
+class GroupStep extends BasicStep
 {
     public const STEP_NAME = 'group';
 }
