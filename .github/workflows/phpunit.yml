@@ -10,7 +10,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
             - name: Composer dependencies
-              uses: php-actions/composer@v3
+              uses: php-actions/composer@v5
               with:
                   command: update
             - name: Generate report
