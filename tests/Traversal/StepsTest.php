@@ -9,22 +9,6 @@ use PHPUnit\Framework\TestCase;
 
 class StepsTest extends TestCase
 {
-    public function testShouldNotWakeup()
-    {
-        $steps = new Steps();
-        $serialized = serialize($steps);
-
-        $this->expectError();
-        unserialize($serialized);
-    }
-
-    public function testShouldNotBeCloned()
-    {
-        $steps = new Steps();
-        $this->expectException(\Error::class);
-        $clone = clone $steps;
-    }
-
     public function testSteps()
     {
         $steps = new Steps();
