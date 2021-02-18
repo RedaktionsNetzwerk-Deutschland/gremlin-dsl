@@ -795,6 +795,18 @@ if (!function_exists('min')) {
     }
 }
 
+if (!function_exists('none')) {
+    /**
+     * The "none" step.
+     * 
+     * @return GraphTraversal
+     */
+    function none(): GraphTraversal
+    {
+        return (new GraphTraversal())->none();
+    }
+}
+
 if (!function_exists('not')) {
     /**
      * The "not" step.

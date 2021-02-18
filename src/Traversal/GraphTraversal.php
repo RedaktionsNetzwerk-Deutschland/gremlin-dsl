@@ -65,6 +65,7 @@ use RND\GremlinDSL\Traversal\Steps\Generated\MathStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\MaxStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\MeanStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\MinStep;
+use RND\GremlinDSL\Traversal\Steps\Generated\NoneStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\NotStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\OptionStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\OptionalStep;
@@ -956,6 +957,19 @@ class GraphTraversal extends AbstractGraphTraversal
     public function min(...$args): GraphTraversal
     {
         $step = new MinStep(...$args);
+        $this->steps->add($step);
+
+        return new static($this->steps);
+    }
+
+    /**
+     * The "none" step.
+     *
+     * @return GraphTraversal
+     */
+    public function none(): GraphTraversal
+    {
+        $step = new NoneStep();
         $this->steps->add($step);
 
         return new static($this->steps);
