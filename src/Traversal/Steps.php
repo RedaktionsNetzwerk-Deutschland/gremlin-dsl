@@ -47,23 +47,6 @@ class Steps implements Iterator
         $this->position = 0;
     }
 
-    /**
-     * prevent the instance from being cloned (which would create a second instance of it)
-     * @codeCoverageIgnore
-     */
-    private function __clone()
-    {
-    }
-
-    /**
-     * prevent from being unserialized (which would create a second instance of it)
-     * @noinspection PhpUnusedPrivateMethodInspection
-     * @codeCoverageIgnore
-     */
-    private function __wakeup()
-    {
-    }
-
     public function current(): StepInterface
     {
         return $this->steps[$this->position];

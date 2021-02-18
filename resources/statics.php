@@ -724,14 +724,14 @@ if (!function_exists('map')) {
     }
 }
 
-if (!function_exists('match')) {
+if (!function_exists('_match')) {
     /**
      * The "match" step.
      * 
      * @param GraphTraversalInterface[] $matchTraversals,...
      * @return GraphTraversal
      */
-    function match(RND\GremlinDSL\Traversal\GraphTraversalInterface ...$matchTraversals): GraphTraversal
+    function _match(RND\GremlinDSL\Traversal\GraphTraversalInterface ...$matchTraversals): GraphTraversal
     {
         return (new GraphTraversal())->match(...$matchTraversals);
     }

@@ -67,6 +67,7 @@ class GraphTraversalGenerator extends AbstractGraphTraversalGenerator
         'interface',
         'isset',
         'list',
+        'match',
         'namespace',
         'new',
         'or',

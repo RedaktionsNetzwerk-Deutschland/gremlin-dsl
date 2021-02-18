@@ -10,11 +10,11 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
             - name: Composer dependencies
-              uses: php-actions/composer@v3
+              uses: php-actions/composer@v5
               with:
                   command: update
             - name: Generate report
-              uses: docker://mileschou/xdebug:7.4
+              uses: docker://mileschou/xdebug:8.0
               with:
                 args: vendor/bin/phpunit -c phpunit.xml.dist
             - name: Export to codecov
