@@ -14,10 +14,13 @@ jobs:
               with:
                   command: update
             - name: Generate report
-              uses: docker://mileschou/xdebug:8.0
+              uses: docker://ghcr.io/mileschou/xdebug:8.0
+              env:
+                XDEBUG_MODE: coverage
               with:
-                args: vendor/bin/phpunit -c phpunit.xml.dist
+                args: vendor/bin/phpunit -c phpunit.xml.dist --coverage-clover coverage.xml
             - name: Export to codecov
               uses: codecov/codecov-action@v1
               with:
                   fail_ci_if_error: true
+                  files: ./coverage.xml
