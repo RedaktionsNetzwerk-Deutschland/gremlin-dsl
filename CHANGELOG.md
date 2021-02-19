@@ -1,3 +1,11 @@
+## [0.5.0](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/compare/v0.4.2...v0.5.0) (2021-02-19)
+
+
+### Features
+
+* **php8.0:** increase all php version constraints to 8.0 ([8f724f4](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/commit/8f724f4b91ff3f60d6e0f9034cfbbc50164b88e2))
+* **tinkerpop:** regenerate with tinkerpop 3.4.10 ([0a44c4c](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/commit/0a44c4c3d24ee1e7698816f0257d3a2421c0d2bc))
+
 ### [0.4.2](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/compare/v0.4.1...v0.4.2) (2020-11-02)
 
 
@@ -27,6 +35,4 @@
 
 * add gremlin UUID helper as reserved keyword ([a44b98c](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/commit/a44b98cc1dd2e3262c59e962ac934e1e8cb5d7e0))
 * add raw and assign step ([0470e05](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/commit/0470e05b54e5f7f3af0b5bd41956cb62d5965e22))
-
-### [0.2.2](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/compare/v0.2.1...v0.2.2) (2020-09-21)
 
