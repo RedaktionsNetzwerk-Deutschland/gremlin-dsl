@@ -17,7 +17,7 @@ jobs:
                 ref: ${{ github.event.inputs.ref }}
             - name: Conventional Changelog Action
               id: changelog
-              uses: TriPSs/conventional-changelog-action@v3
+              uses: TriPSs/conventional-changelog-action@v3.7.1
               with:
                   github-token: ${{ github.token }}
                   preset: conventionalcommits
