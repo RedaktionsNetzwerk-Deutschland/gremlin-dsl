@@ -11,7 +11,7 @@ jobs:
             - uses: php-actions/composer@v5
               with:
                   command: update
-            - uses: shirobrak/action-phpcs@v1
+            - uses: shirobrak/action-phpcs@v1.1
               with:
                   reporter: github-pr-review
                   fail_on_error: true
