@@ -2,13 +2,12 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Generator;
+namespace SpecialWeb\GremlinDSL\Generator;
 
 use Nette\PhpGenerator\ClassType;
 
 class Utils
 {
-
     public static function getFQN(ClassType $class): string
     {
         return $class->getNamespace()

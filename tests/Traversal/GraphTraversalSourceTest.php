@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Tests\Traversal;
+namespace SpecialWeb\GremlinDSL\Tests\Traversal;
 
 use PHPUnit\Framework\TestCase;
-use RND\GremlinDSL\Traversal\GraphTraversalSource;
+use SpecialWeb\GremlinDSL\Traversal\GraphTraversalSource;
 
 class GraphTraversalSourceTest extends TestCase
 {

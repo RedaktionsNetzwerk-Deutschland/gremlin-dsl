@@ -8,112 +8,116 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Traversal;
+namespace SpecialWeb\GremlinDSL\Traversal;
 
-use RND\GremlinDSL\Traversal\Predicates\PredicateInterface;
-use RND\GremlinDSL\Traversal\Steps\Generated\AddEStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\AddVStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\AggregateStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\AndStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\AsStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\BarrierStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\BothEStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\BothStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\BothVStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\BranchStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\ByStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\CapStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\ChooseStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\CoalesceStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\CoinStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\ConnectedComponentStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\ConstantStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\CountStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\CyclicPathStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\DedupStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\DropStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\ElementMapStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\EmitStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\FilterStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\FlatMapStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\FoldStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\FromStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\GroupCountStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\GroupStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\HasIdStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\HasKeyStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\HasLabelStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\HasNotStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\HasStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\HasValueStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\IdStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\IdentityStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\InEStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\InStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\InVStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\IndexStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\InjectStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\IsStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\KeyStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\LabelStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\LimitStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\LocalStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\LoopsStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\MapStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\MatchStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\MathStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\MaxStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\MeanStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\MinStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\NoneStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\NotStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\OptionStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\OptionalStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\OrStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\OrderStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\OtherVStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\OutEStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\OutStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\OutVStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\PageRankStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\PathStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\PeerPressureStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\ProfileStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\ProgramStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\ProjectStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\PropertiesStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\PropertyMapStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\PropertyStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\RangeStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\ReadStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\RepeatStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\SackStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\SampleStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\SelectStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\ShortestPathStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\SideEffectStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\SimplePathStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\SkipStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\StoreStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\SubgraphStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\SumStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\TailStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\TimeLimitStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\TimesStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\ToEStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\ToStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\ToVStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\TreeStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\UnfoldStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\UnionStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\UntilStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\VStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\ValueMapStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\ValueStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\ValuesStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\WhereStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\WithStep;
-use RND\GremlinDSL\Traversal\Steps\Generated\WriteStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\AddEStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\AddVStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\AggregateStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\AndStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\AsStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\BarrierStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\BothEStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\BothStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\BothVStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\BranchStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ByStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\CallStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\CapStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ChooseStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\CoalesceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\CoinStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ConnectedComponentStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ConstantStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\CountStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\CyclicPathStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\DedupStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\DropStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ElementMapStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ElementStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\EmitStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\FailStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\FilterStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\FlatMapStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\FoldStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\FromStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\GroupCountStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\GroupStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\HasIdStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\HasKeyStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\HasLabelStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\HasNotStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\HasStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\HasValueStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\IdStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\IdentityStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\InEStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\InStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\InVStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\IndexStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\InjectStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\IsStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\KeyStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\LabelStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\LimitStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\LocalStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\LoopsStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\MapStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\MatchStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\MathStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\MaxStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\MeanStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\MergeEStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\MergeVStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\MinStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\NoneStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\NotStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\OptionStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\OptionalStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\OrStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\OrderStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\OtherVStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\OutEStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\OutStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\OutVStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\PageRankStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\PathStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\PeerPressureStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ProfileStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ProgramStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ProjectStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\PropertiesStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\PropertyMapStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\PropertyStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\RangeStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ReadStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\RepeatStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\SackStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\SampleStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\SelectStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ShortestPathStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\SideEffectStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\SimplePathStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\SkipStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\StoreStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\SubgraphStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\SumStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\TailStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\TimeLimitStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\TimesStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ToEStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ToStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ToVStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\TreeStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\UnfoldStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\UnionStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\UntilStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\VStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ValueMapStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ValueStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\ValuesStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\WhereStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\WithStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Generated\WriteStep;
 
 /**
  * @see https://tinkerpop.apache.org/docs/current/reference/
@@ -312,6 +316,24 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
+     * The "call" step.
+     *
+     * @param mixed $args being any of:
+     *                    - string service
+     *                    - string service, mixed params
+     *                    - string service, mixed params, GraphTraversalInterface childTraversal
+     *                    - string service, GraphTraversalInterface childTraversal
+     * @return GraphTraversal
+     */
+    public function call(...$args): GraphTraversal
+    {
+        $step = new CallStep(...$args);
+        $this->steps->add($step);
+
+        return new static($this->steps);
+    }
+
+    /**
      * The "cap" step.
      *
      * @param string $sideEffectKey
@@ -331,8 +353,8 @@ class GraphTraversal extends AbstractGraphTraversal
      *
      * @param mixed $args being any of:
      *                    - mixed choiceFunction
-     *                    - PredicateInterface choosePredicate, GraphTraversalInterface trueChoice
-     *                    - PredicateInterface choosePredicate, GraphTraversalInterface trueChoice, GraphTraversalInterface falseChoice
+     *                    - Predicates\PredicateInterface choosePredicate, GraphTraversalInterface trueChoice
+     *                    - Predicates\PredicateInterface choosePredicate, GraphTraversalInterface trueChoice, GraphTraversalInterface falseChoice
      *                    - GraphTraversalInterface choiceTraversal
      *                    - GraphTraversalInterface traversalPredicate, GraphTraversalInterface trueChoice
      *                    - GraphTraversalInterface traversalPredicate, GraphTraversalInterface trueChoice, GraphTraversalInterface falseChoice
@@ -460,6 +482,19 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
+     * The "element" step.
+     *
+     * @return GraphTraversal
+     */
+    public function element(): GraphTraversal
+    {
+        $step = new ElementStep();
+        $this->steps->add($step);
+
+        return new static($this->steps);
+    }
+
+    /**
      * The "elementMap" step.
      *
      * @param string[] $propertyKeys,...
@@ -478,7 +513,7 @@ class GraphTraversal extends AbstractGraphTraversal
      *
      * @param mixed $args being any of:
      *                    - empty
-     *                    - PredicateInterface emitPredicate
+     *                    - Predicates\PredicateInterface emitPredicate
      *                    - GraphTraversalInterface emitTraversal
      * @return GraphTraversal
      */
@@ -491,10 +526,26 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
+     * The "fail" step.
+     *
+     * @param mixed $args being any of:
+     *                    - empty
+     *                    - string message
+     * @return GraphTraversal
+     */
+    public function fail(...$args): GraphTraversal
+    {
+        $step = new FailStep(...$args);
+        $this->steps->add($step);
+
+        return new static($this->steps);
+    }
+
+    /**
      * The "filter" step.
      *
      * @param mixed $args being any of:
-     *                    - PredicateInterface predicate
+     *                    - Predicates\PredicateInterface predicate
      *                    - GraphTraversalInterface filterTraversal
      * @return GraphTraversal
      */
@@ -947,6 +998,40 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
+     * The "mergeE" step.
+     *
+     * @param mixed $args being any of:
+     *                    - empty
+     *                    - mixed searchCreate
+     *                    - GraphTraversalInterface searchCreate
+     * @return GraphTraversal
+     */
+    public function mergeE(...$args): GraphTraversal
+    {
+        $step = new MergeEStep(...$args);
+        $this->steps->add($step);
+
+        return new static($this->steps);
+    }
+
+    /**
+     * The "mergeV" step.
+     *
+     * @param mixed $args being any of:
+     *                    - empty
+     *                    - mixed searchCreate
+     *                    - GraphTraversalInterface searchCreate
+     * @return GraphTraversal
+     */
+    public function mergeV(...$args): GraphTraversal
+    {
+        $step = new MergeVStep(...$args);
+        $this->steps->add($step);
+
+        return new static($this->steps);
+    }
+
+    /**
      * The "min" step.
      *
      * @param mixed $args being any of:
@@ -993,7 +1078,8 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "option" step.
      *
      * @param mixed $args being any of:
-     *                    - mixed pickToken, GraphTraversalInterface traversalOption
+     *                    - mixed token, mixed m
+     *                    - mixed token, GraphTraversalInterface traversalOption
      *                    - GraphTraversalInterface traversalOption
      * @return GraphTraversal
      */
@@ -1209,6 +1295,7 @@ class GraphTraversal extends AbstractGraphTraversal
      *
      * @param mixed $args being any of:
      *                    - mixed cardinality, mixed key, mixed value, mixed keyValues
+     *                    - mixed value
      *                    - mixed key, mixed value, mixed keyValues
      * @return GraphTraversal
      */
@@ -1574,7 +1661,7 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "until" step.
      *
      * @param mixed $args being any of:
-     *                    - PredicateInterface untilPredicate
+     *                    - Predicates\PredicateInterface untilPredicate
      *                    - GraphTraversalInterface untilTraversal
      * @return GraphTraversal
      */

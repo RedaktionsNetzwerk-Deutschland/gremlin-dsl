@@ -19,7 +19,9 @@
         "endingWith",
         "notContaining",
         "notEndingWith",
+        "notRegex",
         "notStartingWith",
+        "regex",
         "startingWith"
     ],
     "sourceStepMethods": [
@@ -280,7 +282,7 @@
             "methodName": "E",
             "parameters": [
                 {
-                    "name": "edgesIds",
+                    "name": "edgeIds",
                     "type": "object[]",
                     "variadic": true
                 }
@@ -326,7 +328,7 @@
             "methodName": "addV",
             "parameters": [
                 {
-                    "name": "label",
+                    "name": "vertexLabel",
                     "type": "string",
                     "variadic": false
                 }
@@ -337,6 +339,72 @@
             "parameters": [
                 {
                     "name": "vertexLabelTraversal",
+                    "type": "Traversal",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "call",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "call",
+            "parameters": [
+                {
+                    "name": "service",
+                    "type": "string",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "call",
+            "parameters": [
+                {
+                    "name": "service",
+                    "type": "string",
+                    "variadic": false
+                },
+                {
+                    "name": "params",
+                    "type": "Map",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "call",
+            "parameters": [
+                {
+                    "name": "service",
+                    "type": "string",
+                    "variadic": false
+                },
+                {
+                    "name": "params",
+                    "type": "Map",
+                    "variadic": false
+                },
+                {
+                    "name": "childTraversal",
+                    "type": "Traversal",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "call",
+            "parameters": [
+                {
+                    "name": "service",
+                    "type": "string",
+                    "variadic": false
+                },
+                {
+                    "name": "childTraversal",
                     "type": "Traversal",
                     "variadic": false
                 }
@@ -358,6 +426,46 @@
                 {
                     "name": "file",
                     "type": "string",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "mergeE",
+            "parameters": [
+                {
+                    "name": "searchCreate",
+                    "type": "Map",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "mergeE",
+            "parameters": [
+                {
+                    "name": "searchCreate",
+                    "type": "Traversal",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "mergeV",
+            "parameters": [
+                {
+                    "name": "searchCreate",
+                    "type": "Map",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "mergeV",
+            "parameters": [
+                {
+                    "name": "searchCreate",
+                    "type": "Traversal",
                     "variadic": false
                 }
             ]
@@ -654,6 +762,66 @@
             ]
         },
         {
+            "methodName": "call",
+            "parameters": [
+                {
+                    "name": "service",
+                    "type": "string",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "call",
+            "parameters": [
+                {
+                    "name": "service",
+                    "type": "string",
+                    "variadic": false
+                },
+                {
+                    "name": "params",
+                    "type": "Map",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "call",
+            "parameters": [
+                {
+                    "name": "service",
+                    "type": "string",
+                    "variadic": false
+                },
+                {
+                    "name": "params",
+                    "type": "Map",
+                    "variadic": false
+                },
+                {
+                    "name": "childTraversal",
+                    "type": "Traversal",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "call",
+            "parameters": [
+                {
+                    "name": "service",
+                    "type": "string",
+                    "variadic": false
+                },
+                {
+                    "name": "childTraversal",
+                    "type": "Traversal",
+                    "variadic": false
+                }
+            ]
+        },
+        {
             "methodName": "cap",
             "parameters": [
                 {
@@ -848,6 +1016,12 @@
             ]
         },
         {
+            "methodName": "element",
+            "parameters": [
+                
+            ]
+        },
+        {
             "methodName": "elementMap",
             "parameters": [
                 {
@@ -879,6 +1053,22 @@
                 {
                     "name": "emitTraversal",
                     "type": "Traversal",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "fail",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "fail",
+            "parameters": [
+                {
+                    "name": "message",
+                    "type": "string",
                     "variadic": false
                 }
             ]
@@ -1466,6 +1656,58 @@
             ]
         },
         {
+            "methodName": "mergeE",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "mergeE",
+            "parameters": [
+                {
+                    "name": "searchCreate",
+                    "type": "Map",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "mergeE",
+            "parameters": [
+                {
+                    "name": "searchCreate",
+                    "type": "Traversal",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "mergeV",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "mergeV",
+            "parameters": [
+                {
+                    "name": "searchCreate",
+                    "type": "Map",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "mergeV",
+            "parameters": [
+                {
+                    "name": "searchCreate",
+                    "type": "Traversal",
+                    "variadic": false
+                }
+            ]
+        },
+        {
             "methodName": "min",
             "parameters": [
                 
@@ -1501,7 +1743,22 @@
             "methodName": "option",
             "parameters": [
                 {
-                    "name": "pickToken",
+                    "name": "token",
+                    "type": "object",
+                    "variadic": false
+                },
+                {
+                    "name": "m",
+                    "type": "Map",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "option",
+            "parameters": [
+                {
+                    "name": "token",
                     "type": "object",
                     "variadic": false
                 },
@@ -1691,6 +1948,16 @@
                     "name": "keyValues",
                     "type": "object[]",
                     "variadic": true
+                }
+            ]
+        },
+        {
+            "methodName": "property",
+            "parameters": [
+                {
+                    "name": "value",
+                    "type": "Map",
+                    "variadic": false
                 }
             ]
         },
@@ -2500,6 +2767,66 @@
             ]
         },
         {
+            "methodName": "call",
+            "parameters": [
+                {
+                    "name": "service",
+                    "type": "string",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "call",
+            "parameters": [
+                {
+                    "name": "service",
+                    "type": "string",
+                    "variadic": false
+                },
+                {
+                    "name": "params",
+                    "type": "Map",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "call",
+            "parameters": [
+                {
+                    "name": "service",
+                    "type": "string",
+                    "variadic": false
+                },
+                {
+                    "name": "params",
+                    "type": "Map",
+                    "variadic": false
+                },
+                {
+                    "name": "childTraversal",
+                    "type": "Traversal",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "call",
+            "parameters": [
+                {
+                    "name": "service",
+                    "type": "string",
+                    "variadic": false
+                },
+                {
+                    "name": "childTraversal",
+                    "type": "Traversal",
+                    "variadic": false
+                }
+            ]
+        },
+        {
             "methodName": "cap",
             "parameters": [
                 {
@@ -2688,6 +3015,12 @@
             ]
         },
         {
+            "methodName": "element",
+            "parameters": [
+                
+            ]
+        },
+        {
             "methodName": "elementMap",
             "parameters": [
                 {
@@ -2719,6 +3052,22 @@
                 {
                     "name": "emitTraversal",
                     "type": "Traversal",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "fail",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "fail",
+            "parameters": [
+                {
+                    "name": "message",
+                    "type": "string",
                     "variadic": false
                 }
             ]
@@ -3276,6 +3625,58 @@
             ]
         },
         {
+            "methodName": "mergeE",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "mergeE",
+            "parameters": [
+                {
+                    "name": "searchCreate",
+                    "type": "Map",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "mergeE",
+            "parameters": [
+                {
+                    "name": "searchCreate",
+                    "type": "Traversal",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "mergeV",
+            "parameters": [
+                
+            ]
+        },
+        {
+            "methodName": "mergeV",
+            "parameters": [
+                {
+                    "name": "searchCreate",
+                    "type": "Map",
+                    "variadic": false
+                }
+            ]
+        },
+        {
+            "methodName": "mergeV",
+            "parameters": [
+                {
+                    "name": "searchCreate",
+                    "type": "Traversal",
+                    "variadic": false
+                }
+            ]
+        },
+        {
             "methodName": "min",
             "parameters": [
                 
@@ -3422,6 +3823,16 @@
                     "name": "keyValues",
                     "type": "object[]",
                     "variadic": true
+                }
+            ]
+        },
+        {
+            "methodName": "property",
+            "parameters": [
+                {
+                    "name": "value",
+                    "type": "Map",
+                    "variadic": false
                 }
             ]
         },

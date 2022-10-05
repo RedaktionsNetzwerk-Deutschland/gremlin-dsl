@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Utils;
+namespace SpecialWeb\GremlinDSL\Utils;
 
 class ArgumentUtil
 {
-
     public const RESERVED_KEYWORDS = ['id', 'T.id'];
 
     public static function implode(array $args): string

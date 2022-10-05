@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Traversal\Predicates\Text;
+namespace SpecialWeb\GremlinDSL\Traversal\Predicates\Text;
 
 /**
  * The "containing" text-predicate.

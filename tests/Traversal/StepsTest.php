@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Tests\Traversal;
+namespace SpecialWeb\GremlinDSL\Tests\Traversal;
 
-use RND\GremlinDSL\Traversal\Steps;
+use SpecialWeb\GremlinDSL\Traversal\Steps;
 use PHPUnit\Framework\TestCase;
 
 class StepsTest extends TestCase

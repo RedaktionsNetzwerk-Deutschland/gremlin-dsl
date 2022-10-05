@@ -2,21 +2,20 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Traversal;
+namespace SpecialWeb\GremlinDSL\Traversal;
 
 use Closure;
-use RND\GremlinDSL\Configuration;
-use RND\GremlinDSL\Exception\NoSendClosureException;
-use RND\GremlinDSL\Traversal\Steps\AnonymousStep;
-use RND\GremlinDSL\Traversal\Steps\AssignStep;
-use RND\GremlinDSL\Traversal\Steps\GStep;
-use RND\GremlinDSL\Traversal\Steps\NextStep;
-use RND\GremlinDSL\Traversal\Steps\RawStep;
-use RND\GremlinDSL\Traversal\Steps\TraversalStepInterface;
+use SpecialWeb\GremlinDSL\Configuration;
+use SpecialWeb\GremlinDSL\Exception\NoSendClosureException;
+use SpecialWeb\GremlinDSL\Traversal\Steps\AnonymousStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\AssignStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\GStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\NextStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\RawStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\TraversalStepInterface;
 
 class AbstractGraphTraversal implements GraphTraversalInterface
 {
-
     protected Steps $steps;
 
     public function __construct(?Steps $steps = null)

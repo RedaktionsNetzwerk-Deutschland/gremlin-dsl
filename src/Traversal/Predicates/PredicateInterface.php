@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Traversal\Predicates;
+namespace SpecialWeb\GremlinDSL\Traversal\Predicates;
 
 interface PredicateInterface
 {

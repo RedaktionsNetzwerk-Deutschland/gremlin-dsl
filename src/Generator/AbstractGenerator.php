@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Generator;
+namespace SpecialWeb\GremlinDSL\Generator;
 
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\PhpFile;
@@ -10,7 +10,6 @@ use Nette\PhpGenerator\PhpNamespace;
 
 abstract class AbstractGenerator
 {
-
     protected FileWriter $writer;
 
     /**
@@ -51,7 +50,7 @@ abstract class AbstractGenerator
 
         if ($abstractClass) {
             $namespace->addUse($abstractClass);
-            $class->addExtend($abstractClass);
+            $class->setExtends($abstractClass);
         }
 
         return $class;

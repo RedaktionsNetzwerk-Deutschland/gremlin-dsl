@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Utils;
 
 use PHPUnit\Framework\TestCase;
-use RND\GremlinDSL\Utils\ArgumentUtil;
+use SpecialWeb\GremlinDSL\Utils\ArgumentUtil;
 
 class ArgumentUtilTest extends TestCase
 {

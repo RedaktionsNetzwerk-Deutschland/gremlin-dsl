@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Traversal\Steps;
+namespace SpecialWeb\GremlinDSL\Traversal\Steps;
 
 class GStep extends BasicStep
 {

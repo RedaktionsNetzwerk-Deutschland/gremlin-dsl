@@ -2,14 +2,13 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Generator;
+namespace SpecialWeb\GremlinDSL\Generator;
 
 use Nette\PhpGenerator\PhpFile;
 use Nette\PhpGenerator\Printer;
 
 class FileWriter
 {
-
     private static ?FileWriter $instance = null;
 
     public Printer $printer;

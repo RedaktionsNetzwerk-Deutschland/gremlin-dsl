@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Generator;
+namespace SpecialWeb\GremlinDSL\Generator;
 
-use RND\GremlinDSL\Traversal\Predicates\Text\AbstractTextPredicate;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Text\AbstractTextPredicate;
 
 class TextPredicatesGenerator extends PredicatesGenerator
 {

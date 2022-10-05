@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use RND\GremlinDSL\Generator\TraversalGeneratorCommand;
+use SpecialWeb\GremlinDSL\Generator\TraversalGeneratorCommand;
 use Symfony\Component\Console\Application as ConsoleApplication;
 
 require 'vendor/autoload.php';

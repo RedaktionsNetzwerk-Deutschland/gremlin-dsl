@@ -2,25 +2,26 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Generator;
+namespace SpecialWeb\GremlinDSL\Generator;
 
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\Method;
 use Nette\PhpGenerator\Parameter;
 use Nette\PhpGenerator\PhpFile;
 use Nette\PhpGenerator\PhpNamespace;
-use RND\GremlinDSL\Traversal\GraphTraversalInterface;
-use RND\GremlinDSL\Traversal\Predicates\PredicateInterface;
-use RND\GremlinDSL\Traversal\Steps\BasicStep;
+use SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\PredicateInterface;
+use SpecialWeb\GremlinDSL\Traversal\Steps\BasicStep;
+
+use const PHP_EOL;
 
 abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
 {
-
     protected const CLASS_NAME = '';
-    protected const CLASS_PATH = 'RND\\GremlinDSL\\Traversal';
+    protected const CLASS_PATH = 'SpecialWeb\\GremlinDSL\\Traversal';
     protected const ABSTRACT_CLASS = '';
     protected const ABSTRACT_STEP_CLASS = BasicStep::class;
-    protected const STEP_NAMESPACE = 'RND\\GremlinDSL\\Traversal\\Steps\\Generated';
+    protected const STEP_NAMESPACE = 'SpecialWeb\\GremlinDSL\\Traversal\\Steps\\Generated';
     protected const STEP_CLASS_SUFFIX = 'Step';
 
     protected PhpFile $graphTraversalFile;
@@ -99,8 +100,7 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
         ClassType $stepClass
     ): Method {
         $method = $this->graphTraversalClass->addMethod($methodName);
-        $method->addComment(sprintf('The "%s" step.', $methodName));
-        $method->addComment('');
+        $method->addComment(sprintf('The "%s" step.', $methodName) . PHP_EOL);
         $method->setReturnType($returnType);
         $parameters = [];
         if ($methodDefinition['differentSignatures'] > 1) {
@@ -121,9 +121,7 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
         }
 
         $this->graphTraversalNs->addUse(Utils::getFQN($stepClass));
-        $this->graphTraversalNs->addUse($returnType);
-
-        $unresolvedReturnType = $this->graphTraversalNs->unresolveName($returnType);
+        $unresolvedReturnType = $this->graphTraversalNs->simplifyName($returnType);
 
         $method->addComment('@return ' . $unresolvedReturnType);
         $this->addMethodBody($method, $stepClass, $parameters, $unresolvedReturnType);
@@ -172,16 +170,14 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
             case 'double':
                 return 'float';
             case 'Predicate':
-                $this->graphTraversalNs->addUse(PredicateInterface::class);
-
                 return $unresolve
-                    ? $this->graphTraversalNs->unresolveName(PredicateInterface::class)
+                    ? $this->graphTraversalNs->simplifyName(PredicateInterface::class)
                     : PredicateInterface::class;
             case 'Traversal':
                 $this->graphTraversalNs->addUse(GraphTraversalInterface::class);
 
                 return $unresolve
-                    ? $this->graphTraversalNs->unresolveName(GraphTraversalInterface::class)
+                    ? $this->graphTraversalNs->simplifyName(GraphTraversalInterface::class)
                     : GraphTraversalInterface::class;
         }
 

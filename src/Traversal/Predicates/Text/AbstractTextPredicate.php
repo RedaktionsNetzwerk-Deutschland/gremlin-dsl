@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Traversal\Predicates\Text;
+namespace SpecialWeb\GremlinDSL\Traversal\Predicates\Text;
 
-use RND\GremlinDSL\Traversal\Predicates\AbstractPredicate;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\AbstractPredicate;
 
 class AbstractTextPredicate extends AbstractPredicate
 {
-
 }

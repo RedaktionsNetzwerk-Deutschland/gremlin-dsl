@@ -8,21 +8,24 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Traversal;
+namespace SpecialWeb\GremlinDSL\Traversal;
 
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\AddESourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\AddVSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\ESourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\InjectSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\IoSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\VSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithBulkSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithPathSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithSackSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithSideEffectSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithStrategiesSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithoutStrategiesSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\AddESourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\AddVSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\CallSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\ESourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\InjectSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\IoSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\MergeESourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\MergeVSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\VSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\WithBulkSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\WithPathSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\WithSackSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\WithSideEffectSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\WithSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\WithStrategiesSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\WithoutStrategiesSourceStep;
 
 /**
  * @see https://tinkerpop.apache.org/docs/current/reference/
@@ -144,12 +147,12 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     /**
      * The "E" step.
      *
-     * @param mixed[] $edgesIds,...
+     * @param mixed[] $edgeIds,...
      * @return GraphTraversal
      */
-    public function E(...$edgesIds): GraphTraversal
+    public function E(...$edgeIds): GraphTraversal
     {
-        $step = new ESourceStep(...$edgesIds);
+        $step = new ESourceStep(...$edgeIds);
         $this->steps->add($step);
 
         return new GraphTraversal($this->steps);
@@ -190,13 +193,32 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
      *
      * @param mixed $args being any of:
      *                    - empty
-     *                    - string label
+     *                    - string vertexLabel
      *                    - GraphTraversalInterface vertexLabelTraversal
      * @return GraphTraversal
      */
     public function addV(...$args): GraphTraversal
     {
         $step = new AddVSourceStep(...$args);
+        $this->steps->add($step);
+
+        return new GraphTraversal($this->steps);
+    }
+
+    /**
+     * The "call" step.
+     *
+     * @param mixed $args being any of:
+     *                    - empty
+     *                    - string service
+     *                    - string service, mixed params
+     *                    - string service, mixed params, GraphTraversalInterface childTraversal
+     *                    - string service, GraphTraversalInterface childTraversal
+     * @return GraphTraversal
+     */
+    public function call(...$args): GraphTraversal
+    {
+        $step = new CallSourceStep(...$args);
         $this->steps->add($step);
 
         return new GraphTraversal($this->steps);
@@ -225,6 +247,38 @@ class GraphTraversalSource extends AbstractGraphTraversalSource
     public function io(string $file): GraphTraversal
     {
         $step = new IoSourceStep($file);
+        $this->steps->add($step);
+
+        return new GraphTraversal($this->steps);
+    }
+
+    /**
+     * The "mergeE" step.
+     *
+     * @param mixed $args being any of:
+     *                    - mixed searchCreate
+     *                    - GraphTraversalInterface searchCreate
+     * @return GraphTraversal
+     */
+    public function mergeE(...$args): GraphTraversal
+    {
+        $step = new MergeESourceStep(...$args);
+        $this->steps->add($step);
+
+        return new GraphTraversal($this->steps);
+    }
+
+    /**
+     * The "mergeV" step.
+     *
+     * @param mixed $args being any of:
+     *                    - mixed searchCreate
+     *                    - GraphTraversalInterface searchCreate
+     * @return GraphTraversal
+     */
+    public function mergeV(...$args): GraphTraversal
+    {
+        $step = new MergeVSourceStep(...$args);
         $this->steps->add($step);
 
         return new GraphTraversal($this->steps);

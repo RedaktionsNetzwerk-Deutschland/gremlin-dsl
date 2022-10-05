@@ -2,14 +2,13 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Traversal;
+namespace SpecialWeb\GremlinDSL\Traversal;
 
 /**
  * @see https://tinkerpop.apache.org/docs/current/reference/#start-steps
  */
 class AbstractGraphTraversalSource implements GraphTraversalInterface
 {
-
     protected Steps $steps;
 
     public function __construct(?Steps $steps = null)

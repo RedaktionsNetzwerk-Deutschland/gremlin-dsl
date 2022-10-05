@@ -1,5 +1,5 @@
 {
-  "name": "rnd/gremlin-dsl",
+  "name": "specialweb/gremlin-dsl",
   "description": "Gremlin DSL PHP integration",
   "version": "0.5.0",
   "type": "library",
@@ -7,12 +7,12 @@
   "authors": [
     {
       "name": "Dominik Jansen",
-      "email": "dominik.jansen@rnd.de"
+      "email": "dominik@specialweb.app"
     }
   ],
   "autoload": {
     "psr-4": {
-      "RND\\GremlinDSL\\": "src/"
+      "SpecialWeb\\GremlinDSL\\": "src/"
     },
     "files": [
       "resources/loader.php"
@@ -20,27 +20,30 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "RND\\GremlinDSL\\Tests\\": "tests/"
+      "SpecialWeb\\GremlinDSL\\Tests\\": "tests/"
     }
   },
   "require": {
-    "php": ">=7.4",
+    "php": ">=8.0",
     "ext-json": "*"
   },
   "require-dev": {
-    "nette/php-generator": "^3.4",
-    "symfony/console": "^5.1",
-    "symfony/var-dumper": "^5.1",
-    "squizlabs/php_codesniffer": "^3.5",
+    "nette/php-generator": "^v4.0.0",
+    "symfony/console": "^6.0",
+    "symfony/var-dumper": "^6.0",
+    "squizlabs/php_codesniffer": "^3.7",
     "phpcompatibility/php-compatibility": "^9.3",
-    "phpunit/phpunit": "^9.3"
+    "phpunit/phpunit": "^9.5"
   },
   "scripts": {
     "cs": "vendor/bin/phpcs",
     "cs:fix": "vendor/bin/phpcbf",
-    "test": "vendor/bin/phpunit"
+    "test": "vendor/bin/phpunit -c phpunit.xml.dist"
   },
   "suggest": {
     "brightzone/gremlin-php": "gremlin-server client for php"
+  },
+  "replace": {
+    "rnd/gremlin-dsl": "*"
   }
 }

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Exception;
+namespace SpecialWeb\GremlinDSL\Exception;
 
-use RND\GremlinDSL\Configuration;
+use SpecialWeb\GremlinDSL\Configuration;
 use RuntimeException;
 use Throwable;
 
@@ -14,7 +14,8 @@ class NoSendClosureException extends RuntimeException
     {
         if (empty($message)) {
             $message = sprintf(
-                'You must either configure the sendClosure or provide a closure to enable the SendStep: `%s::getInstance()->setSendClosure(function(string $traversalString) {})`',
+                'You must either configure the sendClosure or provide a closure to enable the SendStep: ' .
+                '`%s::getInstance()->setSendClosure(function(string $traversalString) {})`',
                 Configuration::class
             );
         }

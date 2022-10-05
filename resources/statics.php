@@ -6,13 +6,14 @@
 
 declare(strict_types=1);
 
-use RND\GremlinDSL\Traversal\GraphTraversal;
-use RND\GremlinDSL\Traversal\GraphTraversalInterface;
+use SpecialWeb\GremlinDSL\Traversal\GraphTraversal;
+use SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface;
+
 
 if (!function_exists('V')) {
     /**
      * The "V" step.
-     * 
+     *
      * @param mixed[] $vertexIdsOrElements,...
      * @return GraphTraversal
      */
@@ -25,7 +26,7 @@ if (!function_exists('V')) {
 if (!function_exists('addE')) {
     /**
      * The "addE" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - string edgeLabel
      *                    - GraphTraversalInterface edgeLabelTraversal
@@ -40,7 +41,7 @@ if (!function_exists('addE')) {
 if (!function_exists('addV')) {
     /**
      * The "addV" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - string vertexLabel
@@ -56,7 +57,7 @@ if (!function_exists('addV')) {
 if (!function_exists('aggregate')) {
     /**
      * The "aggregate" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed scope, string sideEffectKey
      *                    - string sideEffectKey
@@ -71,11 +72,11 @@ if (!function_exists('aggregate')) {
 if (!function_exists('_and')) {
     /**
      * The "and" step.
-     * 
+     *
      * @param GraphTraversalInterface[] $andTraversals,...
      * @return GraphTraversal
      */
-    function _and(RND\GremlinDSL\Traversal\GraphTraversalInterface ...$andTraversals): GraphTraversal
+    function _and(SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface ...$andTraversals): GraphTraversal
     {
         return (new GraphTraversal())->and(...$andTraversals);
     }
@@ -84,7 +85,7 @@ if (!function_exists('_and')) {
 if (!function_exists('_as')) {
     /**
      * The "as" step.
-     * 
+     *
      * @param string $stepLabel
      * @param string[] $stepLabels,...
      * @return GraphTraversal
@@ -98,7 +99,7 @@ if (!function_exists('_as')) {
 if (!function_exists('barrier')) {
     /**
      * The "barrier" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - mixed barrierConsumer
@@ -114,7 +115,7 @@ if (!function_exists('barrier')) {
 if (!function_exists('both')) {
     /**
      * The "both" step.
-     * 
+     *
      * @param string[] $edgeLabels,...
      * @return GraphTraversal
      */
@@ -127,7 +128,7 @@ if (!function_exists('both')) {
 if (!function_exists('bothE')) {
     /**
      * The "bothE" step.
-     * 
+     *
      * @param string[] $edgeLabels,...
      * @return GraphTraversal
      */
@@ -140,7 +141,7 @@ if (!function_exists('bothE')) {
 if (!function_exists('bothV')) {
     /**
      * The "bothV" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function bothV(): GraphTraversal
@@ -152,7 +153,7 @@ if (!function_exists('bothV')) {
 if (!function_exists('branch')) {
     /**
      * The "branch" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed function
      *                    - GraphTraversalInterface branchTraversal
@@ -167,7 +168,7 @@ if (!function_exists('branch')) {
 if (!function_exists('by')) {
     /**
      * The "by" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - mixed comparator
@@ -187,10 +188,27 @@ if (!function_exists('by')) {
     }
 }
 
+if (!function_exists('call')) {
+    /**
+     * The "call" step.
+     *
+     * @param mixed $args being any of:
+     *                    - string service
+     *                    - string service, mixed params
+     *                    - string service, mixed params, GraphTraversalInterface childTraversal
+     *                    - string service, GraphTraversalInterface childTraversal
+     * @return GraphTraversal
+     */
+    function call(...$args): GraphTraversal
+    {
+        return (new GraphTraversal())->call(...$args);
+    }
+}
+
 if (!function_exists('cap')) {
     /**
      * The "cap" step.
-     * 
+     *
      * @param string $sideEffectKey
      * @param string[] $sideEffectKeys,...
      * @return GraphTraversal
@@ -204,11 +222,11 @@ if (!function_exists('cap')) {
 if (!function_exists('choose')) {
     /**
      * The "choose" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed choiceFunction
-     *                    - PredicateInterface choosePredicate, GraphTraversalInterface trueChoice
-     *                    - PredicateInterface choosePredicate, GraphTraversalInterface trueChoice, GraphTraversalInterface falseChoice
+     *                    - Predicates\PredicateInterface choosePredicate, GraphTraversalInterface trueChoice
+     *                    - Predicates\PredicateInterface choosePredicate, GraphTraversalInterface trueChoice, GraphTraversalInterface falseChoice
      *                    - GraphTraversalInterface choiceTraversal
      *                    - GraphTraversalInterface traversalPredicate, GraphTraversalInterface trueChoice
      *                    - GraphTraversalInterface traversalPredicate, GraphTraversalInterface trueChoice, GraphTraversalInterface falseChoice
@@ -223,11 +241,11 @@ if (!function_exists('choose')) {
 if (!function_exists('coalesce')) {
     /**
      * The "coalesce" step.
-     * 
+     *
      * @param GraphTraversalInterface[] $coalesceTraversals,...
      * @return GraphTraversal
      */
-    function coalesce(RND\GremlinDSL\Traversal\GraphTraversalInterface ...$coalesceTraversals): GraphTraversal
+    function coalesce(SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface ...$coalesceTraversals): GraphTraversal
     {
         return (new GraphTraversal())->coalesce(...$coalesceTraversals);
     }
@@ -236,7 +254,7 @@ if (!function_exists('coalesce')) {
 if (!function_exists('coin')) {
     /**
      * The "coin" step.
-     * 
+     *
      * @param float $probability
      * @return GraphTraversal
      */
@@ -249,7 +267,7 @@ if (!function_exists('coin')) {
 if (!function_exists('connectedComponent')) {
     /**
      * The "connectedComponent" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function connectedComponent(): GraphTraversal
@@ -261,7 +279,7 @@ if (!function_exists('connectedComponent')) {
 if (!function_exists('constant')) {
     /**
      * The "constant" step.
-     * 
+     *
      * @param mixed $e
      * @return GraphTraversal
      */
@@ -274,7 +292,7 @@ if (!function_exists('constant')) {
 if (!function_exists('count')) {
     /**
      * The "count" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - mixed scope
@@ -289,7 +307,7 @@ if (!function_exists('count')) {
 if (!function_exists('cyclicPath')) {
     /**
      * The "cyclicPath" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function cyclicPath(): GraphTraversal
@@ -301,7 +319,7 @@ if (!function_exists('cyclicPath')) {
 if (!function_exists('dedup')) {
     /**
      * The "dedup" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed scope, string dedupLabels
      *                    - string dedupLabels
@@ -316,7 +334,7 @@ if (!function_exists('dedup')) {
 if (!function_exists('drop')) {
     /**
      * The "drop" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function drop(): GraphTraversal
@@ -325,10 +343,22 @@ if (!function_exists('drop')) {
     }
 }
 
+if (!function_exists('element')) {
+    /**
+     * The "element" step.
+     *
+     * @return GraphTraversal
+     */
+    function element(): GraphTraversal
+    {
+        return (new GraphTraversal())->element();
+    }
+}
+
 if (!function_exists('elementMap')) {
     /**
      * The "elementMap" step.
-     * 
+     *
      * @param string[] $propertyKeys,...
      * @return GraphTraversal
      */
@@ -341,10 +371,10 @@ if (!function_exists('elementMap')) {
 if (!function_exists('emit')) {
     /**
      * The "emit" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
-     *                    - PredicateInterface emitPredicate
+     *                    - Predicates\PredicateInterface emitPredicate
      *                    - GraphTraversalInterface emitTraversal
      * @return GraphTraversal
      */
@@ -354,12 +384,27 @@ if (!function_exists('emit')) {
     }
 }
 
+if (!function_exists('fail')) {
+    /**
+     * The "fail" step.
+     *
+     * @param mixed $args being any of:
+     *                    - empty
+     *                    - string message
+     * @return GraphTraversal
+     */
+    function fail(...$args): GraphTraversal
+    {
+        return (new GraphTraversal())->fail(...$args);
+    }
+}
+
 if (!function_exists('filter')) {
     /**
      * The "filter" step.
-     * 
+     *
      * @param mixed $args being any of:
-     *                    - PredicateInterface predicate
+     *                    - Predicates\PredicateInterface predicate
      *                    - GraphTraversalInterface filterTraversal
      * @return GraphTraversal
      */
@@ -372,7 +417,7 @@ if (!function_exists('filter')) {
 if (!function_exists('flatMap')) {
     /**
      * The "flatMap" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed function
      *                    - GraphTraversalInterface flatMapTraversal
@@ -387,7 +432,7 @@ if (!function_exists('flatMap')) {
 if (!function_exists('fold')) {
     /**
      * The "fold" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - mixed seed, mixed foldFunction
@@ -402,7 +447,7 @@ if (!function_exists('fold')) {
 if (!function_exists('from')) {
     /**
      * The "from" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - string fromStepLabel
      *                    - GraphTraversalInterface fromVertex
@@ -418,7 +463,7 @@ if (!function_exists('from')) {
 if (!function_exists('group')) {
     /**
      * The "group" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - string sideEffectKey
@@ -433,7 +478,7 @@ if (!function_exists('group')) {
 if (!function_exists('groupCount')) {
     /**
      * The "groupCount" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - string sideEffectKey
@@ -448,7 +493,7 @@ if (!function_exists('groupCount')) {
 if (!function_exists('has')) {
     /**
      * The "has" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - string propertyKey
      *                    - string propertyKey, mixed value
@@ -470,7 +515,7 @@ if (!function_exists('has')) {
 if (!function_exists('hasId')) {
     /**
      * The "hasId" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed id, mixed otherIds
      *                    - mixed predicate
@@ -485,7 +530,7 @@ if (!function_exists('hasId')) {
 if (!function_exists('hasKey')) {
     /**
      * The "hasKey" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed predicate
      *                    - string label, string otherLabels
@@ -500,7 +545,7 @@ if (!function_exists('hasKey')) {
 if (!function_exists('hasLabel')) {
     /**
      * The "hasLabel" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed predicate
      *                    - string label, string otherLabels
@@ -515,7 +560,7 @@ if (!function_exists('hasLabel')) {
 if (!function_exists('hasNot')) {
     /**
      * The "hasNot" step.
-     * 
+     *
      * @param string $propertyKey
      * @return GraphTraversal
      */
@@ -528,7 +573,7 @@ if (!function_exists('hasNot')) {
 if (!function_exists('hasValue')) {
     /**
      * The "hasValue" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed value, mixed otherValues
      *                    - mixed predicate
@@ -543,7 +588,7 @@ if (!function_exists('hasValue')) {
 if (!function_exists('id')) {
     /**
      * The "id" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function id(): GraphTraversal
@@ -555,7 +600,7 @@ if (!function_exists('id')) {
 if (!function_exists('identity')) {
     /**
      * The "identity" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function identity(): GraphTraversal
@@ -567,7 +612,7 @@ if (!function_exists('identity')) {
 if (!function_exists('in')) {
     /**
      * The "in" step.
-     * 
+     *
      * @param string[] $edgeLabels,...
      * @return GraphTraversal
      */
@@ -580,7 +625,7 @@ if (!function_exists('in')) {
 if (!function_exists('inE')) {
     /**
      * The "inE" step.
-     * 
+     *
      * @param string[] $edgeLabels,...
      * @return GraphTraversal
      */
@@ -593,7 +638,7 @@ if (!function_exists('inE')) {
 if (!function_exists('inV')) {
     /**
      * The "inV" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function inV(): GraphTraversal
@@ -605,7 +650,7 @@ if (!function_exists('inV')) {
 if (!function_exists('index')) {
     /**
      * The "index" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function index(): GraphTraversal
@@ -617,7 +662,7 @@ if (!function_exists('index')) {
 if (!function_exists('inject')) {
     /**
      * The "inject" step.
-     * 
+     *
      * @param mixed[] $injections,...
      * @return GraphTraversal
      */
@@ -630,7 +675,7 @@ if (!function_exists('inject')) {
 if (!function_exists('is')) {
     /**
      * The "is" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed value
      *                    - mixed predicate
@@ -645,7 +690,7 @@ if (!function_exists('is')) {
 if (!function_exists('key')) {
     /**
      * The "key" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function key(): GraphTraversal
@@ -657,7 +702,7 @@ if (!function_exists('key')) {
 if (!function_exists('label')) {
     /**
      * The "label" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function label(): GraphTraversal
@@ -669,7 +714,7 @@ if (!function_exists('label')) {
 if (!function_exists('limit')) {
     /**
      * The "limit" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed scope, int limit
      *                    - int limit
@@ -684,11 +729,11 @@ if (!function_exists('limit')) {
 if (!function_exists('local')) {
     /**
      * The "local" step.
-     * 
+     *
      * @param GraphTraversalInterface $localTraversal
      * @return GraphTraversal
      */
-    function local(RND\GremlinDSL\Traversal\GraphTraversalInterface $localTraversal): GraphTraversal
+    function local(SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface $localTraversal): GraphTraversal
     {
         return (new GraphTraversal())->local($localTraversal);
     }
@@ -697,7 +742,7 @@ if (!function_exists('local')) {
 if (!function_exists('loops')) {
     /**
      * The "loops" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - string loopName
@@ -712,7 +757,7 @@ if (!function_exists('loops')) {
 if (!function_exists('map')) {
     /**
      * The "map" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed function
      *                    - GraphTraversalInterface mapTraversal
@@ -727,11 +772,11 @@ if (!function_exists('map')) {
 if (!function_exists('_match')) {
     /**
      * The "match" step.
-     * 
+     *
      * @param GraphTraversalInterface[] $matchTraversals,...
      * @return GraphTraversal
      */
-    function _match(RND\GremlinDSL\Traversal\GraphTraversalInterface ...$matchTraversals): GraphTraversal
+    function _match(SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface ...$matchTraversals): GraphTraversal
     {
         return (new GraphTraversal())->match(...$matchTraversals);
     }
@@ -740,7 +785,7 @@ if (!function_exists('_match')) {
 if (!function_exists('math')) {
     /**
      * The "math" step.
-     * 
+     *
      * @param string $expression
      * @return GraphTraversal
      */
@@ -753,7 +798,7 @@ if (!function_exists('math')) {
 if (!function_exists('max')) {
     /**
      * The "max" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - mixed scope
@@ -768,7 +813,7 @@ if (!function_exists('max')) {
 if (!function_exists('mean')) {
     /**
      * The "mean" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - mixed scope
@@ -780,10 +825,42 @@ if (!function_exists('mean')) {
     }
 }
 
+if (!function_exists('mergeE')) {
+    /**
+     * The "mergeE" step.
+     *
+     * @param mixed $args being any of:
+     *                    - empty
+     *                    - mixed searchCreate
+     *                    - GraphTraversalInterface searchCreate
+     * @return GraphTraversal
+     */
+    function mergeE(...$args): GraphTraversal
+    {
+        return (new GraphTraversal())->mergeE(...$args);
+    }
+}
+
+if (!function_exists('mergeV')) {
+    /**
+     * The "mergeV" step.
+     *
+     * @param mixed $args being any of:
+     *                    - empty
+     *                    - mixed searchCreate
+     *                    - GraphTraversalInterface searchCreate
+     * @return GraphTraversal
+     */
+    function mergeV(...$args): GraphTraversal
+    {
+        return (new GraphTraversal())->mergeV(...$args);
+    }
+}
+
 if (!function_exists('min')) {
     /**
      * The "min" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - mixed scope
@@ -798,7 +875,7 @@ if (!function_exists('min')) {
 if (!function_exists('none')) {
     /**
      * The "none" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function none(): GraphTraversal
@@ -810,11 +887,11 @@ if (!function_exists('none')) {
 if (!function_exists('not')) {
     /**
      * The "not" step.
-     * 
+     *
      * @param GraphTraversalInterface $notTraversal
      * @return GraphTraversal
      */
-    function not(RND\GremlinDSL\Traversal\GraphTraversalInterface $notTraversal): GraphTraversal
+    function not(SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface $notTraversal): GraphTraversal
     {
         return (new GraphTraversal())->not($notTraversal);
     }
@@ -823,9 +900,10 @@ if (!function_exists('not')) {
 if (!function_exists('option')) {
     /**
      * The "option" step.
-     * 
+     *
      * @param mixed $args being any of:
-     *                    - mixed pickToken, GraphTraversalInterface traversalOption
+     *                    - mixed token, mixed m
+     *                    - mixed token, GraphTraversalInterface traversalOption
      *                    - GraphTraversalInterface traversalOption
      * @return GraphTraversal
      */
@@ -838,11 +916,11 @@ if (!function_exists('option')) {
 if (!function_exists('optional')) {
     /**
      * The "optional" step.
-     * 
+     *
      * @param GraphTraversalInterface $optionalTraversal
      * @return GraphTraversal
      */
-    function optional(RND\GremlinDSL\Traversal\GraphTraversalInterface $optionalTraversal): GraphTraversal
+    function optional(SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface $optionalTraversal): GraphTraversal
     {
         return (new GraphTraversal())->optional($optionalTraversal);
     }
@@ -851,11 +929,11 @@ if (!function_exists('optional')) {
 if (!function_exists('_or')) {
     /**
      * The "or" step.
-     * 
+     *
      * @param GraphTraversalInterface[] $orTraversals,...
      * @return GraphTraversal
      */
-    function _or(RND\GremlinDSL\Traversal\GraphTraversalInterface ...$orTraversals): GraphTraversal
+    function _or(SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface ...$orTraversals): GraphTraversal
     {
         return (new GraphTraversal())->or(...$orTraversals);
     }
@@ -864,7 +942,7 @@ if (!function_exists('_or')) {
 if (!function_exists('order')) {
     /**
      * The "order" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - mixed scope
@@ -879,7 +957,7 @@ if (!function_exists('order')) {
 if (!function_exists('otherV')) {
     /**
      * The "otherV" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function otherV(): GraphTraversal
@@ -891,7 +969,7 @@ if (!function_exists('otherV')) {
 if (!function_exists('out')) {
     /**
      * The "out" step.
-     * 
+     *
      * @param string[] $edgeLabels,...
      * @return GraphTraversal
      */
@@ -904,7 +982,7 @@ if (!function_exists('out')) {
 if (!function_exists('outE')) {
     /**
      * The "outE" step.
-     * 
+     *
      * @param string[] $edgeLabels,...
      * @return GraphTraversal
      */
@@ -917,7 +995,7 @@ if (!function_exists('outE')) {
 if (!function_exists('outV')) {
     /**
      * The "outV" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function outV(): GraphTraversal
@@ -929,7 +1007,7 @@ if (!function_exists('outV')) {
 if (!function_exists('pageRank')) {
     /**
      * The "pageRank" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - float alpha
@@ -944,7 +1022,7 @@ if (!function_exists('pageRank')) {
 if (!function_exists('path')) {
     /**
      * The "path" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function path(): GraphTraversal
@@ -956,7 +1034,7 @@ if (!function_exists('path')) {
 if (!function_exists('peerPressure')) {
     /**
      * The "peerPressure" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function peerPressure(): GraphTraversal
@@ -968,7 +1046,7 @@ if (!function_exists('peerPressure')) {
 if (!function_exists('profile')) {
     /**
      * The "profile" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - string sideEffectKey
@@ -983,7 +1061,7 @@ if (!function_exists('profile')) {
 if (!function_exists('program')) {
     /**
      * The "program" step.
-     * 
+     *
      * @param mixed $vertexProgram
      * @return GraphTraversal
      */
@@ -996,7 +1074,7 @@ if (!function_exists('program')) {
 if (!function_exists('project')) {
     /**
      * The "project" step.
-     * 
+     *
      * @param string $projectKey
      * @param string[] $otherProjectKeys,...
      * @return GraphTraversal
@@ -1010,7 +1088,7 @@ if (!function_exists('project')) {
 if (!function_exists('properties')) {
     /**
      * The "properties" step.
-     * 
+     *
      * @param string[] $propertyKeys,...
      * @return GraphTraversal
      */
@@ -1023,9 +1101,10 @@ if (!function_exists('properties')) {
 if (!function_exists('property')) {
     /**
      * The "property" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed cardinality, mixed key, mixed value, mixed keyValues
+     *                    - mixed value
      *                    - mixed key, mixed value, mixed keyValues
      * @return GraphTraversal
      */
@@ -1038,7 +1117,7 @@ if (!function_exists('property')) {
 if (!function_exists('propertyMap')) {
     /**
      * The "propertyMap" step.
-     * 
+     *
      * @param string[] $propertyKeys,...
      * @return GraphTraversal
      */
@@ -1051,7 +1130,7 @@ if (!function_exists('propertyMap')) {
 if (!function_exists('range')) {
     /**
      * The "range" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed scope, int low, int high
      *                    - int low, int high
@@ -1066,7 +1145,7 @@ if (!function_exists('range')) {
 if (!function_exists('read')) {
     /**
      * The "read" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function read(): GraphTraversal
@@ -1078,7 +1157,7 @@ if (!function_exists('read')) {
 if (!function_exists('repeat')) {
     /**
      * The "repeat" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - string loopName, GraphTraversalInterface repeatTraversal
      *                    - GraphTraversalInterface repeatTraversal
@@ -1093,7 +1172,7 @@ if (!function_exists('repeat')) {
 if (!function_exists('sack')) {
     /**
      * The "sack" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - mixed sackOperator
@@ -1108,7 +1187,7 @@ if (!function_exists('sack')) {
 if (!function_exists('sample')) {
     /**
      * The "sample" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed scope, int amountToSample
      *                    - int amountToSample
@@ -1123,7 +1202,7 @@ if (!function_exists('sample')) {
 if (!function_exists('select')) {
     /**
      * The "select" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed column
      *                    - mixed pop, string selectKey
@@ -1143,7 +1222,7 @@ if (!function_exists('select')) {
 if (!function_exists('shortestPath')) {
     /**
      * The "shortestPath" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function shortestPath(): GraphTraversal
@@ -1155,7 +1234,7 @@ if (!function_exists('shortestPath')) {
 if (!function_exists('sideEffect')) {
     /**
      * The "sideEffect" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed consumer
      *                    - GraphTraversalInterface sideEffectTraversal
@@ -1170,7 +1249,7 @@ if (!function_exists('sideEffect')) {
 if (!function_exists('simplePath')) {
     /**
      * The "simplePath" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function simplePath(): GraphTraversal
@@ -1182,7 +1261,7 @@ if (!function_exists('simplePath')) {
 if (!function_exists('skip')) {
     /**
      * The "skip" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed scope, int skip
      *                    - int skip
@@ -1197,7 +1276,7 @@ if (!function_exists('skip')) {
 if (!function_exists('store')) {
     /**
      * The "store" step.
-     * 
+     *
      * @param string $sideEffectKey
      * @return GraphTraversal
      */
@@ -1210,7 +1289,7 @@ if (!function_exists('store')) {
 if (!function_exists('subgraph')) {
     /**
      * The "subgraph" step.
-     * 
+     *
      * @param string $sideEffectKey
      * @return GraphTraversal
      */
@@ -1223,7 +1302,7 @@ if (!function_exists('subgraph')) {
 if (!function_exists('sum')) {
     /**
      * The "sum" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - mixed scope
@@ -1238,7 +1317,7 @@ if (!function_exists('sum')) {
 if (!function_exists('tail')) {
     /**
      * The "tail" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - mixed scope
@@ -1255,7 +1334,7 @@ if (!function_exists('tail')) {
 if (!function_exists('timeLimit')) {
     /**
      * The "timeLimit" step.
-     * 
+     *
      * @param int $timeLimit
      * @return GraphTraversal
      */
@@ -1268,7 +1347,7 @@ if (!function_exists('timeLimit')) {
 if (!function_exists('times')) {
     /**
      * The "times" step.
-     * 
+     *
      * @param int $maxLoops
      * @return GraphTraversal
      */
@@ -1281,7 +1360,7 @@ if (!function_exists('times')) {
 if (!function_exists('to')) {
     /**
      * The "to" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed direction, string edgeLabels
      *                    - string toStepLabel
@@ -1298,7 +1377,7 @@ if (!function_exists('to')) {
 if (!function_exists('toE')) {
     /**
      * The "toE" step.
-     * 
+     *
      * @param mixed $direction
      * @param string[] $edgeLabels,...
      * @return GraphTraversal
@@ -1312,7 +1391,7 @@ if (!function_exists('toE')) {
 if (!function_exists('toV')) {
     /**
      * The "toV" step.
-     * 
+     *
      * @param mixed $direction
      * @return GraphTraversal
      */
@@ -1325,7 +1404,7 @@ if (!function_exists('toV')) {
 if (!function_exists('tree')) {
     /**
      * The "tree" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - empty
      *                    - string sideEffectKey
@@ -1340,7 +1419,7 @@ if (!function_exists('tree')) {
 if (!function_exists('unfold')) {
     /**
      * The "unfold" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function unfold(): GraphTraversal
@@ -1352,11 +1431,11 @@ if (!function_exists('unfold')) {
 if (!function_exists('union')) {
     /**
      * The "union" step.
-     * 
+     *
      * @param GraphTraversalInterface[] $unionTraversals,...
      * @return GraphTraversal
      */
-    function union(RND\GremlinDSL\Traversal\GraphTraversalInterface ...$unionTraversals): GraphTraversal
+    function union(SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface ...$unionTraversals): GraphTraversal
     {
         return (new GraphTraversal())->union(...$unionTraversals);
     }
@@ -1365,9 +1444,9 @@ if (!function_exists('union')) {
 if (!function_exists('until')) {
     /**
      * The "until" step.
-     * 
+     *
      * @param mixed $args being any of:
-     *                    - PredicateInterface untilPredicate
+     *                    - Predicates\PredicateInterface untilPredicate
      *                    - GraphTraversalInterface untilTraversal
      * @return GraphTraversal
      */
@@ -1380,7 +1459,7 @@ if (!function_exists('until')) {
 if (!function_exists('value')) {
     /**
      * The "value" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function value(): GraphTraversal
@@ -1392,7 +1471,7 @@ if (!function_exists('value')) {
 if (!function_exists('valueMap')) {
     /**
      * The "valueMap" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - string propertyKeys
      *                    - mixed includeTokens, string propertyKeys
@@ -1407,7 +1486,7 @@ if (!function_exists('valueMap')) {
 if (!function_exists('values')) {
     /**
      * The "values" step.
-     * 
+     *
      * @param string[] $propertyKeys,...
      * @return GraphTraversal
      */
@@ -1420,7 +1499,7 @@ if (!function_exists('values')) {
 if (!function_exists('where')) {
     /**
      * The "where" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - mixed predicate
      *                    - string startKey, mixed predicate
@@ -1436,7 +1515,7 @@ if (!function_exists('where')) {
 if (!function_exists('with')) {
     /**
      * The "with" step.
-     * 
+     *
      * @param mixed $args being any of:
      *                    - string key
      *                    - string key, mixed value
@@ -1451,7 +1530,7 @@ if (!function_exists('with')) {
 if (!function_exists('write')) {
     /**
      * The "write" step.
-     * 
+     *
      * @return GraphTraversal
      */
     function write(): GraphTraversal

@@ -6,9 +6,9 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Traversal\Steps\Generated;
+namespace SpecialWeb\GremlinDSL\Traversal\Steps\Generated;
 
-use RND\GremlinDSL\Traversal\Steps\BasicStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\BasicStep;
 
 class SimplePathStep extends BasicStep
 {
