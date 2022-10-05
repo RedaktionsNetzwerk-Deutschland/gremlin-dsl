@@ -7,12 +7,16 @@ jobs:
         name: PHPCS
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - uses: php-actions/composer@v5
+            - uses: actions/checkout@v3
+              with:
+                fetch-depth: 0
+            - uses: php-actions/composer@v6
               with:
                   command: update
-            - uses: shirobrak/action-phpcs@v1
+            - name: Install PHP_CodeSniffer
+              run: |
+                curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
+                php phpcs.phar --version
+            - uses: thenabeel/action-phpcs@v8
               with:
-                  reporter: github-pr-review
-                  fail_on_error: true
-                  phpcs_flags: --standard=phpcs.xml.dist
+                standard: phpcs.xml.dist
