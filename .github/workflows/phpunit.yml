@@ -8,19 +8,23 @@ jobs:
         name: PHPUnit
         steps:
             - name: Checkout
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
             - name: Composer dependencies
-              uses: php-actions/composer@v5
-              with:
-                  command: update
-            - name: Generate report
-              uses: docker://ghcr.io/mileschou/xdebug:8.0
+              uses: php-actions/composer@6
+            - name: PHPUnit Tests
+              uses: php-actions/phpunit@v3
               env:
                 XDEBUG_MODE: coverage
               with:
-                args: vendor/bin/phpunit -c phpunit.xml.dist --coverage-clover coverage.xml
+                bootstrap: vendor/autoload.php
+                configuration: phpunit.xml.dist
+                php_extensions: xdebug
+                args: tests --coverage-clover ./coverage.xml
+
             - name: Export to codecov
-              uses: codecov/codecov-action@v1
+              uses: codecov/codecov-action@v2
               with:
                   fail_ci_if_error: true
+                  token: ${{ secrets.CODE_COV_TOKEN }}
                   files: ./coverage.xml
+                  verbose: true
