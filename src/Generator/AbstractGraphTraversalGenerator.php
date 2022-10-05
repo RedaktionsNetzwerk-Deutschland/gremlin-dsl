@@ -13,9 +13,10 @@ use RND\GremlinDSL\Traversal\GraphTraversalInterface;
 use RND\GremlinDSL\Traversal\Predicates\PredicateInterface;
 use RND\GremlinDSL\Traversal\Steps\BasicStep;
 
+use const PHP_EOL;
+
 abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
 {
-
     protected const CLASS_NAME = '';
     protected const CLASS_PATH = 'RND\\GremlinDSL\\Traversal';
     protected const ABSTRACT_CLASS = '';
@@ -99,8 +100,7 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
         ClassType $stepClass
     ): Method {
         $method = $this->graphTraversalClass->addMethod($methodName);
-        $method->addComment(sprintf('The "%s" step.', $methodName));
-        $method->addComment('');
+        $method->addComment(sprintf('The "%s" step.', $methodName) . PHP_EOL);
         $method->setReturnType($returnType);
         $parameters = [];
         if ($methodDefinition['differentSignatures'] > 1) {

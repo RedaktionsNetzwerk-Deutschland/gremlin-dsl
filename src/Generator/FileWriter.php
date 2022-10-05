@@ -9,7 +9,6 @@ use Nette\PhpGenerator\Printer;
 
 class FileWriter
 {
-
     private static ?FileWriter $instance = null;
 
     public Printer $printer;

@@ -187,6 +187,23 @@ if (!function_exists('by')) {
     }
 }
 
+if (!function_exists('call')) {
+    /**
+     * The "call" step.
+     * 
+     * @param mixed $args being any of:
+     *                    - string service
+     *                    - string service, mixed params
+     *                    - string service, mixed params, GraphTraversalInterface childTraversal
+     *                    - string service, GraphTraversalInterface childTraversal
+     * @return GraphTraversal
+     */
+    function call(...$args): GraphTraversal
+    {
+        return (new GraphTraversal())->call(...$args);
+    }
+}
+
 if (!function_exists('cap')) {
     /**
      * The "cap" step.
@@ -325,6 +342,18 @@ if (!function_exists('drop')) {
     }
 }
 
+if (!function_exists('element')) {
+    /**
+     * The "element" step.
+     * 
+     * @return GraphTraversal
+     */
+    function element(): GraphTraversal
+    {
+        return (new GraphTraversal())->element();
+    }
+}
+
 if (!function_exists('elementMap')) {
     /**
      * The "elementMap" step.
@@ -351,6 +380,21 @@ if (!function_exists('emit')) {
     function emit(...$args): GraphTraversal
     {
         return (new GraphTraversal())->emit(...$args);
+    }
+}
+
+if (!function_exists('fail')) {
+    /**
+     * The "fail" step.
+     * 
+     * @param mixed $args being any of:
+     *                    - empty
+     *                    - string message
+     * @return GraphTraversal
+     */
+    function fail(...$args): GraphTraversal
+    {
+        return (new GraphTraversal())->fail(...$args);
     }
 }
 
@@ -780,6 +824,38 @@ if (!function_exists('mean')) {
     }
 }
 
+if (!function_exists('mergeE')) {
+    /**
+     * The "mergeE" step.
+     * 
+     * @param mixed $args being any of:
+     *                    - empty
+     *                    - mixed searchCreate
+     *                    - GraphTraversalInterface searchCreate
+     * @return GraphTraversal
+     */
+    function mergeE(...$args): GraphTraversal
+    {
+        return (new GraphTraversal())->mergeE(...$args);
+    }
+}
+
+if (!function_exists('mergeV')) {
+    /**
+     * The "mergeV" step.
+     * 
+     * @param mixed $args being any of:
+     *                    - empty
+     *                    - mixed searchCreate
+     *                    - GraphTraversalInterface searchCreate
+     * @return GraphTraversal
+     */
+    function mergeV(...$args): GraphTraversal
+    {
+        return (new GraphTraversal())->mergeV(...$args);
+    }
+}
+
 if (!function_exists('min')) {
     /**
      * The "min" step.
@@ -825,7 +901,8 @@ if (!function_exists('option')) {
      * The "option" step.
      * 
      * @param mixed $args being any of:
-     *                    - mixed pickToken, GraphTraversalInterface traversalOption
+     *                    - mixed token, mixed m
+     *                    - mixed token, GraphTraversalInterface traversalOption
      *                    - GraphTraversalInterface traversalOption
      * @return GraphTraversal
      */
@@ -1026,6 +1103,7 @@ if (!function_exists('property')) {
      * 
      * @param mixed $args being any of:
      *                    - mixed cardinality, mixed key, mixed value, mixed keyValues
+     *                    - mixed value
      *                    - mixed key, mixed value, mixed keyValues
      * @return GraphTraversal
      */

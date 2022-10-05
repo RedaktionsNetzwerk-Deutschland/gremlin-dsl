@@ -10,7 +10,6 @@ use Nette\PhpGenerator\PhpNamespace;
 
 abstract class AbstractGenerator
 {
-
     protected FileWriter $writer;
 
     /**

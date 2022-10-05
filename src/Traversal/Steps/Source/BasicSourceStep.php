@@ -8,5 +8,4 @@ use RND\GremlinDSL\Traversal\Steps\BasicStep;
 
 abstract class BasicSourceStep extends BasicStep
 {
-
 }

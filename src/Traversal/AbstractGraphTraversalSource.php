@@ -9,7 +9,6 @@ namespace RND\GremlinDSL\Traversal;
  */
 class AbstractGraphTraversalSource implements GraphTraversalInterface
 {
-
     protected Steps $steps;
 
     public function __construct(?Steps $steps = null)

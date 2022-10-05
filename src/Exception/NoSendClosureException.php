@@ -14,7 +14,8 @@ class NoSendClosureException extends RuntimeException
     {
         if (empty($message)) {
             $message = sprintf(
-                'You must either configure the sendClosure or provide a closure to enable the SendStep: `%s::getInstance()->setSendClosure(function(string $traversalString) {})`',
+                'You must either configure the sendClosure or provide a closure to enable the SendStep: ' .
+                '`%s::getInstance()->setSendClosure(function(string $traversalString) {})`',
                 Configuration::class
             );
         }

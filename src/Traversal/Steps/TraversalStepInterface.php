@@ -6,5 +6,4 @@ namespace RND\GremlinDSL\Traversal\Steps;
 
 interface TraversalStepInterface extends StepInterface
 {
-
 }

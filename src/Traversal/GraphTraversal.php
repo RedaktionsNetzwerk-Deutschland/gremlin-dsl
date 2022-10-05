@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace RND\GremlinDSL\Traversal;
 
+use RND\GremlinDSL\Traversal\GraphTraversal as GraphTraversal1;
 use RND\GremlinDSL\Traversal\Predicates\PredicateInterface;
 use RND\GremlinDSL\Traversal\Steps\Generated\AddEStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\AddVStep;
@@ -22,6 +23,7 @@ use RND\GremlinDSL\Traversal\Steps\Generated\BothStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\BothVStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\BranchStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\ByStep;
+use RND\GremlinDSL\Traversal\Steps\Generated\CallStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\CapStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\ChooseStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\CoalesceStep;
@@ -33,7 +35,9 @@ use RND\GremlinDSL\Traversal\Steps\Generated\CyclicPathStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\DedupStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\DropStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\ElementMapStep;
+use RND\GremlinDSL\Traversal\Steps\Generated\ElementStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\EmitStep;
+use RND\GremlinDSL\Traversal\Steps\Generated\FailStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\FilterStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\FlatMapStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\FoldStep;
@@ -64,6 +68,8 @@ use RND\GremlinDSL\Traversal\Steps\Generated\MatchStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\MathStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\MaxStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\MeanStep;
+use RND\GremlinDSL\Traversal\Steps\Generated\MergeEStep;
+use RND\GremlinDSL\Traversal\Steps\Generated\MergeVStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\MinStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\NoneStep;
 use RND\GremlinDSL\Traversal\Steps\Generated\NotStep;
@@ -312,6 +318,24 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
+     * The "call" step.
+     *
+     * @param mixed $args being any of:
+     *                    - string service
+     *                    - string service, mixed params
+     *                    - string service, mixed params, GraphTraversalInterface childTraversal
+     *                    - string service, GraphTraversalInterface childTraversal
+     * @return GraphTraversal
+     */
+    public function call(...$args): GraphTraversal
+    {
+        $step = new CallStep(...$args);
+        $this->steps->add($step);
+
+        return new static($this->steps);
+    }
+
+    /**
      * The "cap" step.
      *
      * @param string $sideEffectKey
@@ -460,6 +484,19 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
+     * The "element" step.
+     *
+     * @return GraphTraversal
+     */
+    public function element(): GraphTraversal
+    {
+        $step = new ElementStep();
+        $this->steps->add($step);
+
+        return new static($this->steps);
+    }
+
+    /**
      * The "elementMap" step.
      *
      * @param string[] $propertyKeys,...
@@ -485,6 +522,22 @@ class GraphTraversal extends AbstractGraphTraversal
     public function emit(...$args): GraphTraversal
     {
         $step = new EmitStep(...$args);
+        $this->steps->add($step);
+
+        return new static($this->steps);
+    }
+
+    /**
+     * The "fail" step.
+     *
+     * @param mixed $args being any of:
+     *                    - empty
+     *                    - string message
+     * @return GraphTraversal
+     */
+    public function fail(...$args): GraphTraversal
+    {
+        $step = new FailStep(...$args);
         $this->steps->add($step);
 
         return new static($this->steps);
@@ -947,6 +1000,40 @@ class GraphTraversal extends AbstractGraphTraversal
     }
 
     /**
+     * The "mergeE" step.
+     *
+     * @param mixed $args being any of:
+     *                    - empty
+     *                    - mixed searchCreate
+     *                    - GraphTraversalInterface searchCreate
+     * @return GraphTraversal
+     */
+    public function mergeE(...$args): GraphTraversal
+    {
+        $step = new MergeEStep(...$args);
+        $this->steps->add($step);
+
+        return new static($this->steps);
+    }
+
+    /**
+     * The "mergeV" step.
+     *
+     * @param mixed $args being any of:
+     *                    - empty
+     *                    - mixed searchCreate
+     *                    - GraphTraversalInterface searchCreate
+     * @return GraphTraversal
+     */
+    public function mergeV(...$args): GraphTraversal
+    {
+        $step = new MergeVStep(...$args);
+        $this->steps->add($step);
+
+        return new static($this->steps);
+    }
+
+    /**
      * The "min" step.
      *
      * @param mixed $args being any of:
@@ -993,7 +1080,8 @@ class GraphTraversal extends AbstractGraphTraversal
      * The "option" step.
      *
      * @param mixed $args being any of:
-     *                    - mixed pickToken, GraphTraversalInterface traversalOption
+     *                    - mixed token, mixed m
+     *                    - mixed token, GraphTraversalInterface traversalOption
      *                    - GraphTraversalInterface traversalOption
      * @return GraphTraversal
      */
@@ -1209,6 +1297,7 @@ class GraphTraversal extends AbstractGraphTraversal
      *
      * @param mixed $args being any of:
      *                    - mixed cardinality, mixed key, mixed value, mixed keyValues
+     *                    - mixed value
      *                    - mixed key, mixed value, mixed keyValues
      * @return GraphTraversal
      */

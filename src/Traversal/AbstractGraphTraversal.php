@@ -16,7 +16,6 @@ use RND\GremlinDSL\Traversal\Steps\TraversalStepInterface;
 
 class AbstractGraphTraversal implements GraphTraversalInterface
 {
-
     protected Steps $steps;
 
     public function __construct(?Steps $steps = null)

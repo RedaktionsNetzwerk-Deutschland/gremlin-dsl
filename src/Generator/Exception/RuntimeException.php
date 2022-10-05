@@ -6,5 +6,4 @@ namespace RND\GremlinDSL\Generator\Exception;
 
 class RuntimeException extends \RuntimeException
 {
-
 }

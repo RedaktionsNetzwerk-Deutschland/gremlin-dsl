@@ -8,7 +8,6 @@ use Nette\PhpGenerator\ClassType;
 
 class Utils
 {
-
     public static function getFQN(ClassType $class): string
     {
         return $class->getNamespace()

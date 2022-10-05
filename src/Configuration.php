@@ -9,7 +9,6 @@ use RND\GremlinDSL\Traversal\SendClosureInterface;
 
 class Configuration
 {
-
     private static ?Configuration $instance = null;
 
     /** @var SendClosureInterface|Closure|null */
@@ -56,7 +55,7 @@ class Configuration
      * ```
      *
      * @param SendClosureInterface|Closure $closure The function used for handling the send step.
-     *                                              The context of the closure will be set to the current GraphTraversal.
+     *                                              The context of the closure will be the current GraphTraversal.
      *                                              The first parameter is the compiled traversal string.
      *                                              Example closure:
      *                                              <code>

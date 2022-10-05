@@ -8,5 +8,4 @@ use RND\GremlinDSL\Traversal\Predicates\AbstractPredicate;
 
 class AbstractTextPredicate extends AbstractPredicate
 {
-
 }
