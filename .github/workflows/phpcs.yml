@@ -4,6 +4,7 @@ on:
   - pull_request
 jobs:
     phpcs:
+        if: ${{ false }}
         name: PHPCS
         runs-on: ubuntu-latest
         steps:
