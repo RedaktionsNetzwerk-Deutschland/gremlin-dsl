@@ -15,6 +15,7 @@ use RND\GremlinDSL\Traversal\Predicates\Text\NotStartingWith;
 use RND\GremlinDSL\Traversal\Predicates\Text\Regex;
 use RND\GremlinDSL\Traversal\Predicates\Text\StartingWith;
 
+
 if (!function_exists('containing')) {
     function containing(...$args): Containing
     {

@@ -50,7 +50,7 @@ abstract class AbstractGenerator
 
         if ($abstractClass) {
             $namespace->addUse($abstractClass);
-            $class->addExtend($abstractClass);
+            $class->setExtends($abstractClass);
         }
 
         return $class;

@@ -123,7 +123,7 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
         $this->graphTraversalNs->addUse(Utils::getFQN($stepClass));
         $this->graphTraversalNs->addUse($returnType);
 
-        $unresolvedReturnType = $this->graphTraversalNs->unresolveName($returnType);
+        $unresolvedReturnType = $this->graphTraversalNs->simplifyType($returnType);
 
         $method->addComment('@return ' . $unresolvedReturnType);
         $this->addMethodBody($method, $stepClass, $parameters, $unresolvedReturnType);
@@ -175,13 +175,13 @@ abstract class AbstractGraphTraversalGenerator extends AbstractGenerator
                 $this->graphTraversalNs->addUse(PredicateInterface::class);
 
                 return $unresolve
-                    ? $this->graphTraversalNs->unresolveName(PredicateInterface::class)
+                    ? $this->graphTraversalNs->simplifyType(PredicateInterface::class)
                     : PredicateInterface::class;
             case 'Traversal':
                 $this->graphTraversalNs->addUse(GraphTraversalInterface::class);
 
                 return $unresolve
-                    ? $this->graphTraversalNs->unresolveName(GraphTraversalInterface::class)
+                    ? $this->graphTraversalNs->simplifyType(GraphTraversalInterface::class)
                     : GraphTraversalInterface::class;
         }
 
