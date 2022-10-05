@@ -20,3 +20,4 @@ jobs:
             - uses: thenabeel/action-phpcs@v8
               with:
                 standard: phpcs.xml.dist
+                phpcs_path: php phpcs.phar
