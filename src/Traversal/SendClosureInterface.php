@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Traversal;
+namespace SpecialWeb\GremlinDSL\Traversal;
 
 interface SendClosureInterface
 {

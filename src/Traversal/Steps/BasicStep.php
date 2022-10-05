@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Traversal\Steps;
+namespace SpecialWeb\GremlinDSL\Traversal\Steps;
 
-use RND\GremlinDSL\Utils\ArgumentUtil;
+use SpecialWeb\GremlinDSL\Utils\ArgumentUtil;
 
 abstract class BasicStep implements TraversalStepInterface
 {

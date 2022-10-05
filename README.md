@@ -1,11 +1,15 @@
 # PHP Gremlin DSL implementation
 
-[![PHPCS](https://img.shields.io/github/workflow/status/RedaktionsNetzwerk-Deutschland/gremlin-dsl/PHPCS?label=PHPCS)](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/actions?query=workflow%3APHPCS)
-[![PHPUnit](https://img.shields.io/github/workflow/status/RedaktionsNetzwerk-Deutschland/gremlin-dsl/PHPUnit?label=PHPUnit)](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl/actions?query=workflow%3APHPCS)
-[![License](https://img.shields.io/github/license/RedaktionsNetzwerk-Deutschland/gremlin-dsl)](LICENSE.md)
-[![Downloads](https://img.shields.io/packagist/dt/rnd/gremlin-dsl)](https://packagist.org/packages/rnd/gremlin-dsl)
-[![Latest version](https://img.shields.io/packagist/v/rnd/gremlin-dsl)](https://packagist.org/packages/rnd/gremlin-dsl)
-[![codecov](https://codecov.io/gh/RedaktionsNetzwerk-Deutschland/gremlin-dsl/branch/master/graph/badge.svg)](https://codecov.io/gh/RedaktionsNetzwerk-Deutschland/gremlin-dsl)
+[![PHPCS](https://img.shields.io/github/workflow/status/SpecialWeb/gremlin-dsl/PHPCS?label=PHPCS)](https://github.com/SpecialWeb/gremlin-dsl/actions?query=workflow%3APHPCS)
+[![PHPUnit](https://img.shields.io/github/workflow/status/SpecialWeb/gremlin-dsl/PHPUnit?label=PHPUnit)](https://github.com/SpecialWeb/gremlin-dsl/actions?query=workflow%3APHPCS)
+[![License](https://img.shields.io/github/license/SpecialWeb/gremlin-dsl)](LICENSE.md)
+[![Downloads](https://img.shields.io/packagist/dt/specialweb/gremlin-dsl)](https://packagist.org/packages/specialweb/gremlin-dsl)
+[![Latest version](https://img.shields.io/packagist/v/specialweb/gremlin-dsl)](https://packagist.org/packages/specialweb/gremlin-dsl)
+[![codecov](https://codecov.io/gh/SpecialWeb/gremlin-dsl/branch/master/graph/badge.svg)](https://codecov.io/gh/SpecialWeb/gremlin-dsl)
+
+## Information
+
+As the [original repository](https://github.com/RedaktionsNetzwerk-Deutschland/gremlin-dsl) was discontinued this is the continuing package to work with.
 
 ## Introduction
 
@@ -15,11 +19,11 @@ Many graph vendors like [Neo4j](https://neo4j.com/), [Azure Cosmos](https://azur
 
 This package provides a basic integration of gremlin for php applications.
 
-This version is built from [TinkerPop v3.4.10](generator/pom.xml#L24).
+This version is built from [TinkerPop v3.6.1](generator/pom.xml#L24).
 
 ## Installation
 ```shell
-composer require rnd/gremlin-dsl
+composer require specialweb/gremlin-dsl
 ```
 
 ## Configuration
@@ -33,7 +37,7 @@ This packages provides a static [Configuration](src/Configuration.php) Class wit
 
 You can either configure it from array:
 ```php
-use RND\GremlinDSL\Configuration;
+use SpecialWeb\GremlinDSL\Configuration;
 
 /** @var \Brightzone\GremlinDriver\Connection $connection */
 $connection = null;
@@ -48,7 +52,7 @@ Configuration::fromConfig([
 
 or set the desired settings directly:
 ```php
-use RND\GremlinDSL\Configuration;
+use SpecialWeb\GremlinDSL\Configuration;
 
 /** @var \Brightzone\GremlinDriver\Connection $connection */
 $connection = null;
@@ -70,8 +74,8 @@ Just [install the package](#installation) and begin traversing.
 <?php
 require_once 'vendor/autoload.php';
 
-echo \RND\GremlinDSL\Traversal\GraphTraversal::g()
-    ->V(1)->out('knows')->has('age', new \RND\GremlinDSL\Traversal\Predicates\Gt(30))->values('name');
+echo \SpecialWeb\GremlinDSL\Traversal\GraphTraversal::g()
+    ->V(1)->out('knows')->has('age', new \SpecialWeb\GremlinDSL\Traversal\Predicates\Gt(30))->values('name');
 # g.V(1).out("knows").has("age", gt(30)).values("name")
 ```
 
@@ -84,7 +88,7 @@ You can either globally configure a closure for the send step or provide it with
 <?php
 require_once 'vendor/autoload.php';
 
-use RND\GremlinDSL\Configuration;
+use SpecialWeb\GremlinDSL\Configuration;
 
 /** @var \Brightzone\GremlinDriver\Connection $connection */
 $connection = null;
@@ -103,8 +107,8 @@ g()->V(1)->out("knows")->has("age", gt(30))->values("name")->send($sendClosure);
 Instead of a closure you can also provide an instance of SendClosureInterface.
 
 ```php
-use RND\GremlinDSL\Traversal\SendClosureInterface;
-use RND\GremlinDSL\Traversal\GraphTraversalInterface;
+use SpecialWeb\GremlinDSL\Traversal\SendClosureInterface;
+use SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface;
 
 class SendClosure implements SendClosureInterface
 {
@@ -126,7 +130,7 @@ or call `Configuration::enableShortFunctions()` to make short functions availabl
 
 require_once 'vendor/autoload.php';
 
-\RND\GremlinDSL\Configuration::getInstance()->enableShortFunctions();
+\SpecialWeb\GremlinDSL\Configuration::getInstance()->enableShortFunctions();
 g()->V(1)->out('knows')->has('age', gt(30))->values('name');
 # g.V(1).out("knows").has("age", gt(30)).values("name")
 ```
@@ -155,6 +159,3 @@ Just call `make generate-json` or `mvn -f generator -P glv-json compile`
 
 #### Generate PHP only
 To e.g. adjust the php file generation you can either call `php generate.php [dsl:generate [<in-file>]]` or `make generate-php`
-
-___
-♥ RND Technical Hub

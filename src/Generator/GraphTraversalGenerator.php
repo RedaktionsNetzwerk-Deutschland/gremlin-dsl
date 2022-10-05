@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Generator;
+namespace SpecialWeb\GremlinDSL\Generator;
 
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\GlobalFunction;
 use Nette\PhpGenerator\Method;
 use Nette\PhpGenerator\PhpFile;
-use RND\GremlinDSL\Traversal\AbstractGraphTraversal;
-use RND\GremlinDSL\Traversal\GraphTraversalInterface;
-use RND\GremlinDSL\Traversal\Steps\BasicStep;
+use SpecialWeb\GremlinDSL\Traversal\AbstractGraphTraversal;
+use SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface;
+use SpecialWeb\GremlinDSL\Traversal\Steps\BasicStep;
 
 class GraphTraversalGenerator extends AbstractGraphTraversalGenerator
 {
     protected const CLASS_NAME = 'GraphTraversal';
-    protected const CLASS_PATH = 'RND\\GremlinDSL\\Traversal';
+    protected const CLASS_PATH = 'SpecialWeb\\GremlinDSL\\Traversal';
     protected const ABSTRACT_CLASS = AbstractGraphTraversal::class;
     protected const ABSTRACT_STEP_CLASS = BasicStep::class;
     protected const FUNCTIONS_FILE = 'resources/statics.php';

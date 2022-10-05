@@ -1,5 +1,5 @@
 {
-  "name": "rnd/gremlin-dsl",
+  "name": "specialweb/gremlin-dsl",
   "description": "Gremlin DSL PHP integration",
   "version": "0.5.0",
   "type": "library",
@@ -7,12 +7,12 @@
   "authors": [
     {
       "name": "Dominik Jansen",
-      "email": "dominik.jansen@rnd.de"
+      "email": "dominik@specialweb.app"
     }
   ],
   "autoload": {
     "psr-4": {
-      "RND\\GremlinDSL\\": "src/"
+      "SpecialWeb\\GremlinDSL\\": "src/"
     },
     "files": [
       "resources/loader.php"
@@ -20,7 +20,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "RND\\GremlinDSL\\Tests\\": "tests/"
+      "SpecialWeb\\GremlinDSL\\Tests\\": "tests/"
     }
   },
   "require": {
@@ -38,9 +38,12 @@
   "scripts": {
     "cs": "vendor/bin/phpcs",
     "cs:fix": "vendor/bin/phpcbf",
-    "test": "vendor/bin/phpunit"
+    "test": "vendor/bin/phpunit -c phpunit.xml.dist"
   },
   "suggest": {
     "brightzone/gremlin-php": "gremlin-server client for php"
+  },
+  "replace": {
+    "rnd/gremlin-dsl": "*"
   }
 }

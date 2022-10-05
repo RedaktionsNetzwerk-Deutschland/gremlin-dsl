@@ -8,25 +8,24 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Traversal;
+namespace SpecialWeb\GremlinDSL\Traversal;
 
-use RND\GremlinDSL\Traversal\GraphTraversalSource as GraphTraversalSource1;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\AddESourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\AddVSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\CallSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\ESourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\InjectSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\IoSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\MergeESourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\MergeVSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\VSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithBulkSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithPathSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithSackSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithSideEffectSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithStrategiesSourceStep;
-use RND\GremlinDSL\Traversal\Steps\Source\Generated\WithoutStrategiesSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\AddESourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\AddVSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\CallSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\ESourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\InjectSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\IoSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\MergeESourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\MergeVSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\VSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\WithBulkSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\WithPathSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\WithSackSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\WithSideEffectSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\WithSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\WithStrategiesSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated\WithoutStrategiesSourceStep;
 
 /**
  * @see https://tinkerpop.apache.org/docs/current/reference/

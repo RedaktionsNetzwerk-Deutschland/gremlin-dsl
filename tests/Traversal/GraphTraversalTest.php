@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Tests\Traversal;
+namespace SpecialWeb\GremlinDSL\Tests\Traversal;
 
 use PHPUnit\Framework\TestCase;
-use RND\GremlinDSL\Configuration;
-use RND\GremlinDSL\Exception\NoSendClosureException;
-use RND\GremlinDSL\Traversal\GraphTraversal;
-use RND\GremlinDSL\Traversal\Predicates\Gt;
+use SpecialWeb\GremlinDSL\Configuration;
+use SpecialWeb\GremlinDSL\Exception\NoSendClosureException;
+use SpecialWeb\GremlinDSL\Traversal\GraphTraversal;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Gt;
 
 class GraphTraversalTest extends TestCase
 {
@@ -46,8 +46,8 @@ class GraphTraversalTest extends TestCase
     public function testTraversalWithAnonymous()
     {
         $instance = GraphTraversal::g();
-        $instance->V()->repeat(__()->out('edgeType'))->until(__()->hasLabel('label'));
 
+        $instance->V()->repeat(GraphTraversal::__()->out('edgeType'))->until(GraphTraversal::__()->hasLabel('label'));
         self::assertEquals('g.V().repeat(__.out("edgeType")).until(__.hasLabel("label"))', $instance->__toString());
     }
 

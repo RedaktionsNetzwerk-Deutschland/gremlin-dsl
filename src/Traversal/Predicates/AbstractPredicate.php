@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Traversal\Predicates;
+namespace SpecialWeb\GremlinDSL\Traversal\Predicates;
 
-use RND\GremlinDSL\Utils\ArgumentUtil;
+use SpecialWeb\GremlinDSL\Utils\ArgumentUtil;
 
 abstract class AbstractPredicate implements PredicateInterface
 {

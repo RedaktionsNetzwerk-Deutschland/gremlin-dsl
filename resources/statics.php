@@ -6,8 +6,8 @@
 
 declare(strict_types=1);
 
-use RND\GremlinDSL\Traversal\GraphTraversal;
-use RND\GremlinDSL\Traversal\GraphTraversalInterface;
+use SpecialWeb\GremlinDSL\Traversal\GraphTraversal;
+use SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface;
 
 
 if (!function_exists('V')) {
@@ -76,7 +76,7 @@ if (!function_exists('_and')) {
      * @param GraphTraversalInterface[] $andTraversals,...
      * @return GraphTraversal
      */
-    function _and(RND\GremlinDSL\Traversal\GraphTraversalInterface ...$andTraversals): GraphTraversal
+    function _and(SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface ...$andTraversals): GraphTraversal
     {
         return (new GraphTraversal())->and(...$andTraversals);
     }
@@ -225,8 +225,8 @@ if (!function_exists('choose')) {
      *
      * @param mixed $args being any of:
      *                    - mixed choiceFunction
-     *                    - PredicateInterface choosePredicate, GraphTraversalInterface trueChoice
-     *                    - PredicateInterface choosePredicate, GraphTraversalInterface trueChoice, GraphTraversalInterface falseChoice
+     *                    - Predicates\PredicateInterface choosePredicate, GraphTraversalInterface trueChoice
+     *                    - Predicates\PredicateInterface choosePredicate, GraphTraversalInterface trueChoice, GraphTraversalInterface falseChoice
      *                    - GraphTraversalInterface choiceTraversal
      *                    - GraphTraversalInterface traversalPredicate, GraphTraversalInterface trueChoice
      *                    - GraphTraversalInterface traversalPredicate, GraphTraversalInterface trueChoice, GraphTraversalInterface falseChoice
@@ -245,7 +245,7 @@ if (!function_exists('coalesce')) {
      * @param GraphTraversalInterface[] $coalesceTraversals,...
      * @return GraphTraversal
      */
-    function coalesce(RND\GremlinDSL\Traversal\GraphTraversalInterface ...$coalesceTraversals): GraphTraversal
+    function coalesce(SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface ...$coalesceTraversals): GraphTraversal
     {
         return (new GraphTraversal())->coalesce(...$coalesceTraversals);
     }
@@ -374,7 +374,7 @@ if (!function_exists('emit')) {
      *
      * @param mixed $args being any of:
      *                    - empty
-     *                    - PredicateInterface emitPredicate
+     *                    - Predicates\PredicateInterface emitPredicate
      *                    - GraphTraversalInterface emitTraversal
      * @return GraphTraversal
      */
@@ -404,7 +404,7 @@ if (!function_exists('filter')) {
      * The "filter" step.
      *
      * @param mixed $args being any of:
-     *                    - PredicateInterface predicate
+     *                    - Predicates\PredicateInterface predicate
      *                    - GraphTraversalInterface filterTraversal
      * @return GraphTraversal
      */
@@ -733,7 +733,7 @@ if (!function_exists('local')) {
      * @param GraphTraversalInterface $localTraversal
      * @return GraphTraversal
      */
-    function local(RND\GremlinDSL\Traversal\GraphTraversalInterface $localTraversal): GraphTraversal
+    function local(SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface $localTraversal): GraphTraversal
     {
         return (new GraphTraversal())->local($localTraversal);
     }
@@ -776,7 +776,7 @@ if (!function_exists('_match')) {
      * @param GraphTraversalInterface[] $matchTraversals,...
      * @return GraphTraversal
      */
-    function _match(RND\GremlinDSL\Traversal\GraphTraversalInterface ...$matchTraversals): GraphTraversal
+    function _match(SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface ...$matchTraversals): GraphTraversal
     {
         return (new GraphTraversal())->match(...$matchTraversals);
     }
@@ -891,7 +891,7 @@ if (!function_exists('not')) {
      * @param GraphTraversalInterface $notTraversal
      * @return GraphTraversal
      */
-    function not(RND\GremlinDSL\Traversal\GraphTraversalInterface $notTraversal): GraphTraversal
+    function not(SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface $notTraversal): GraphTraversal
     {
         return (new GraphTraversal())->not($notTraversal);
     }
@@ -920,7 +920,7 @@ if (!function_exists('optional')) {
      * @param GraphTraversalInterface $optionalTraversal
      * @return GraphTraversal
      */
-    function optional(RND\GremlinDSL\Traversal\GraphTraversalInterface $optionalTraversal): GraphTraversal
+    function optional(SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface $optionalTraversal): GraphTraversal
     {
         return (new GraphTraversal())->optional($optionalTraversal);
     }
@@ -933,7 +933,7 @@ if (!function_exists('_or')) {
      * @param GraphTraversalInterface[] $orTraversals,...
      * @return GraphTraversal
      */
-    function _or(RND\GremlinDSL\Traversal\GraphTraversalInterface ...$orTraversals): GraphTraversal
+    function _or(SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface ...$orTraversals): GraphTraversal
     {
         return (new GraphTraversal())->or(...$orTraversals);
     }
@@ -1435,7 +1435,7 @@ if (!function_exists('union')) {
      * @param GraphTraversalInterface[] $unionTraversals,...
      * @return GraphTraversal
      */
-    function union(RND\GremlinDSL\Traversal\GraphTraversalInterface ...$unionTraversals): GraphTraversal
+    function union(SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface ...$unionTraversals): GraphTraversal
     {
         return (new GraphTraversal())->union(...$unionTraversals);
     }
@@ -1446,7 +1446,7 @@ if (!function_exists('until')) {
      * The "until" step.
      *
      * @param mixed $args being any of:
-     *                    - PredicateInterface untilPredicate
+     *                    - Predicates\PredicateInterface untilPredicate
      *                    - GraphTraversalInterface untilTraversal
      * @return GraphTraversal
      */

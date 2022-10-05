@@ -1,5 +1,6 @@
 MIT License
 
+Copyright (c) 2022 SpecialWeb
 Copyright (c) 2020 RND RedaktionsNetzwerk Deutschland GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

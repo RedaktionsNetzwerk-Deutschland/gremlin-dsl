@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Tests\Traversal;
+namespace SpecialWeb\GremlinDSL\Tests\Traversal;
 
-use RND\GremlinDSL\Traversal\GraphTraversalInterface;
-use RND\GremlinDSL\Traversal\SendClosureInterface;
+use SpecialWeb\GremlinDSL\Traversal\GraphTraversalInterface;
+use SpecialWeb\GremlinDSL\Traversal\SendClosureInterface;
 
 class SendClosure implements SendClosureInterface
 {

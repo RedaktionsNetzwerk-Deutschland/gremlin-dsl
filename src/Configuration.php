@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL;
+namespace SpecialWeb\GremlinDSL;
 
 use Closure;
-use RND\GremlinDSL\Traversal\SendClosureInterface;
+use SpecialWeb\GremlinDSL\Traversal\SendClosureInterface;
 
 class Configuration
 {

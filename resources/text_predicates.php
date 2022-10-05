@@ -6,14 +6,14 @@
 
 declare(strict_types=1);
 
-use RND\GremlinDSL\Traversal\Predicates\Text\Containing;
-use RND\GremlinDSL\Traversal\Predicates\Text\EndingWith;
-use RND\GremlinDSL\Traversal\Predicates\Text\NotContaining;
-use RND\GremlinDSL\Traversal\Predicates\Text\NotEndingWith;
-use RND\GremlinDSL\Traversal\Predicates\Text\NotRegex;
-use RND\GremlinDSL\Traversal\Predicates\Text\NotStartingWith;
-use RND\GremlinDSL\Traversal\Predicates\Text\Regex;
-use RND\GremlinDSL\Traversal\Predicates\Text\StartingWith;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Text\Containing;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Text\EndingWith;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Text\NotContaining;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Text\NotEndingWith;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Text\NotRegex;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Text\NotStartingWith;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Text\Regex;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Text\StartingWith;
 
 
 if (!function_exists('containing')) {

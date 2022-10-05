@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Traversal;
+namespace SpecialWeb\GremlinDSL\Traversal;
 
 use Iterator;
-use RND\GremlinDSL\Traversal\Steps\StepInterface;
+use SpecialWeb\GremlinDSL\Traversal\Steps\StepInterface;
 
 class Steps implements Iterator
 {

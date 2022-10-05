@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Generator;
+namespace SpecialWeb\GremlinDSL\Generator;
 
 use Nette\PhpGenerator\Printer;
 use Nette\PhpGenerator\PsrPrinter;
-use RND\GremlinDSL\Generator\Exception\RuntimeException;
+use SpecialWeb\GremlinDSL\Generator\Exception\RuntimeException;
 
 class TraversalGenerator extends AbstractGenerator
 {

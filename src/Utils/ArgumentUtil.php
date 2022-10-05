@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Utils;
+namespace SpecialWeb\GremlinDSL\Utils;
 
 class ArgumentUtil
 {

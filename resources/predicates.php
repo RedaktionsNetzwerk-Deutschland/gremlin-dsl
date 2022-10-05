@@ -6,19 +6,19 @@
 
 declare(strict_types=1);
 
-use RND\GremlinDSL\Traversal\Predicates\Between;
-use RND\GremlinDSL\Traversal\Predicates\Eq;
-use RND\GremlinDSL\Traversal\Predicates\Gt;
-use RND\GremlinDSL\Traversal\Predicates\Gte;
-use RND\GremlinDSL\Traversal\Predicates\Inside;
-use RND\GremlinDSL\Traversal\Predicates\Lt;
-use RND\GremlinDSL\Traversal\Predicates\Lte;
-use RND\GremlinDSL\Traversal\Predicates\Neq;
-use RND\GremlinDSL\Traversal\Predicates\Not;
-use RND\GremlinDSL\Traversal\Predicates\Outside;
-use RND\GremlinDSL\Traversal\Predicates\Test;
-use RND\GremlinDSL\Traversal\Predicates\Within;
-use RND\GremlinDSL\Traversal\Predicates\Without;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Between;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Eq;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Gt;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Gte;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Inside;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Lt;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Lte;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Neq;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Not;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Outside;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Test;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Within;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\Without;
 
 
 if (!function_exists('between')) {

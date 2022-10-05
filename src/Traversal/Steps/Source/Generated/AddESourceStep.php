@@ -6,9 +6,9 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Traversal\Steps\Source\Generated;
+namespace SpecialWeb\GremlinDSL\Traversal\Steps\Source\Generated;
 
-use RND\GremlinDSL\Traversal\Steps\Source\BasicSourceStep;
+use SpecialWeb\GremlinDSL\Traversal\Steps\Source\BasicSourceStep;
 
 class AddESourceStep extends BasicSourceStep
 {

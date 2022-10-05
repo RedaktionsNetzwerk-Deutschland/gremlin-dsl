@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Exception;
+namespace SpecialWeb\GremlinDSL\Exception;
 
-use RND\GremlinDSL\Configuration;
+use SpecialWeb\GremlinDSL\Configuration;
 use RuntimeException;
 use Throwable;
 

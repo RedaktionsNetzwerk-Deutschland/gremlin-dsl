@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Tests;
+namespace SpecialWeb\GremlinDSL\Tests;
 
-use RND\GremlinDSL\Configuration;
+use SpecialWeb\GremlinDSL\Configuration;
 use PHPUnit\Framework\TestCase;
-use RND\GremlinDSL\Tests\Traversal\SendClosure;
+use SpecialWeb\GremlinDSL\Tests\Traversal\SendClosure;
 
 class ConfigurationTest extends TestCase
 {
@@ -63,5 +63,6 @@ class ConfigurationTest extends TestCase
         Configuration::getInstance()->enableShortFunctions();
         self::assertTrue(function_exists('g'));
         self::assertTrue(function_exists('addE'));
+        self::assertTrue(function_exists('__'));
     }
 }

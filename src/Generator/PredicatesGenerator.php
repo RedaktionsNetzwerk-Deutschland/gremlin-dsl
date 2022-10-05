@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace RND\GremlinDSL\Generator;
+namespace SpecialWeb\GremlinDSL\Generator;
 
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\GlobalFunction;
 use Nette\PhpGenerator\PhpFile;
-use RND\GremlinDSL\Traversal\Predicates\AbstractPredicate;
+use SpecialWeb\GremlinDSL\Traversal\Predicates\AbstractPredicate;
 
 class PredicatesGenerator extends AbstractGenerator
 {
